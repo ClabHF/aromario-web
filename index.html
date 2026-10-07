@@ -81,7 +81,7 @@ footer .foot-brand{font-family:var(--serif);letter-spacing:.3em;color:var(--gold
 footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
 footer a{color:var(--muted);text-decoration:none;transition:color .25s}
 footer a:hover{color:var(--gold)}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.gallery{background:var(--black)} .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2.2rem;max-width:1080px;margin:0 auto} .shot{margin:0} .phone-frame{border:2px solid #d4af37;border-radius:26px;overflow:hidden;background:#000;box-shadow:0 14px 44px rgba(212,175,55,.16);transition:transform .3s,box-shadow .3s} .phone-frame:hover{transform:translateY(-6px);box-shadow:0 20px 54px rgba(212,175,55,.3)} .phone-frame img{display:block;width:100%;height:auto} .shot figcaption{text-align:center;margin-top:1rem;color:var(--muted);font-size:.92rem;letter-spacing:.1em} .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 @media (max-width:720px){.nav-links li:not(:last-child){display:none}.hero{padding:8.5rem 1.25rem 4.5rem}section.block{padding:4.5rem 0}.stat+.stat::before{display:none}.stat{flex:1 1 45%}}
@@ -94,7 +94,7 @@ footer a:hover{color:var(--gold)}
 <ul class="nav-links">
 <li><a href="#funciones">Funciones</a></li>
 <li><a href="#como-funciona">Cómo funciona</a></li>
-<li><a href="privacy.html">Privacidad</a></li>
+<li><a href="#galeria">Galería</a></li> <li><a href="privacy.html">Privacidad</a></li>
 <li><a class="btn btn-gold btn-small" href="https://play.google.com/store/apps/details?id=com.aromario.app">Descargar</a></li>
 </ul>
 </div>
@@ -159,7 +159,7 @@ footer a:hover{color:var(--gold)}
 </div>
 </div>
 </section>
-<section class="cta-final">
+<section class="block gallery" id="galeria"> <div class="wrap"> <p class="kicker reveal">Galería</p> <h2 class="section-title reveal">La app, en tus manos</h2> <p class="section-lead reveal">Un vistazo a las pantallas principales de AROMARIO.</p> <div class="shots"> <figure class="shot reveal"><div class="phone-frame"><img src="images/home.jpg" alt="Recomendación diaria"></div><figcaption>Recomendación diaria</figcaption></figure> <figure class="shot reveal"><div class="phone-frame"><img src="images/wardrobe.jpg" alt="Mi armario"></div><figcaption>Mi armario</figcaption></figure> <figure class="shot reveal"><div class="phone-frame"><img src="images/detail.jpg" alt="Ficha del perfume"></div><figcaption>Ficha del perfume</figcaption></figure> <figure class="shot reveal"><div class="phone-frame"><img src="images/search.jpg" alt="Búsqueda avanzada"></div><figcaption>Búsqueda avanzada</figcaption></figure> <figure class="shot reveal"><div class="phone-frame"><img src="images/layering.jpg" alt="Mezclar perfumes"></div><figcaption>Mezclar perfumes</figcaption></figure> </div> </div> </section> <section class="cta-final">
 <div class="wrap">
 <h2 class="reveal">Tu colección merece un hogar elegante</h2>
 <p class="reveal">Descarga AROMARIO gratis y convierte tu pasión por la perfumería en una experiencia inteligente y refinada.</p>
