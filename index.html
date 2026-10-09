@@ -1,90 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"> <meta name='impact-site-verification' value='97374b3e-8fb9-4936-aa57-6c6055da868b'>
+<meta charset="UTF-8">
+<meta name='impact-site-verification' value='97374b3e-8fb9-4936-aa57-6c6055da868b'>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AROMARIO — Tu armario digital de perfumes</title>
-<meta name="description" content="AROMARIO es tu armario digital de perfumes: organiza tu colección, recibe recomendaciones inteligentes según clima, ocasión y temporada, y descubre tu próxima fragancia. Gratis en Google Play.">
+<meta name="description" content="AROMARIO es tu armario digital de perfumes: organiza tu colección, recibe cada día la recomendación perfecta según el clima y tu plan, mezcla fragancias y guarda tus deseos. Gratis en Google Play.">
 <meta property="og:title" content="AROMARIO — Tu armario digital de perfumes">
-<meta property="og:description" content="Organiza tu colección de perfumes, recibe recomendaciones inteligentes y lleva tu lista de deseos a donde vayas.">
+<meta property="og:description" content="Organiza tu colección de perfumes, recibe recomendaciones diarias según el clima y tu plan, y lleva tu lista de deseos a donde vayas.">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
---black:#0a0a0a;
---panel:#121212;
---panel-2:#16130c;
---gold:#d4af37;
---gold-light:#f4dd7a;
---gold-deep:#8f701f;
---text:#f3efe4;
---muted:#b3ad9a;
---serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
---sans:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+--bg:#FFFFFF;
+--light:#F7F6F2;
+--navy:#182338;
+--gold:#B49A62;
+--gold-deep:#9a7f4e;
+--text:#181818;
+--muted:#5c6470;
+--labels:#F0EEE8;
+--bluegray:#AEC6DD;
+--serif:Georgia,'Times New Roman',serif;
+--sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;min-height:100vh;overflow-x:hidden}
-h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.7;min-height:100vh;overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;color:var(--navy)}
 a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,10,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,175,55,.18)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--navy);box-shadow:0 2px 18px rgba(24,35,56,.25)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.35em;color:var(--gold);text-decoration:none}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.3rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
+.nav-links a{text-decoration:none;color:#dfe3ea;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;transition:color .25s}
 .nav-links a:hover{color:var(--gold)}
-.btn{display:inline-block;text-decoration:none;font-weight:500;letter-spacing:.08em;border-radius:999px;transition:transform .25s,box-shadow .25s}
-.btn-gold{background:linear-gradient(135deg,var(--gold-deep),var(--gold) 55%,var(--gold-light));color:#0a0a0a;padding:.95rem 2.4rem;font-size:1rem;box-shadow:0 8px 30px rgba(212,175,55,.25)}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(212,175,55,.4)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;letter-spacing:.06em;border-radius:999px;transition:transform .25s,box-shadow .25s}
+.btn-gold{background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:#fff;padding:.95rem 2.4rem;font-size:1rem;box-shadow:0 8px 26px rgba(180,154,98,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(180,154,98,.5)}
+.btn-navy{background:var(--navy);color:#fff;padding:.95rem 2.4rem;font-size:1rem;box-shadow:0 8px 26px rgba(24,35,56,.3)}
+.btn-navy:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(24,35,56,.42)}
 .btn-small{padding:.6rem 1.5rem;font-size:.85rem}
-.hero{position:relative;text-align:center;padding:11rem 1.5rem 6rem;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 45% at 50% 32%,rgba(212,175,55,.14),transparent 70%),radial-gradient(ellipse 40% 30% at 50% 100%,rgba(212,175,55,.06),transparent 70%);pointer-events:none}
-.hero>*{position:relative}
-.eyebrow{font-size:.8rem;letter-spacing:.5em;text-transform:uppercase;color:var(--muted);margin-bottom:1.6rem}
-.brand{font-size:clamp(2.6rem,13vw,8.5rem);letter-spacing:.28em;margin-right:-.28em;font-weight:600;max-width:100%;overflow-wrap:break-word;background:linear-gradient(100deg,var(--gold-deep) 0%,var(--gold) 28%,var(--gold-light) 50%,var(--gold) 72%,var(--gold-deep) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 24px rgba(212,175,55,.25))}
-.tagline{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3.4vw,2rem);color:var(--text);margin-top:1.4rem}
-.subtitle{max-width:640px;margin:1.4rem auto 0;color:var(--muted);font-size:1.08rem}
-.hero-cta{margin-top:2.6rem}
-.hero-note{margin-top:1.1rem;font-size:.85rem;color:var(--muted);letter-spacing:.06em}
-.divider{width:72px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto}
-.stats{border-top:1px solid rgba(212,175,55,.18);border-bottom:1px solid rgba(212,175,55,.18);background:rgba(212,175,55,.03)}
-.stats-inner{display:flex;justify-content:center;flex-wrap:wrap;padding:2.4rem 0}
+.hero{background:linear-gradient(180deg,var(--light) 0%,var(--bg) 100%);padding:10.5rem 0 5.5rem}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
+.eyebrow{font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;font-weight:600}
+.brand{font-size:clamp(2.6rem,7vw,4.8rem);letter-spacing:.18em;margin-right:-.18em;color:var(--navy)}
+.tagline{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--text);margin-top:1.1rem}
+.subtitle{max-width:520px;margin:1.2rem 0 0;color:var(--muted);font-size:1.05rem}
+.hero-cta{margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap}
+.hero-note{margin-top:1.1rem;font-size:.85rem;color:var(--muted);letter-spacing:.04em}
+.hero-phone{display:flex;justify-content:center}
+.phone-frame{width:min(300px,72vw);border-radius:34px;overflow:hidden;background:#fff;border:1px solid rgba(24,35,56,.12);box-shadow:0 30px 70px rgba(24,35,56,.22),0 0 0 10px #fdfdfb}
+.phone-frame img{display:block;width:100%;height:auto}
+.stats{background:var(--navy)}
+.stats-inner{display:flex;justify-content:center;flex-wrap:wrap;padding:2.2rem 0}
 .stat{flex:1 1 200px;max-width:320px;text-align:center;padding:1rem 2rem;position:relative}
-.stat+.stat::before{content:"";position:absolute;left:0;top:20%;height:60%;width:1px;background:rgba(212,175,55,.25)}
-.stat-value{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--gold)}
-.stat-label{margin-top:.3rem;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-section.block{padding:6rem 0}
-.kicker{text-align:center;font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.section-title{text-align:center;font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem}
-.section-lead{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 3.5rem;font-size:1.05rem}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
-.card{background:linear-gradient(160deg,var(--panel) 0%,var(--panel-2) 100%);border:1px solid rgba(212,175,55,.22);border-radius:14px;padding:2.4rem 1.8rem;transition:transform .3s,border-color .3s,box-shadow .3s}
-.card:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.6);box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 0 1px rgba(212,175,55,.15)}
-.card-icon{width:52px;height:52px;border-radius:50%;border:1px solid rgba(212,175,55,.5);display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem}
-.card-icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.card h3{font-size:1.45rem;color:var(--gold);margin-bottom:.7rem;letter-spacing:.02em}
-.card p{color:var(--muted);font-size:.98rem}
-.how{background:linear-gradient(180deg,rgba(212,175,55,.04),transparent 40%)}
+.stat+.stat::before{content:"";position:absolute;left:0;top:20%;height:60%;width:1px;background:rgba(180,154,98,.35)}
+.stat-value{font-family:var(--serif);font-size:2.3rem;font-weight:600;color:var(--gold)}
+.stat-label{margin-top:.3rem;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:#c9cfda}
+section.block{padding:5.5rem 0}
+.kicker{text-align:center;font-size:.76rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600}
+.section-title{text-align:center;font-size:clamp(1.9rem,4.6vw,2.8rem);margin-bottom:1rem}
+.section-lead{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 3.2rem;font-size:1.04rem}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.card{background:var(--bg);border:1px solid rgba(24,35,56,.12);border-radius:16px;padding:2.3rem 1.8rem;transition:transform .3s,box-shadow .3s;box-shadow:0 6px 22px rgba(24,35,56,.06)}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(24,35,56,.14)}
+.card-icon{width:52px;height:52px;border-radius:50%;background:var(--labels);border:1px solid rgba(180,154,98,.5);display:flex;align-items:center;justify-content:center;margin-bottom:1.3rem}
+.card-icon svg{width:24px;height:24px;stroke:var(--gold-deep);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.4rem;color:var(--navy);margin-bottom:.6rem}
+.card p{color:var(--muted);font-size:.96rem}
+.how{background:var(--light)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2.5rem}
 .step{position:relative;text-align:center;padding:0 1rem}
-.step-number{font-family:var(--serif);font-size:4.2rem;font-weight:600;line-height:1;background:linear-gradient(135deg,var(--gold-deep),var(--gold-light));-webkit-background-clip:text;background-clip:text;color:transparent}
-.step h3{font-size:1.6rem;margin:1rem 0 .6rem;color:var(--text)}
-.step p{color:var(--muted);font-size:.98rem}
-.cta-final{text-align:center;padding:6.5rem 1.5rem;background:radial-gradient(ellipse 55% 70% at 50% 50%,rgba(212,175,55,.1),transparent 70%)}
-.cta-final h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:1rem}
-.cta-final p{color:var(--muted);max-width:560px;margin:0 auto 2.4rem}
-footer{border-top:1px solid rgba(212,175,55,.18);padding:2.6rem 1.5rem;text-align:center;color:var(--muted);font-size:.9rem}
+.step-number{font-family:var(--serif);font-size:4rem;font-weight:600;line-height:1;color:var(--bluegray)}
+.step h3{font-size:1.5rem;margin:1rem 0 .6rem}
+.step p{color:var(--muted);font-size:.96rem}
+.divider{width:72px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto}
+.gallery{background:var(--bg)}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;max-width:1080px;margin:0 auto}
+.shot{margin:0}
+.shot .phone-frame{width:100%;border-radius:26px}
+.shot .phone-frame:hover{transform:translateY(-6px)}
+.shot figcaption{text-align:center;margin-top:.9rem;color:var(--muted);font-size:.88rem;letter-spacing:.06em}
+.cta-final{text-align:center;padding:6rem 1.5rem;background:linear-gradient(180deg,var(--light),var(--bg))}
+.cta-final h2{font-size:clamp(1.9rem,4.6vw,3rem);margin-bottom:1rem}
+.cta-final p{color:var(--muted);max-width:560px;margin:0 auto 2.2rem}
+footer{background:var(--navy);padding:2.8rem 1.5rem;text-align:center;color:#aab2c2;font-size:.9rem}
 footer .foot-brand{font-family:var(--serif);letter-spacing:.3em;color:var(--gold);font-size:1.05rem;margin-bottom:.8rem}
 footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
-footer a{color:var(--muted);text-decoration:none;transition:color .25s}
+footer a{color:#c9cfda;text-decoration:none;transition:color .25s}
 footer a:hover{color:var(--gold)}
-.gallery{background:var(--black)} .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2.2rem;max-width:1080px;margin:0 auto} .shot{margin:0} .phone-frame{border:2px solid #d4af37;border-radius:26px;overflow:hidden;background:#000;box-shadow:0 14px 44px rgba(212,175,55,.16);transition:transform .3s,box-shadow .3s} .phone-frame:hover{transform:translateY(-6px);box-shadow:0 20px 54px rgba(212,175,55,.3)} .phone-frame img{display:block;width:100%;height:auto} .shot figcaption{text-align:center;margin-top:1rem;color:var(--muted);font-size:.92rem;letter-spacing:.1em} .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-@media (max-width:720px){.nav-links li:not(:last-child){display:none}.hero{padding:8.5rem 1.25rem 4.5rem}.brand{font-size:clamp(2.2rem,13vw,3.4rem);letter-spacing:.18em;margin-right:-.18em;white-space:nowrap}section.block{padding:4.5rem 0}.stat+.stat::before{display:none}.stat{flex:1 1 45%}}
+@media (max-width:860px){.hero-inner{grid-template-columns:1fr;text-align:center}.subtitle{margin-left:auto;margin-right:auto}.hero-cta{justify-content:center}.hero{padding-top:8.5rem}}
+@media (max-width:720px){.nav-links li:not(:last-child){display:none}section.block{padding:4rem 0}.stat+.stat::before{display:none}.stat{flex:1 1 45%}}
 </style>
 </head>
 <body>
@@ -94,26 +104,34 @@ footer a:hover{color:var(--gold)}
 <ul class="nav-links">
 <li><a href="#funciones">Funciones</a></li>
 <li><a href="#como-funciona">Cómo funciona</a></li>
-<li><a href="#galeria">Galería</a></li> <li><a href="privacy.html">Privacidad</a></li>
-<li><a class="btn btn-gold btn-small" href="https://play.google.com/store/apps/details?id=com.aromario.app">Descargar</a></li>
+<li><a href="#galeria">Galería</a></li>
+<li><a href="privacy.html">Privacidad</a></li>
+<li><a class="btn btn-gold btn-small" href="#descargar">Descargar</a></li>
 </ul>
 </div>
 </header>
 <main>
 <section class="hero">
+<div class="wrap hero-inner">
+<div>
 <p class="eyebrow reveal">El arte de oler bien</p>
 <h1 class="brand reveal">AROMARIO</h1>
 <p class="tagline reveal">Tu armario digital de perfumes</p>
-<p class="subtitle reveal">Organiza tu colección, recibe recomendaciones inteligentes según el clima, la ocasión y la temporada, y descubre tu próxima fragancia favorita. Todo en una app elegante y gratuita para Android.</p>
+<p class="subtitle reveal">Organiza tu colección, recibe cada mañana la recomendación perfecta según el clima y tu plan, mezcla fragancias y guarda tus deseos. Gratis para Android.</p>
 <div class="hero-cta reveal">
-<a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.aromario.app">Descargar en Google Play</a>
+<a class="btn btn-navy" href="#descargar">Próximamente en Google Play</a>
 </div>
 <p class="hero-note reveal">Gratis · Sin registro obligatorio · Para Android</p>
+</div>
+<div class="hero-phone reveal">
+<div class="phone-frame"><img src="images/screenshots/welcome.jpg" alt="Pantalla de bienvenida de AROMARIO"></div>
+</div>
+</div>
 </section>
 <div class="stats">
 <div class="wrap stats-inner">
-<div class="stat reveal"><div class="stat-value">2,658</div><div class="stat-label">Perfumes</div></div>
-<div class="stat reveal"><div class="stat-value">Smart</div><div class="stat-label">Recomendación inteligente</div></div>
+<div class="stat reveal"><div class="stat-value">2,658</div><div class="stat-label">Perfumes en catálogo</div></div>
+<div class="stat reveal"><div class="stat-value">Diaria</div><div class="stat-label">Recomendación inteligente</div></div>
 <div class="stat reveal"><div class="stat-value">100%</div><div class="stat-label">Gratis</div></div>
 </div>
 </div>
@@ -124,24 +142,24 @@ footer a:hover{color:var(--gold)}
 <p class="section-lead reveal">AROMARIO combina la elegancia de un guardarropa clásico con la inteligencia de la tecnología moderna.</p>
 <div class="features">
 <article class="card reveal">
-<div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="3.5"/></svg></div>
-<h3>Recomendación Inteligente</h3>
-<p>Recibe la fragancia ideal para cada momento: la app considera el clima, la ocasión y la temporada para sugerirte el perfume perfecto de tu colección.</p>
+<div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1"/><path d="M4 7h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M9 11h6M9 15h4"/></svg></div>
+<h3>Armario digital</h3>
+<p>Registra tu colección con la ficha completa de cada perfume: notas olfativas, acordes, duración, estela y tus impresiones. Tu armario, siempre contigo.</p>
 </article>
 <article class="card reveal">
-<div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1"/><path d="M4 7h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M9 11h6M9 15h4"/></svg></div>
-<h3>Armario Digital</h3>
-<p>Cataloga cada perfume con su ficha completa: notas olfativas, marca, concentración y tus impresiones personales. Tu colección, siempre contigo.</p>
+<div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+<h3>Recomendación diaria</h3>
+<p>Cada mañana, la fragancia ideal según el clima, tu plan y la temporada. El perfume del día queda fijo para que la app, el widget y la notificación siempre coincidan.</p>
+</article>
+<article class="card reveal">
+<div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 16V8m0 0L4 11m3-3l3 3M17 8v8m0 0l3-3m-3 3l-3-3"/><path d="M4 20h16"/></svg></div>
+<h3>Mezclar perfumes</h3>
+<p>Descubre qué fragancias combinan entre sí: la app analiza notas y acordes compartidos y te dice en qué orden aplicarlas para un resultado perfecto.</p>
 </article>
 <article class="card reveal">
 <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.5S3.5 15.4 3.5 9.6A4.6 4.6 0 0 1 8.1 5c1.6 0 3 .8 3.9 2A4.6 4.6 0 0 1 15.9 5a4.6 4.6 0 0 1 4.6 4.6c0 5.8-8.5 10.9-8.5 10.9z"/></svg></div>
-<h3>Lista de Deseos</h3>
-<p>Guarda las fragancias que quieres probar o comprar. Mantén tus antojos organizados y no pierdas de vista tu próxima adquisición.</p>
-</article>
-<article class="card reveal">
-<div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 6-8"/><path d="M18 6h-4M18 6v4"/><path d="M3 21h18"/></svg></div>
-<h3>Inteligencia de Mercado</h3>
-<p>Descubre tendencias, compara precios y encuentra las mejores oportunidades para ampliar tu colección con decisiones informadas.</p>
+<h3>Lista de deseos</h3>
+<p>Guarda las fragancias que quieres probar, con botón de compra directo a la tienda. Tus próximos favoritos, organizados y a un toque de distancia.</p>
 </article>
 </div>
 </div>
@@ -153,17 +171,35 @@ footer a:hover{color:var(--gold)}
 <h2 class="section-title reveal">Tu ritual de fragancia en tres pasos</h2>
 <p class="section-lead reveal">Empezar es tan sencillo como elegir tu aroma de hoy.</p>
 <div class="steps">
-<div class="step reveal"><div class="step-number">01</div><h3>Crea tu armario</h3><p>Registra tus perfumes con sus fichas completas: notas, marca y concentración. En minutos tendrás tu colección digital lista.</p></div>
-<div class="step reveal"><div class="step-number">02</div><h3>Pide una recomendación</h3><p>Dinos solo la ocasión. AROMARIO detecta automáticamente el clima y la temporada, analiza tu armario y te sugiere la fragancia ideal.</p></div>
-<div class="step reveal"><div class="step-number">03</div><h3>Descubre y amplía</h3><p>Guarda tus deseos, explora tendencias del mercado y encuentra tu próxima fragancia favorita con total confianza.</p></div>
+<div class="step reveal"><div class="step-number">01</div><h3>Crea tu armario</h3><p>Busca entre miles de perfumes y agrega los tuyos con un toque. En minutos tendrás tu colección digital lista.</p></div>
+<div class="step reveal"><div class="step-number">02</div><h3>Elige tu plan</h3><p>Dinos solo la ocasión: diario, citas, noche, oficina, deporte o iglesia. AROMARIO detecta el clima y te sugiere la fragancia ideal.</p></div>
+<div class="step reveal"><div class="step-number">03</div><h3>Descubre y mezcla</h3><p>Guarda tus deseos, combina perfumes que armonizan y encuentra tu próxima fragancia favorita con total confianza.</p></div>
 </div>
 </div>
 </section>
-<section class="block gallery" id="galeria"> <div class="wrap"> <p class="kicker reveal">Galería</p> <h2 class="section-title reveal">La app, en tus manos</h2> <p class="section-lead reveal">Un vistazo a las pantallas principales de AROMARIO.</p> <div class="shots"> <figure class="shot reveal"><div class="phone-frame"><img src="images/home.jpg" alt="Recomendación diaria"></div><figcaption>Recomendación diaria</figcaption></figure> <figure class="shot reveal"><div class="phone-frame"><img src="images/wardrobe.jpg" alt="Mi armario"></div><figcaption>Mi armario</figcaption></figure> <figure class="shot reveal"><div class="phone-frame"><img src="images/detail.jpg" alt="Ficha del perfume"></div><figcaption>Ficha del perfume</figcaption></figure> <figure class="shot reveal"><div class="phone-frame"><img src="images/search.jpg" alt="Búsqueda avanzada"></div><figcaption>Búsqueda avanzada</figcaption></figure> <figure class="shot reveal"><div class="phone-frame"><img src="images/layering.jpg" alt="Mezclar perfumes"></div><figcaption>Mezclar perfumes</figcaption></figure> </div> </div> </section> <section class="cta-final">
+<section class="block gallery" id="galeria">
+<div class="wrap">
+<p class="kicker reveal">Galería</p>
+<h2 class="section-title reveal">La app, en tus manos</h2>
+<p class="section-lead reveal">Un vistazo a las pantallas principales de AROMARIO.</p>
+<div class="shots">
+<figure class="shot reveal"><div class="phone-frame"><img src="images/screenshots/hoy.jpg" alt="La elección de hoy"></div><figcaption>La elección de hoy</figcaption></figure>
+<figure class="shot reveal"><div class="phone-frame"><img src="images/screenshots/armario.jpg" alt="Mi armario"></div><figcaption>Mi armario</figcaption></figure>
+<figure class="shot reveal"><div class="phone-frame"><img src="images/screenshots/detalle.jpg" alt="Ficha del perfume"></div><figcaption>Ficha del perfume</figcaption></figure>
+<figure class="shot reveal"><div class="phone-frame"><img src="images/screenshots/busqueda-filtros.jpg" alt="Filtros de búsqueda"></div><figcaption>Filtros de búsqueda</figcaption></figure>
+<figure class="shot reveal"><div class="phone-frame"><img src="images/screenshots/busqueda-resultados.jpg" alt="Resultados de búsqueda"></div><figcaption>Resultados de búsqueda</figcaption></figure>
+<figure class="shot reveal"><div class="phone-frame"><img src="images/screenshots/mezclar.jpg" alt="Mezclar perfumes"></div><figcaption>Mezclar perfumes</figcaption></figure>
+<figure class="shot reveal"><div class="phone-frame"><img src="images/screenshots/deseos.jpg" alt="Lista de deseos"></div><figcaption>Lista de deseos</figcaption></figure>
+<figure class="shot reveal"><div class="phone-frame"><img src="images/screenshots/perfil.jpg" alt="Mi perfil"></div><figcaption>Mi perfil</figcaption></figure>
+<figure class="shot reveal"><div class="phone-frame"><img src="images/screenshots/welcome.jpg" alt="Bienvenida"></div><figcaption>Bienvenida</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="cta-final" id="descargar">
 <div class="wrap">
 <h2 class="reveal">Tu colección merece un hogar elegante</h2>
-<p class="reveal">Descarga AROMARIO gratis y convierte tu pasión por la perfumería en una experiencia inteligente y refinada.</p>
-<a class="btn btn-gold reveal" href="https://play.google.com/store/apps/details?id=com.aromario.app">Descargar en Google Play</a>
+<p class="reveal">AROMARIO estará disponible gratis en Google Play muy pronto. El arte de oler bien, en tu bolsillo.</p>
+<span class="btn btn-gold reveal" style="cursor:default">Próximamente en Google Play</span>
 </div>
 </section>
 </main>
@@ -171,7 +207,7 @@ footer a:hover{color:var(--gold)}
 <p class="foot-brand">AROMARIO</p>
 <nav>
 <a href="privacy.html">Política de privacidad</a>
-<a href="https://play.google.com/store/apps/details?id=com.aromario.app">Google Play</a>
+<a href="terms.html">Términos y condiciones</a>
 </nav>
 <p>© 2026 Clab HF Development. Todos los derechos reservados.</p>
 </footer>
