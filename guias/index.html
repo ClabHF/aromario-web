@@ -8,34 +8,75 @@
 <meta property="og:title" content="Guías de perfumes — AROMARIO">
 <meta property="og:description" content="Aprende todo sobre perfumes: ocasiones, familias olfativas, duración, clones y notas.">
 <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FFFFFF;--light:#F7F6F2;--navy:#182338;--gold:#B49A62;--gold-deep:#9a7f4e;--text:#181818;--muted:#5c6470;--serif:Georgia,'Times New Roman',serif;--sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+:root{
+--bg:#FFFFFF;--light:#F7F6F2;--navy:#182338;--gold:#B49A62;--gold-deep:#9a7f4e;
+--gold-soft:rgba(180,154,98,.14);--text:#1d1d1f;--muted:#5c6470;
+--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+--sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+--micro:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;min-height:100vh}
-h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.25}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(180,154,98,.3)}
+h1,h2{font-family:var(--serif);color:var(--navy);line-height:1.2;font-weight:600}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--navy);box-shadow:0 2px 18px rgba(24,35,56,.25)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(24,35,56,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(180,154,98,.3);box-shadow:0 2px 18px rgba(24,35,56,.25)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 1.5rem}
-.logo{font-family:var(--serif);font-weight:700;font-size:1.3rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none}
-.nav-links a{text-decoration:none;color:#dfe3ea;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{text-decoration:none;color:#dfe3ea;font-family:var(--micro);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:color .25s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;height:1px;width:0;background:var(--gold);transition:width .3s}
 .nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
 @media (max-width:720px){.nav-links li:not(:last-child){display:none}}
-.hero{background:linear-gradient(180deg,var(--light) 0%,var(--bg) 100%);padding:9rem 0 3rem;text-align:center}
-.eyebrow{font-size:.76rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:600}
-.hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem}
-.hero p{color:var(--muted);font-size:1.08rem;max-width:620px;margin:0 auto}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem;padding:3rem 0 4rem}
-.card{background:#fff;border:1px solid rgba(24,35,56,.12);border-radius:16px;padding:2rem 1.7rem;box-shadow:0 6px 22px rgba(24,35,56,.06);transition:transform .3s,box-shadow .3s;text-decoration:none;display:block}
-.card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(24,35,56,.14)}
-.card .tag{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.7rem}
-.card h2{font-size:1.4rem;margin-bottom:.6rem}
-.card p{color:var(--muted);font-size:.95rem}
-footer{background:var(--navy);padding:2.6rem 1.5rem;text-align:center;color:#aab2c2;font-size:.9rem}
-footer .foot-brand{font-family:var(--serif);letter-spacing:.3em;color:var(--gold);font-size:1.05rem;margin-bottom:.8rem}
-footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
-footer a{color:#c9cfda;text-decoration:none}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#F5F2EB 0%,var(--bg) 100%);padding:10rem 0 3.5rem;text-align:center}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(640px 300px at 50% 0%,rgba(180,154,98,.2),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative}
+.crumb{font-family:var(--micro);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem}
+.crumb a{color:var(--gold-deep);text-decoration:none}
+.crumb a:hover{color:var(--gold)}
+.crumb span{margin:0 .5rem;color:var(--gold)}
+.eyebrow{font-family:var(--micro);font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.2rem;font-weight:500}
+.hero h1{font-size:clamp(2.3rem,5.4vw,3.4rem);margin-bottom:1.1rem}
+.hero h1::after{content:"";display:block;width:84px;height:2px;margin:1.3rem auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.hero p.lede{color:var(--muted);font-size:1.08rem;max-width:620px;margin:0 auto;font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.6}
+.grid-section{padding:1rem 0 5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem}
+.card{background:#fff;border:1px solid rgba(24,35,56,.1);border-radius:18px;overflow:hidden;box-shadow:0 8px 26px rgba(24,35,56,.07);transition:transform .35s,box-shadow .35s;text-decoration:none;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-8px);box-shadow:0 24px 54px rgba(24,35,56,.16)}
+.card-visual{position:relative;height:150px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.card-visual::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 9px)}
+.card-visual::after{content:"";position:absolute;inset:0;background:radial-gradient(220px 120px at 50% 115%,rgba(180,154,98,.4),transparent 70%)}
+.v1{background:linear-gradient(135deg,#141e31,#2e4066)}
+.v2{background:linear-gradient(135deg,#1b2740,#4a3a20)}
+.v3{background:linear-gradient(135deg,#2a2113,#1c2a44)}
+.v4{background:linear-gradient(135deg,#182338,#57431f)}
+.v5{background:linear-gradient(135deg,#202c46,#6b5636)}
+.v6{background:linear-gradient(135deg,#33270f,#24344f)}
+.card-icon{position:relative;z-index:1;width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(180,154,98,.65);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.15);transition:transform .35s}
+.card:hover .card-icon{transform:scale(1.08) rotate(-4deg)}
+.card-icon svg{width:36px;height:36px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.card-body{padding:1.8rem 1.8rem 1.7rem;display:flex;flex-direction:column;flex:1}
+.card .tag{font-family:var(--micro);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);font-weight:500;margin-bottom:.7rem}
+.card h2{font-size:1.5rem;margin-bottom:.65rem;transition:color .25s}
+.card:hover h2{color:var(--gold-deep)}
+.card p.desc{color:var(--muted);font-size:.95rem;flex:1}
+.card-cta{margin-top:1.3rem;font-family:var(--micro);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);display:inline-flex;align-items:center;gap:.5rem}
+.card-cta i{font-style:normal;transition:transform .25s}
+.card:hover .card-cta i{transform:translateX(5px)}
+footer{background:linear-gradient(180deg,#141e31,var(--navy));padding:3rem 1.5rem 2.6rem;text-align:center;color:#aab2c2;font-size:.9rem;border-top:1px solid rgba(180,154,98,.35)}
+footer .foot-brand{font-family:var(--serif);letter-spacing:.32em;color:var(--gold);font-size:1.1rem;margin-bottom:.9rem}
+footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.1rem}
+footer a{color:#c9cfda;text-decoration:none;font-family:var(--micro);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
 footer a:hover{color:var(--gold)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.card-icon,.card-cta i{transition:none}}
 </style>
 </head>
 <body>
@@ -48,17 +89,36 @@ footer a:hover{color:var(--gold)}
 </ul></div></header>
 <main>
 <section class="hero"><div class="wrap">
+<p class="crumb"><a href="../index.html">Inicio</a><span>/</span>Guías</p>
 <p class="eyebrow">Aprende</p>
 <h1>Guías de perfumes</h1>
-<p>Artículos educativos para entender el mundo de las fragancias: ocasiones, familias olfativas, duración, clones y mucho más.</p>
+<p class="lede">Artículos educativos para entender el mundo de las fragancias: ocasiones, familias olfativas, duración, clones y mucho más.</p>
 </div></section>
-<section><div class="wrap"><div class="grid">
-<a class="card" href="como-elegir-perfume-segun-ocasion.html"><p class="tag">Ocasiones</p><h2>Cómo elegir el perfume según la ocasión</h2><p>Oficina, citas, eventos, deporte e iglesia: qué fragancia funciona en cada momento.</p></a>
-<a class="card" href="familias-olfativas-guia.html"><p class="tag">Fundamentos</p><h2>Guía de familias olfativas</h2><p>Cítricos, florales, amaderados, orientales, fougère, chipre y gourmand, explicados.</p></a>
-<a class="card" href="mejores-perfumes-verano-2026.html"><p class="tag">Temporada</p><h2>Mejores perfumes frescos para el verano</h2><p>Qué buscar en una fragancia de verano y los errores más comunes con el calor.</p></a>
-<a class="card" href="perfume-dure-mas-trucos.html"><p class="tag">Trucos</p><h2>Trucos para que tu perfume dure más</h2><p>12 consejos probados: hidratación, puntos de aplicación, conservación y más.</p></a>
-<a class="card" href="perfumes-clon-vs-originales.html"><p class="tag">Guía de compra</p><h2>Clon vs original: ¿vale la pena?</h2><p>Una mirada honesta a los perfumes clon: diferencias reales y cuándo tienen sentido.</p></a>
-<a class="card" href="notas-salida-corazon-fondo.html"><p class="tag">Fundamentos</p><h2>Notas de salida, corazón y fondo</h2><p>Por qué un perfume cambia con las horas y cómo usarlo para elegir mejor.</p></a>
+<section class="grid-section"><div class="wrap"><div class="grid">
+<a class="card" href="como-elegir-perfume-segun-ocasion.html">
+<div class="card-visual v1"><span class="card-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M10 14.5h4"/></svg></span></div>
+<div class="card-body"><p class="tag">Ocasiones</p><h2>Cómo elegir el perfume según la ocasión</h2><p class="desc">Oficina, citas, eventos, deporte e iglesia: qué fragancia funciona en cada momento.</p><span class="card-cta">Leer guía <i>&rarr;</i></span></div>
+</a>
+<a class="card" href="familias-olfativas-guia.html">
+<div class="card-visual v2"><span class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.1"/><ellipse cx="12" cy="6.4" rx="2.3" ry="3.3"/><ellipse cx="12" cy="17.6" rx="2.3" ry="3.3"/><ellipse cx="6.4" cy="12" rx="3.3" ry="2.3"/><ellipse cx="17.6" cy="12" rx="3.3" ry="2.3"/></svg></span></div>
+<div class="card-body"><p class="tag">Fundamentos</p><h2>Guía de familias olfativas</h2><p class="desc">Cítricos, florales, amaderados, orientales, fougère, chipre y gourmand, explicados.</p><span class="card-cta">Leer guía <i>&rarr;</i></span></div>
+</a>
+<a class="card" href="mejores-perfumes-verano-2026.html">
+<div class="card-visual v3"><span class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8"/></svg></span></div>
+<div class="card-body"><p class="tag">Temporada</p><h2>Mejores perfumes frescos para el verano</h2><p class="desc">Qué buscar en una fragancia de verano y los errores más comunes con el calor.</p><span class="card-cta">Leer guía <i>&rarr;</i></span></div>
+</a>
+<a class="card" href="perfume-dure-mas-trucos.html">
+<div class="card-visual v4"><span class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg></span></div>
+<div class="card-body"><p class="tag">Trucos</p><h2>Trucos para que tu perfume dure más</h2><p class="desc">12 consejos probados: hidratación, puntos de aplicación, conservación y más.</p><span class="card-cta">Leer guía <i>&rarr;</i></span></div>
+</a>
+<a class="card" href="perfumes-clon-vs-originales.html">
+<div class="card-visual v5"><span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 4v16M8.5 20h7M12 6.5L5 8m7-1.5L19 8"/><path d="M5 8l-2.6 6.2a2.9 2.9 0 0 0 5.2 0L5 8zM19 8l-2.6 6.2a2.9 2.9 0 0 0 5.2 0L19 8z"/></svg></span></div>
+<div class="card-body"><p class="tag">Guía de compra</p><h2>Clon vs original: ¿vale la pena?</h2><p class="desc">Una mirada honesta a los perfumes clon: diferencias reales y cuándo tienen sentido.</p><span class="card-cta">Leer guía <i>&rarr;</i></span></div>
+</a>
+<a class="card" href="notas-salida-corazon-fondo.html">
+<div class="card-visual v6"><span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3.5s6.5 7 6.5 11.3a6.5 6.5 0 0 1-13 0C5.5 10.5 12 3.5 12 3.5z"/><path d="M9.2 14.6a3.1 3.1 0 0 0 2.9 3.2"/></svg></span></div>
+<div class="card-body"><p class="tag">Fundamentos</p><h2>Notas de salida, corazón y fondo</h2><p class="desc">Por qué un perfume cambia con las horas y cómo usarlo para elegir mejor.</p><span class="card-cta">Leer guía <i>&rarr;</i></span></div>
+</a>
 </div></div></section>
 </main>
 <footer>
