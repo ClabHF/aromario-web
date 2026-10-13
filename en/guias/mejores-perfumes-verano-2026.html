@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<title>The best perfumes by season — AROMARIO</title>
+<meta name="description" content="Perfume guide by season: which fragrance families work in spring, summer, fall, and winter — and how to rotate your wardrobe all year.">
+<meta property="og:title" content="The best perfumes by season — AROMARIO">
+<meta property="og:description" content="Perfume guide by season: which fragrance families work in spring, summer, fall, and winter — and how to rotate your wardrobe all year.">
+<meta property="og:type" content="article">
+<style>
+:root{
+--bg:#FFFFFF;--light:#F7F6F2;--navy:#182338;--gold:#B49A62;--gold-deep:#9a7f4e;
+--gold-soft:rgba(180,154,98,.14);--text:#1d1d1f;--muted:#5c6470;--labels:#F0EEE8;
+--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+--sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+--micro:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.8;min-height:100vh;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(180,154,98,.3)}
+h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.2;font-weight:600}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(24,35,56,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(180,154,98,.3);box-shadow:0 2px 18px rgba(24,35,56,.25)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{text-decoration:none;color:#dfe3ea;font-family:var(--micro);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:color .25s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;height:1px;width:0;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+@media (max-width:720px){.nav-links li:not(:last-child){display:none}}
+.hero-article{position:relative;overflow:hidden;background:linear-gradient(180deg,#F5F2EB 0%,var(--bg) 100%);padding:9.5rem 0 3.5rem}
+.hero-article::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 300px at 85% 8%,rgba(180,154,98,.18),transparent 70%),radial-gradient(520px 280px at 6% 92%,rgba(24,35,56,.06),transparent 70%);pointer-events:none}
+.hero-article::after{content:"\2766";position:absolute;right:4%;bottom:-.38em;font-family:var(--serif);font-size:11rem;line-height:1;color:rgba(180,154,98,.1);pointer-events:none;transform:rotate(-8deg)}
+.hero-article .wrap{position:relative;z-index:1}
+.back{margin-bottom:1.7rem}
+.back a{font-family:var(--micro);font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .25s,color .25s}
+.back a:hover{color:var(--gold);border-color:var(--gold)}
+.eyebrow{font-family:var(--micro);font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.3rem;font-weight:500}
+.eyebrow::before{content:"\2726  ";color:var(--gold)}
+.article-title{font-size:clamp(2.2rem,5.4vw,3.3rem);margin-bottom:1.1rem;letter-spacing:.01em}
+.article-lead{color:var(--muted);max-width:640px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.3rem;line-height:1.6}
+.article-meta{margin-top:1.7rem;font-size:.82rem;color:var(--muted);letter-spacing:.06em;display:flex;align-items:center;gap:.7rem}
+.article-meta::before{content:"";width:36px;height:1px;background:var(--gold);display:inline-block;flex:none}
+.article-meta span{color:var(--gold-deep);font-weight:600;letter-spacing:.16em;font-family:var(--micro);font-size:.76rem;text-transform:uppercase}
+.article-body{padding:3.2rem 0 4.5rem}
+.article-body p{margin-bottom:1.5rem;font-size:1.04rem;color:#2a2a2e}
+.article-body>.wrap>p:first-of-type::first-letter{font-family:var(--serif);font-weight:700;font-size:3.4em;float:left;line-height:.82;padding:.08em .14em 0 0;color:var(--gold-deep)}
+.article-body h2{font-size:2.05rem;margin:3rem 0 1.2rem;position:relative;padding-bottom:.65rem}
+.article-body h2::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:2px;background:linear-gradient(90deg,var(--gold-deep),rgba(180,154,98,0))}
+.article-body h3{font-size:1.42rem;margin:2.1rem 0 .8rem;font-style:italic;font-weight:600}
+.article-body ul,.article-body ol{margin:0 0 1.6rem 1.2rem}
+.article-body li{margin-bottom:.6rem;font-size:1.02rem;padding-left:.3rem}
+.article-body ul li::marker{color:var(--gold-deep)}
+.article-body ol li::marker{color:var(--gold-deep);font-family:var(--serif);font-weight:700}
+.article-body strong{color:var(--navy)}
+.article-body a{color:var(--gold-deep);text-underline-offset:3px}
+.tip{position:relative;background:linear-gradient(180deg,#FCFAF5,#F6F1E7);border:1px solid rgba(180,154,98,.4);border-radius:14px;padding:1.7rem 1.7rem 1.5rem 4rem;margin:2.4rem 0;font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.65;color:var(--navy);box-shadow:0 10px 30px rgba(180,154,98,.12)}
+.tip::before{content:"\201C";position:absolute;left:1.15rem;top:.3rem;font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--gold)}
+.tip strong{font-style:normal;font-family:var(--micro);font-weight:600;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:.45rem}
+.related{background:var(--light);border:1px solid rgba(24,35,56,.08);border-radius:16px;padding:2.1rem 2.2rem;margin-top:3.2rem;position:relative;overflow:hidden}
+.related::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--gold),var(--gold-deep))}
+.related h3{font-size:1.45rem;margin-bottom:1rem}
+.related ul{list-style:none;margin:0}
+.related li{margin-bottom:0;border-bottom:1px solid rgba(24,35,56,.07)}
+.related li:last-child{border-bottom:none}
+.related a{color:var(--navy);text-decoration:none;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0;transition:color .25s,padding-left .25s}
+.related a::after{content:"\2192";color:var(--gold);transition:transform .25s;flex:none}
+.related a:hover{color:var(--gold-deep);padding-left:.35rem}
+.related a:hover::after{transform:translateX(4px)}
+.cta-box{position:relative;overflow:hidden;text-align:center;background:linear-gradient(140deg,#101a2e,var(--navy) 60%,#22314f);border-radius:20px;padding:3rem 2rem;margin-top:3.2rem;border:1px solid rgba(180,154,98,.35)}
+.cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(440px 200px at 50% 0%,rgba(180,154,98,.22),transparent 70%);pointer-events:none}
+.cta-box h3{position:relative;color:var(--gold);font-size:1.7rem;margin-bottom:.9rem}
+.cta-box p{position:relative;color:#aab2c2;font-size:.99rem;max-width:520px;margin:0 auto}
+footer{background:linear-gradient(180deg,#141e31,var(--navy));padding:3rem 1.5rem 2.6rem;text-align:center;color:#aab2c2;font-size:.9rem;border-top:1px solid rgba(180,154,98,.35)}
+footer .foot-brand{font-family:var(--serif);letter-spacing:.32em;color:var(--gold);font-size:1.1rem;margin-bottom:.9rem}
+footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.1rem}
+footer a{color:#c9cfda;text-decoration:none;font-family:var(--micro);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
+footer a:hover{color:var(--gold)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:640px){.article-body h2{font-size:1.7rem}.tip{padding:1.4rem 1.2rem 1.2rem 3.2rem;font-size:1.08rem}.hero-article::after{font-size:7rem}}
+
+.lang-toggle{font-family:var(--micro);font-size:.72rem;letter-spacing:.22em;color:var(--gold);text-decoration:none;border:1px solid rgba(180,154,98,.55);border-radius:999px;padding:.32rem .75rem;transition:background .25s,color .25s;white-space:nowrap}.lang-toggle:hover{background:rgba(180,154,98,.18);color:#fff}
+</style>
+</head>
+<body>
+<header class="nav">
+<div class="nav-inner">
+<div style="display:flex;align-items:center;gap:.9rem"><a class="logo" href="../index.html">AROMARIO</a><a class="lang-toggle" href="../../guias/mejores-perfumes-verano-2026.html">ES</a></div>
+<ul class="nav-links">
+<li><a href="../index.html#funciones">Features</a></li>
+<li><a href="index.html">Guides</a></li>
+<li><a href="../../privacy.html">Privacy</a></li>
+</ul>
+</div>
+</header>
+<main>
+<section class="hero-article">
+<div class="wrap">
+<p class="back"><a href="index.html">&larr; All guides</a></p>
+<p class="eyebrow">Perfume guide</p>
+<h1 class="article-title">The best perfumes for every season</h1>
+<img src="images/verano.webp" alt="The best perfumes for every season" style="width:100%;border-radius:12px;margin:1.5rem 0">
+<p class="article-lead">Every season changes the rules of perfume: what shines in August can vanish in January. This is your guide to dressing your scent all year round.</p>
+<p class="article-meta"><span>AROMARIO</span> · Educational guide · 8 min read</p>
+</div>
+</section>
+<article class="article-body">
+<div class="wrap">
+<p>Weather doesn't just decide what clothes you wear — it decides how your perfume behaves. Heat amplifies projection and evaporates light notes, while cold dulls aromas and calls for fragrances with more body. That's why perfume lovers rotate their wardrobe with the seasons, just like they do with their closet.</p>
+<p>You don't need a huge collection to do it well. Once you understand which fragrance family each season calls for, two or three well-chosen bottles will cover each season. Let's go season by season.</p>
+
+<h2>Spring: the rebirth</h2>
+<p>Spring calls for lightness with optimism. After winter, the nose wants air, flowers, and green: luminous fragrances that go with the longer days without feeling heavy.</p>
+<h3>What works</h3>
+<ul>
+<li><strong>Fresh florals:</strong> peony, orange blossom, lily, or light rose. Flowers that feel like petals, not a dense bouquet.</li>
+<li><strong>Greens:</strong> violet leaf, green tea, cut grass, or green fig. They bring a serene freshness, different from the sparkle of citrus.</li>
+<li><strong>Soft citruses:</strong> bergamot or mandarin in delicate versions, perfect for spring mornings.</li>
+<li><strong>A fruity touch:</strong> pear, white peach, or light red berries add a cheerful note without being cloying.</li>
+</ul>
+<h3>What to avoid</h3>
+<p>Keep dense orientals and heavy vanillas stored away for now: at 68°F (20°C) they start to feel oppressive. Spring is a transition — not the moment for winter powerhouses or the extreme freshness of summer.</p>
+
+<h2>Summer: freshness rules</h2>
+<p>Summer is the most demanding season. Heat multiplies projection, sweat alters the notes, and a dense fragrance that's cozy in December can become overwhelming in August. Here, less is more.</p>
+<h3>What works</h3>
+<ul>
+<li><strong>Citrus:</strong> bergamot, lemon, grapefruit, or mandarin. A luminous spark that feels like a glass of cold water.</li>
+<li><strong>Aquatic and marine:</strong> they recreate the sea breeze or the air after rain. Clean, modern, and very versatile.</li>
+<li><strong>Neroli and orange blossom:</strong> the bitter orange blossom is perhaps the most elegant summer note — floral, citrusy, and green at once.</li>
+<li><strong>Green tea and herbs:</strong> basil, sage, or rosemary bring serene freshness — ideal if you want something fresh yet sophisticated.</li>
+</ul>
+<h3>Common summer mistakes</h3>
+<ul>
+<li><strong>Wearing your winter perfume:</strong> that dense oriental you love in January becomes oppressive at 95°F (35°C).</li>
+<li><strong>Over-applying:</strong> heat multiplies projection; in summer, two sprays are usually enough where you'd use four in winter.</li>
+<li><strong>Ignoring the sun:</strong> some citruses can stain skin in direct sunlight. Avoid applying on exposed areas if you'll spend hours in the sun.</li>
+<li><strong>Storing bottles poorly:</strong> heat and light degrade perfume. Keep your bottles in a cool, dark place — never in the car.</li>
+</ul>
+<div class="tip"><strong>Summer trick:</strong> keep a sample or decant of your favorite fresh scent in the fridge. Applying it cold on a hot day is one of the best feelings there is.</div>
+
+<h2>Fall: the warm transition</h2>
+<p>Fall is the bridge between summer's lightness and winter's depth. The air cools, the nights grow longer, and the nose starts asking for warmth: this is the season of "cozy" perfumes.</p>
+<h3>What works</h3>
+<ul>
+<li><strong>Warm woods:</strong> cedar, sandalwood, or vetiver. Elegant and versatile, they work from the office to dinner.</li>
+<li><strong>Soft spices:</strong> cinnamon, cardamom, or nutmeg in moderate doses — warmth without winter's weight.</li>
+<li><strong>Light gourmands:</strong> a touch of vanilla, tonka bean, or soft caramel. Cozy sweetness, without being cloying.</li>
+<li><strong>Soft leather:</strong> light leather notes add character and sophistication, perfect for fall nights.</li>
+</ul>
+<h3>The time to bring them back</h3>
+<p>Those perfumes you shelved in summer for being "too intense" come back into rotation in fall. If a woody scent felt heavy in August, try it again in October: the same perfume behaves very differently ten degrees cooler.</p>
+
+<h2>Winter: the warm embrace</h2>
+<p>Cold dulls projection: perfume molecules move more slowly and the nose perceives them less. That's why winter calls for fragrances with body — the kind that feel like a coat.</p>
+<h3>What works</h3>
+<ul>
+<li><strong>Orientals:</strong> amber, incense, or myrrh. Deep and enveloping, made for the cold.</li>
+<li><strong>Vanilla and dense gourmands:</strong> vanilla, tonka bean, chocolate, or coffee. Warm sweetness that the cold balances perfectly.</li>
+<li><strong>Oud and patchouli:</strong> intense and characterful, they perform at their best when temperatures drop.</li>
+<li><strong>Warm spices:</strong> clove, cinnamon, or pepper. They bring an almost physical warmth on the coldest days.</li>
+</ul>
+<h3>The only season for "powerhouses"</h3>
+<p>Winter is the moment for those powerhouse perfumes that feel excessive the rest of the year. Take advantage: apply generously, because the cold will tame the projection for you.</p>
+<div class="tip"><strong>Golden rule:</strong> if a perfume makes you sweat just smelling it in the store, it's a winter scent. If it refreshes you just smelling it, it's a summer one.</div>
+
+<h2>How to rotate your wardrobe by season</h2>
+<p>You don't need four separate collections. Most perfumes work in two neighboring seasons: a fresh floral goes from spring to summer, and a soft woody from fall to winter. With two or three bottles per season — some shared — you cover the whole year.</p>
+<ul>
+<li><strong>Change like your closet:</strong> when you put away the season's clothes, rotate your perfumes too. It's the perfect reminder.</li>
+<li><strong>Blend between seasons:</strong> layering extends the life of your perfumes. A summer citrus over a musk base works in spring; a touch of vanilla over a fall woody carries it into winter.</li>
+<li><strong>Test in real weather:</strong> a perfume that smells perfect in an air-conditioned store can behave very differently in full sun or cold. Always decide after trying it on your skin in real weather.</li>
+<li><strong>Store them well all year:</strong> a cool, dark, dry place. Heat and light degrade any perfume, whatever the season.</li>
+</ul>
+<p>And remember: your own nose is the best guide. These are the general rules, but if a "winter perfume" makes you happy in July, wear it in moderation and enjoy it. Perfume, in the end, is for the one who wears it.</p>
+
+<div class="related">
+<h3>Keep exploring</h3>
+<ul>
+<li><a href="como-elegir-perfume-segun-ocasion.html">How to choose perfume by occasion</a></li>
+<li><a href="familias-olfativas-guia.html">Fragrance families guide</a></li>
+<li><a href="perfume-dure-mas-trucos.html">Tips to make your perfume last longer</a></li>
+<li><a href="perfumes-clon-vs-originales.html">Clone vs. original: is it worth it?</a></li>
+<li><a href="notas-salida-corazon-fondo.html">Top, heart, and base notes</a></li>
+</ul>
+</div>
+<div class="cta-box">
+<h3>Want the perfect recommendation every morning?</h3>
+<p>AROMARIO organizes your collection and suggests the ideal perfume based on the weather and your plans for the day. Free for Android.</p>
+</div>
+</div>
+</article>
+</main>
+<footer>
+<p class="foot-brand">AROMARIO</p>
+<nav>
+<a href="../../privacy.html">Privacy Policy</a>
+<a href="../../terms.html">Terms and Conditions</a>
+<a href="index.html">Perfume guides</a>
+</nav>
+<p>© 2026 Clab HF Development. All rights reserved.</p>
+</footer>
+</body>
+</html>

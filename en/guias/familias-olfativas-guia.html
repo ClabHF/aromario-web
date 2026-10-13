@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Complete guide to fragrance families — AROMARIO</title>
+<meta name="description" content="Discover fragrance families: citrus, floral, woody, oriental, fougère, chypre, and gourmand. Learn to identify them and choose perfumes based on your taste.">
+<meta property="og:title" content="Complete guide to fragrance families — AROMARIO">
+<meta property="og:description" content="Discover fragrance families: citrus, floral, woody, oriental, fougère, chypre, and gourmand. Learn to identify them and choose perfumes based on your taste.">
+<meta property="og:type" content="article">
+<style>
+:root{
+--bg:#FFFFFF;--light:#F7F6F2;--navy:#182338;--gold:#B49A62;--gold-deep:#9a7f4e;
+--gold-soft:rgba(180,154,98,.14);--text:#1d1d1f;--muted:#5c6470;--labels:#F0EEE8;
+--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+--sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+--micro:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.8;min-height:100vh;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(180,154,98,.3)}
+h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.2;font-weight:600}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(24,35,56,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(180,154,98,.3);box-shadow:0 2px 18px rgba(24,35,56,.25)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{text-decoration:none;color:#dfe3ea;font-family:var(--micro);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:color .25s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;height:1px;width:0;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+@media (max-width:720px){.nav-links li:not(:last-child){display:none}}
+.hero-article{position:relative;overflow:hidden;background:linear-gradient(180deg,#F5F2EB 0%,var(--bg) 100%);padding:9.5rem 0 3.5rem}
+.hero-article::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 300px at 85% 8%,rgba(180,154,98,.18),transparent 70%),radial-gradient(520px 280px at 6% 92%,rgba(24,35,56,.06),transparent 70%);pointer-events:none}
+.hero-article::after{content:"\2766";position:absolute;right:4%;bottom:-.38em;font-family:var(--serif);font-size:11rem;line-height:1;color:rgba(180,154,98,.1);pointer-events:none;transform:rotate(-8deg)}
+.hero-article .wrap{position:relative;z-index:1}
+.back{margin-bottom:1.7rem}
+.back a{font-family:var(--micro);font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .25s,color .25s}
+.back a:hover{color:var(--gold);border-color:var(--gold)}
+.eyebrow{font-family:var(--micro);font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.3rem;font-weight:500}
+.eyebrow::before{content:"\2726  ";color:var(--gold)}
+.article-title{font-size:clamp(2.2rem,5.4vw,3.3rem);margin-bottom:1.1rem;letter-spacing:.01em}
+.article-lead{color:var(--muted);max-width:640px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.3rem;line-height:1.6}
+.article-meta{margin-top:1.7rem;font-size:.82rem;color:var(--muted);letter-spacing:.06em;display:flex;align-items:center;gap:.7rem}
+.article-meta::before{content:"";width:36px;height:1px;background:var(--gold);display:inline-block;flex:none}
+.article-meta span{color:var(--gold-deep);font-weight:600;letter-spacing:.16em;font-family:var(--micro);font-size:.76rem;text-transform:uppercase}
+.article-body{padding:3.2rem 0 4.5rem}
+.article-body p{margin-bottom:1.5rem;font-size:1.04rem;color:#2a2a2e}
+.article-body>.wrap>p:first-of-type::first-letter{font-family:var(--serif);font-weight:700;font-size:3.4em;float:left;line-height:.82;padding:.08em .14em 0 0;color:var(--gold-deep)}
+.article-body h2{font-size:2.05rem;margin:3rem 0 1.2rem;position:relative;padding-bottom:.65rem}
+.article-body h2::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:2px;background:linear-gradient(90deg,var(--gold-deep),rgba(180,154,98,0))}
+.article-body h3{font-size:1.42rem;margin:2.1rem 0 .8rem;font-style:italic;font-weight:600}
+.article-body ul,.article-body ol{margin:0 0 1.6rem 1.2rem}
+.article-body li{margin-bottom:.6rem;font-size:1.02rem;padding-left:.3rem}
+.article-body ul li::marker{color:var(--gold-deep)}
+.article-body ol li::marker{color:var(--gold-deep);font-family:var(--serif);font-weight:700}
+.article-body strong{color:var(--navy)}
+.article-body a{color:var(--gold-deep);text-underline-offset:3px}
+.tip{position:relative;background:linear-gradient(180deg,#FCFAF5,#F6F1E7);border:1px solid rgba(180,154,98,.4);border-radius:14px;padding:1.7rem 1.7rem 1.5rem 4rem;margin:2.4rem 0;font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.65;color:var(--navy);box-shadow:0 10px 30px rgba(180,154,98,.12)}
+.tip::before{content:"\201C";position:absolute;left:1.15rem;top:.3rem;font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--gold)}
+.tip strong{font-style:normal;font-family:var(--micro);font-weight:600;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:.45rem}
+.related{background:var(--light);border:1px solid rgba(24,35,56,.08);border-radius:16px;padding:2.1rem 2.2rem;margin-top:3.2rem;position:relative;overflow:hidden}
+.related::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--gold),var(--gold-deep))}
+.related h3{font-size:1.45rem;margin-bottom:1rem}
+.related ul{list-style:none;margin:0}
+.related li{margin-bottom:0;border-bottom:1px solid rgba(24,35,56,.07)}
+.related li:last-child{border-bottom:none}
+.related a{color:var(--navy);text-decoration:none;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0;transition:color .25s,padding-left .25s}
+.related a::after{content:"\2192";color:var(--gold);transition:transform .25s;flex:none}
+.related a:hover{color:var(--gold-deep);padding-left:.35rem}
+.related a:hover::after{transform:translateX(4px)}
+.cta-box{position:relative;overflow:hidden;text-align:center;background:linear-gradient(140deg,#101a2e,var(--navy) 60%,#22314f);border-radius:20px;padding:3rem 2rem;margin-top:3.2rem;border:1px solid rgba(180,154,98,.35)}
+.cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(440px 200px at 50% 0%,rgba(180,154,98,.22),transparent 70%);pointer-events:none}
+.cta-box h3{position:relative;color:var(--gold);font-size:1.7rem;margin-bottom:.9rem}
+.cta-box p{position:relative;color:#aab2c2;font-size:.99rem;max-width:520px;margin:0 auto}
+footer{background:linear-gradient(180deg,#141e31,var(--navy));padding:3rem 1.5rem 2.6rem;text-align:center;color:#aab2c2;font-size:.9rem;border-top:1px solid rgba(180,154,98,.35)}
+footer .foot-brand{font-family:var(--serif);letter-spacing:.32em;color:var(--gold);font-size:1.1rem;margin-bottom:.9rem}
+footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.1rem}
+footer a{color:#c9cfda;text-decoration:none;font-family:var(--micro);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
+footer a:hover{color:var(--gold)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:640px){.article-body h2{font-size:1.7rem}.tip{padding:1.4rem 1.2rem 1.2rem 3.2rem;font-size:1.08rem}.hero-article::after{font-size:7rem}}
+
+.lang-toggle{font-family:var(--micro);font-size:.72rem;letter-spacing:.22em;color:var(--gold);text-decoration:none;border:1px solid rgba(180,154,98,.55);border-radius:999px;padding:.32rem .75rem;transition:background .25s,color .25s;white-space:nowrap}.lang-toggle:hover{background:rgba(180,154,98,.18);color:#fff}
+</style>
+</head>
+<body>
+<header class="nav">
+<div class="nav-inner">
+<div style="display:flex;align-items:center;gap:.9rem"><a class="logo" href="../index.html">AROMARIO</a><a class="lang-toggle" href="../../guias/familias-olfativas-guia.html">ES</a></div>
+<ul class="nav-links">
+<li><a href="../index.html#funciones">Features</a></li>
+<li><a href="index.html">Guides</a></li>
+<li><a href="../../privacy.html">Privacy</a></li>
+</ul>
+</div>
+</header>
+<main>
+<section class="hero-article">
+<div class="wrap">
+<p class="back"><a href="index.html">&larr; All guides</a></p>
+<p class="eyebrow">Perfume guide</p>
+<h1 class="article-title">Complete guide to fragrance families</h1>
+<img src="images/familias.webp" alt="Fragrance families guide" style="width:100%;border-radius:12px;margin:1.5rem 0">
+<p class="article-lead">Citrus, florals, woods, orientals... Fragrance families are the map of the perfume world. Learn to read it and you'll choose better forever.</p>
+<p class="article-meta"><span>AROMARIO</span> · Educational guide · 9 min read</p>
+</div>
+</section>
+<article class="article-body">
+<div class="wrap">
+<p>When someone says "I like fresh perfumes" or "I prefer something sweet," they're talking — without knowing it — about fragrance families. Families are how perfumery classifies fragrances by their dominant character. Knowing them is like learning film genres: once you've got them down, you know exactly what to look for.</p>
+<p>Several classifications exist, but the most widely used recognizes seven major families. Let's go through them one by one.</p>
+
+<h2>Citrus: instant freshness</h2>
+<p>These are perfumes built around bergamot, lemon, orange, grapefruit, or mandarin. They convey cleanliness, energy, and brightness. They're the first choice for heat, sports, and everyday wear.</p>
+<p>Their weak point is longevity: citrus molecules are volatile and evaporate quickly, so many pure citrus scents last only a few hours on skin. That's why they're often blended with woody or aromatic notes that give them body.</p>
+
+<h2>Floral: the heart of perfumery</h2>
+<p>The largest and most varied family. It ranges from classic jasmine and rose to white flowers like orange blossom, tuberose, and gardenia, plus powdery flowers like violet and iris. A floral can be fresh and springlike or dense and sensual depending on the flowers chosen.</p>
+<p>Florals dominate traditional feminine perfumery, but they also appear in modern unisex and masculine fragrances, where they're combined with woods or spices for a contemporary result.</p>
+
+<h2>Woody: solid elegance</h2>
+<p>Cedar, sandalwood, vetiver, patchouli, oud... Woods bring depth, warmth, and sophistication. They're the backbone of countless masculine perfumes and much of unisex niche perfumery.</p>
+<p>Woody scents usually have good longevity and elegant projection without being aggressive. They work beautifully at the office, in fall and winter, and on occasions when you want to project confidence.</p>
+
+<h2>Oriental: warmth and opulence</h2>
+<p>Also called ambers, they're built with vanilla, amber, tonka bean, spices, resins, and incense. They're warm, enveloping, and often sweet. Think winter nights, elegant dinners, and intimate moments.</p>
+<p>These are the perfumes with the most presence: they project strongly and last for hours. That's why you should dose them carefully, especially in enclosed spaces or warm climates, where they can become cloying.</p>
+
+<h2>Fougère: the masculine classic</h2>
+<p>Its name means "fern" in French. It comes from a historic blend: lavender, coumarin (the scent of sweet hay), oakmoss, and woods. It's the family of the classic barbershop — the timeless "clean and masculine" smell.</p>
+<p>Although it was born as a masculine family, its ingredients appear today in perfumes of all kinds. If you like fresh scents with character, you probably like fougères without knowing it.</p>
+
+<h2>Chypre: contrasting sophistication</h2>
+<p>The classic chypre combines a citrus opening (almost always bergamot) with a floral heart and a base of oakmoss and patchouli. The contrast between the initial freshness and the depth of the base creates a very particular elegance — somewhat vintage, yet timeless.</p>
+<p>It's a less common family today than decades ago, but it lives on in niche perfumery and in some classics that never go out of style.</p>
+
+<h2>Gourmand: perfumes you could "eat"</h2>
+<p>The youngest family: born in the nineties with perfumes that smell of vanilla, caramel, chocolate, coffee, cotton candy, or sweet fruits. They're addictive, cozy, and very popular — especially with younger audiences.</p>
+<p>Their sweetness makes them perfect for cold weather and nighttime, but they're best used in moderation in the heat or at the office.</p>
+<div class="tip"><strong>How to use this guide:</strong> next time you try a perfume you love, look up its fragrance family. If you discover that almost all your favorites are woody, you know where to keep exploring. Families turn chance into criteria.</div>
+
+<h2>What if a perfume blends several families?</h2>
+<p>Most modern perfumes don't belong purely to a single family: they're blends. A perfume can be a "floral woody" or an "aromatic citrus." Families are reference points, not closed boxes.</p>
+<p>What's more, within each family there are endless subfamilies and nuances. Two "oriental" perfumes can smell nothing alike. That's why families are the map, not the territory: they guide you, but the final test is always your nose.</p>
+
+<h3>A practical exercise</h3>
+<p>Pick three perfumes you own and love. Look up which family each one belongs to. If two or three fall in the same family, you've just discovered your dominant preference. From there, ask for recommendations within that family and you'll hit the mark far more often.</p>
+<h2>Families and gender: a shifting map</h2>
+<p>Historically, certain families were associated with a gender: florals with feminine, fougères and woods with masculine. That division is dissolving fast. Today it's normal to find rose in masculine perfumes and oud in feminine ones, and niche perfumery deliberately plays with those boundaries.</p>
+<p>My advice: ignore the gender on the bottle and follow the family and your nose. If you love florals, the label doesn't matter. Families describe the scent; marketing describes who they want to sell it to.</p>
+
+<h2>How to talk about perfumes using families</h2>
+<p>Knowing the families also gives you a language. Instead of saying "I like this one, I don't know why," you can say "I like woodies with a vetiver base" or "I'm looking for a soft oriental, not too sweet." That completely changes the conversation with a salesperson or anyone recommending scents: you go from pointing at random to describing precisely what you're looking for.</p>
+<p>Write down the families of your five favorite perfumes and keep them on your phone. It's the fastest way for someone to recommend something you'll actually love.</p>
+<div class="related">
+<h3>Keep exploring</h3>
+<ul>
+<li><a href="como-elegir-perfume-segun-ocasion.html">How to choose perfume by occasion</a></li>
+<li><a href="mejores-perfumes-verano-2026.html">Best perfumes for summer</a></li>
+<li><a href="perfume-dure-mas-trucos.html">Tips to make your perfume last longer</a></li>
+<li><a href="perfumes-clon-vs-originales.html">Clone vs. original: is it worth it?</a></li>
+<li><a href="notas-salida-corazon-fondo.html">Top, heart, and base notes</a></li>
+</ul>
+</div>
+<div class="cta-box">
+<h3>Want the perfect recommendation every morning?</h3>
+<p>AROMARIO organizes your collection and suggests the ideal perfume based on the weather and your plans for the day. Free for Android.</p>
+</div>
+</div>
+</article>
+</main>
+<footer>
+<p class="foot-brand">AROMARIO</p>
+<nav>
+<a href="../../privacy.html">Privacy Policy</a>
+<a href="../../terms.html">Terms and Conditions</a>
+<a href="index.html">Perfume guides</a>
+</nav>
+<p>© 2026 Clab HF Development. All rights reserved.</p>
+</footer>
+</body>
+</html>
