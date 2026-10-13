@@ -30,6 +30,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(24,35,56,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(180,154,98,.3);box-shadow:0 2px 18px rgba(24,35,56,.25)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 1.5rem}
 .logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
+.lang-toggle{font-family:var(--micro);font-size:.72rem;letter-spacing:.22em;color:var(--gold);text-decoration:none;border:1px solid rgba(180,154,98,.55);border-radius:999px;padding:.32rem .75rem;transition:background .25s,color .25s;white-space:nowrap}.lang-toggle:hover{background:rgba(180,154,98,.18);color:#fff}
 .nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
 .nav-links a{text-decoration:none;color:#dfe3ea;font-family:var(--micro);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:color .25s;position:relative}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;height:1px;width:0;background:var(--gold);transition:width .3s}
@@ -81,7 +82,7 @@ footer a:hover{color:var(--gold)}
 </head>
 <body>
 <header class="nav"><div class="nav-inner">
-<a class="logo" href="../index.html">AROMARIO</a>
+<div style="display:flex;align-items:center;gap:.9rem"><a class="logo" href="../index.html">AROMARIO</a><a class="lang-toggle" href="../en/guias/index.html">EN</a></div>
 <ul class="nav-links">
 <li><a href="../index.html#funciones">Funciones</a></li>
 <li><a href="index.html">Guías</a></li>
