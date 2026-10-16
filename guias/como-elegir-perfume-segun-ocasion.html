@@ -2,148 +2,61 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<title>Cómo elegir el perfume según la ocasión — AROMARIO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Cómo elegir el perfume según la ocasión — Aromario</title>
 <meta name="description" content="Guía práctica para elegir la fragancia correcta según la ocasión: oficina, citas, eventos, deporte, iglesia y salidas. Aprende a oler bien en cada momento.">
-<meta property="og:title" content="Cómo elegir el perfume según la ocasión — AROMARIO">
+<meta property="og:title" content="Cómo elegir el perfume según la ocasión — Aromario">
 <meta property="og:description" content="Guía práctica para elegir la fragancia correcta según la ocasión: oficina, citas, eventos, deporte, iglesia y salidas. Aprende a oler bien en cada momento.">
 <meta property="og:type" content="article">
-<style>
-:root{
---bg:#FFFFFF;--light:#F7F6F2;--navy:#182338;--gold:#B49A62;--gold-deep:#9a7f4e;
---gold-soft:rgba(180,154,98,.14);--text:#1d1d1f;--muted:#5c6470;--labels:#F0EEE8;
---serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
---sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
---micro:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.8;min-height:100vh;-webkit-font-smoothing:antialiased}
-::selection{background:rgba(180,154,98,.3)}
-h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.2;font-weight:600}
-a{color:inherit}
-a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
-.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(24,35,56,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(180,154,98,.3);box-shadow:0 2px 18px rgba(24,35,56,.25)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 1.5rem}
-.logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
-.nav-links a{text-decoration:none;color:#dfe3ea;font-family:var(--micro);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:color .25s;position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;height:1px;width:0;background:var(--gold);transition:width .3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-links a:hover::after{width:100%}
-@media (max-width:720px){.nav-links li:not(:last-child){display:none}}
-.hero-article{position:relative;overflow:hidden;background:linear-gradient(180deg,#F5F2EB 0%,var(--bg) 100%);padding:9.5rem 0 3.5rem}
-.hero-article::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 300px at 85% 8%,rgba(180,154,98,.18),transparent 70%),radial-gradient(520px 280px at 6% 92%,rgba(24,35,56,.06),transparent 70%);pointer-events:none}
-.hero-article::after{content:"\2766";position:absolute;right:4%;bottom:-.38em;font-family:var(--serif);font-size:11rem;line-height:1;color:rgba(180,154,98,.1);pointer-events:none;transform:rotate(-8deg)}
-.hero-article .wrap{position:relative;z-index:1}
-.back{margin-bottom:1.7rem}
-.back a{font-family:var(--micro);font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .25s,color .25s}
-.back a:hover{color:var(--gold);border-color:var(--gold)}
-.eyebrow{font-family:var(--micro);font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.3rem;font-weight:500}
-.eyebrow::before{content:"\2726  ";color:var(--gold)}
-.article-title{font-size:clamp(2.2rem,5.4vw,3.3rem);margin-bottom:1.1rem;letter-spacing:.01em}
-.article-lead{color:var(--muted);max-width:640px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.3rem;line-height:1.6}
-.article-meta{margin-top:1.7rem;font-size:.82rem;color:var(--muted);letter-spacing:.06em;display:flex;align-items:center;gap:.7rem}
-.article-meta::before{content:"";width:36px;height:1px;background:var(--gold);display:inline-block;flex:none}
-.article-meta span{color:var(--gold-deep);font-weight:600;letter-spacing:.16em;font-family:var(--micro);font-size:.76rem;text-transform:uppercase}
-.article-body{padding:3.2rem 0 4.5rem}
-.article-body p{margin-bottom:1.5rem;font-size:1.04rem;color:#2a2a2e}
-.article-body>.wrap>p:first-of-type::first-letter{font-family:var(--serif);font-weight:700;font-size:3.4em;float:left;line-height:.82;padding:.08em .14em 0 0;color:var(--gold-deep)}
-.article-body h2{font-size:2.05rem;margin:3rem 0 1.2rem;position:relative;padding-bottom:.65rem}
-.article-body h2::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:2px;background:linear-gradient(90deg,var(--gold-deep),rgba(180,154,98,0))}
-.article-body h3{font-size:1.42rem;margin:2.1rem 0 .8rem;font-style:italic;font-weight:600}
-.article-body ul,.article-body ol{margin:0 0 1.6rem 1.2rem}
-.article-body li{margin-bottom:.6rem;font-size:1.02rem;padding-left:.3rem}
-.article-body ul li::marker{color:var(--gold-deep)}
-.article-body ol li::marker{color:var(--gold-deep);font-family:var(--serif);font-weight:700}
-.article-body strong{color:var(--navy)}
-.article-body a{color:var(--gold-deep);text-underline-offset:3px}
-.tip{position:relative;background:linear-gradient(180deg,#FCFAF5,#F6F1E7);border:1px solid rgba(180,154,98,.4);border-radius:14px;padding:1.7rem 1.7rem 1.5rem 4rem;margin:2.4rem 0;font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.65;color:var(--navy);box-shadow:0 10px 30px rgba(180,154,98,.12)}
-.tip::before{content:"";display:none}
-.tip strong{font-style:normal;font-family:var(--micro);font-weight:600;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:.45rem}
-.related{background:var(--light);border:1px solid rgba(24,35,56,.08);border-radius:16px;padding:2.1rem 2.2rem;margin-top:3.2rem;position:relative;overflow:hidden}
-.related::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--gold),var(--gold-deep))}
-.related h3{font-size:1.45rem;margin-bottom:1rem}
-.related ul{list-style:none;margin:0}
-.related li{margin-bottom:0;border-bottom:1px solid rgba(24,35,56,.07)}
-.related li:last-child{border-bottom:none}
-.related a{color:var(--navy);text-decoration:none;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0;transition:color .25s,padding-left .25s}
-.related a::after{content:"\2192";color:var(--gold);transition:transform .25s;flex:none}
-.related a:hover{color:var(--gold-deep);padding-left:.35rem}
-.related a:hover::after{transform:translateX(4px)}
-.cta-box{position:relative;overflow:hidden;text-align:center;background:linear-gradient(140deg,#101a2e,var(--navy) 60%,#22314f);border-radius:20px;padding:3rem 2rem;margin-top:3.2rem;border:1px solid rgba(180,154,98,.35)}
-.cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(440px 200px at 50% 0%,rgba(180,154,98,.22),transparent 70%);pointer-events:none}
-.cta-box h3{position:relative;color:var(--gold);font-size:1.7rem;margin-bottom:.9rem}
-.cta-box p{position:relative;color:#aab2c2;font-size:.99rem;max-width:520px;margin:0 auto}
-footer{background:linear-gradient(180deg,#141e31,var(--navy));padding:3rem 1.5rem 2.6rem;text-align:center;color:#aab2c2;font-size:.9rem;border-top:1px solid rgba(180,154,98,.35)}
-footer .foot-brand{font-family:var(--serif);letter-spacing:.32em;color:var(--gold);font-size:1.1rem;margin-bottom:.9rem}
-footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.1rem}
-footer a{color:#c9cfda;text-decoration:none;font-family:var(--micro);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
-footer a:hover{color:var(--gold)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media (max-width:640px){.article-body h2{font-size:1.7rem}.tip{padding:1.4rem 1.2rem 1.2rem 3.2rem;font-size:1.08rem}.hero-article::after{font-size:7rem}}
-
-.lang-toggle{font-family:var(--micro);font-size:.72rem;letter-spacing:.22em;color:var(--gold);text-decoration:none;border:1px solid rgba(180,154,98,.55);border-radius:999px;padding:.32rem .75rem;transition:background .25s,color .25s;white-space:nowrap}.lang-toggle:hover{background:rgba(180,154,98,.18);color:#fff}
-</style>
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="silk" aria-hidden="true"></div>
 <header class="nav">
-<div class="nav-inner">
-<div style="display:flex;align-items:center;gap:.9rem"><a class="logo" href="../index.html">AROMARIO</a><a class="lang-toggle" href="../en/guias/como-elegir-perfume-segun-ocasion.html">EN</a></div>
-<ul class="nav-links">
-<li><a href="../index.html#funciones">Funciones</a></li>
-<li><a href="index.html">Guías</a></li>
-<li><a href="../privacy.html">Privacidad</a></li>
-</ul>
-</div>
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index.html">AROMARIO</a>
+    <nav aria-label="Principal"><ul class="nav-links"><li><a href="../index.html#funciones">Funciones</a></li><li><a href="../index.html#el-dia">Cómo funciona</a></li><li><a href="../index.html#galeria">Galería</a></li><li><a href="../guias/index.html" aria-current="page">Guías</a></li><li><a href="../index.html#faq">Preguntas</a></li></ul></nav>
+    <div class="lang" role="group" aria-label="Idioma / Language"><a href="#" hreflang="es" lang="es" data-lang="es" aria-current="true">ES</a><a href="../en/guias/como-elegir-perfume-segun-ocasion.html" hreflang="en" lang="en" data-lang="en" aria-current="false">EN</a></div>
+    <a class="btn btn-primary btn-sm" href="../index.html#descargar">Próximamente</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
 </header>
-<main>
-<section class="hero-article">
-<div class="wrap">
-<p class="back"><a href="index.html">&larr; Todas las guías</a></p>
-<p class="eyebrow">Guía de perfumes</p>
-<h1 class="article-title">Cómo elegir el perfume correcto según la ocasión</h1>
-<img src="images/ocasion.webp" alt="Cómo elegir el perfume según la ocasión" style="width:100%;border-radius:12px;margin:1.5rem 0">
-<p class="article-lead">El mismo perfume no funciona igual en la oficina que en una cita. Aquí tienes una guía práctica para acertar con tu fragancia en cada momento del día.</p>
-<p class="article-meta"><span>AROMARIO</span> · Guía educativa · 7 min de lectura</p>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="../index.html#funciones">Funciones</a></li><li><a href="../index.html#el-dia">Cómo funciona</a></li><li><a href="../index.html#galeria">Galería</a></li><li><a href="../guias/index.html" aria-current="page">Guías</a></li><li><a href="../index.html#faq">Preguntas</a></li></ul>
+  <a class="btn btn-primary" href="../index.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Próximamente en Google Play</a>
 </div>
-</section>
-<article class="article-body">
-<div class="wrap">
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="back"><a href="index.html">← Todas las guías</a></p><p class="eyebrow" style="margin-top:1.4rem">Guía de perfumes</p><h1>Cómo elegir el perfume correcto según la ocasión</h1><p class="article-lead">El mismo perfume no funciona igual en la oficina que en una cita. Aquí tienes una guía práctica para acertar con tu fragancia en cada momento del día.</p><p class="article-meta">Aromario · Guía educativa · 7 min de lectura</p><img class="hero-img" src="images/ocasion.webp" alt="Cómo elegir el perfume según la ocasión"></div></section>
+<div class="wrap"><div class="prose">
 <p>Elegir el perfume correcto no es solo cuestión de gustos: es cuestión de contexto. Una fragancia intensa y dulce que funciona de maravilla en una fiesta puede resultar agobiante en una oficina cerrada. Y un aroma fresco y ligero, perfecto para el día a día, quizá se pierda en una noche de fiesta. La clave está en entender qué pide cada ocasión.</p>
 <p>En esta guía repasamos las ocasiones más comunes y qué tipo de perfume funciona mejor en cada una, para que nunca más dudes frente a tu colección.</p>
-
 <h2>La oficina: discreción ante todo</h2>
 <p>En el trabajo compartes el aire con otras personas durante ocho horas o más. Aquí la regla de oro es la moderación: busca fragancias frescas, limpias o ligeramente amaderadas, con proyección baja o moderada. Los cítricos suaves, los aromáticos verdes y los almizcles limpios son apuestas seguras.</p>
 <p>Evita los perfumes muy dulces, muy especiados o con estela potente: lo que a ti te parece delicioso, a un compañero a dos metros puede resultarle invasivo. Dos o tres pulverizaciones como máximo, aplicadas en puntos discretos como las muñecas o detrás de las orejas.</p>
 <div class="tip"><strong>Consejo:</strong> si tu oficina tiene aire acondicionado fuerte, el perfume se proyecta menos; si trabajas al aire libre o en un espacio abierto, reduce aún más la cantidad.</div>
-
 <h2>Las citas: cercanía y personalidad</h2>
 <p>En una cita, la otra persona va a estar cerca de ti, así que el perfume se convierte en parte de tu presencia. Busca algo que hable de tu personalidad sin gritar: fragancias cálidas, con un punto sensual pero elegante. Las notas de vainilla suave, ámbar, flores blancas o maderas cremosas suelen funcionar muy bien.</p>
 <p>Lo más importante en una cita es que el perfume te haga sentir seguro. Si llevas algo con lo que no te sientes cómodo, se nota. Elige un favorito probado antes que un experimento nuevo: no es el momento de estrenar una fragancia que no conoces.</p>
-
 <h2>Eventos y fiestas: permiso para destacar</h2>
 <p>En un evento social, una boda o una fiesta, tienes más libertad. El ambiente es festivo, hay más gente y más olores mezclados, así que puedes usar fragancias con más carácter: orientales, gourmand, cueros o flores intensas. La proyección puede ser mayor porque el contexto lo permite.</p>
 <p>Aun así, mantén el equilibrio: "destacar" no significa "anunciar tu llegada desde la puerta". Tres o cuatro pulverizaciones bien colocadas son suficientes incluso para la fragancia más intensa.</p>
-
 <h2>Deporte y actividades físicas</h2>
 <p>Para hacer ejercicio, menos es más. El calor corporal amplifica cualquier fragancia, y el sudor la transforma. Lo ideal son colonias frescas, cítricas o acuáticas, aplicadas con mucha moderación, o directamente optar por no llevar perfume y usar un buen desodorante.</p>
 <p>Si vas al gimnasio, ten en cuenta a los demás: es un espacio cerrado donde la gente respira fuerte. Una sola pulverización de algo fresco es el máximo razonable.</p>
-
 <h2>La iglesia y eventos formales sobrios</h2>
 <p>En contextos sobrios como una iglesia, un funeral o una ceremonia formal, la discreción es una forma de respeto. Elige fragancias limpias y suaves: un jabonoso elegante, un floral ligero o un almizcle sutil. Nada dulce, nada intenso, nada que llame la atención.</p>
-
 <h2>Salidas ocasionales y tiempo libre</h2>
 <p>Para un paseo, una tarde de compras o un café con amigos, tienes total libertad. Es el momento perfecto para experimentar: prueba ese perfume nuevo, mezcla dos fragancias o rescata ese frasco que llevas meses sin usar. Sin reglas estrictas, solo disfrute.</p>
-
 <h2>La noche: intensidad y misterio</h2>
 <p>De noche, las fragancias se perciben de forma distinta: el aire fresco hace que los aromas densos se aprecien mejor. Es el momento de los orientales, las maderas oscuras, el oud, el cuero y las especias. Puedes subir la intensidad uno o dos puntos respecto al día.</p>
 <div class="tip"><strong>Regla práctica:</strong> piensa en el perfume como en la ropa. Igual que no irías al gimnasio con traje ni a una boda en chándal, cada ocasión pide una fragancia distinta. Con el tiempo, elegir se vuelve instintivo.</div>
-
 <h2>Cómo construir tu rotación por ocasiones</h2>
 <p>No necesitas docenas de perfumes para cubrir todas las ocasiones. Con cuatro o cinco bien elegidos tienes suficiente:</p>
 <ul>
@@ -157,7 +70,6 @@ footer a:hover{color:var(--gold)}
 <h2>El factor clima: el gran olvidado</h2>
 <p>La ocasión no es lo único que importa: el clima cambia por completo cómo se comporta un perfume. El calor amplifica la proyección y la dulzura, mientras que el frío las atenúa. Por eso un oriental intenso puede ser perfecto para una cena de invierno y un desastre para un almuerzo de verano, aunque la ocasión sea igual de elegante.</p>
 <p>La combinación ganadora es ocasión + clima. Para una boda de verano al aire libre, elige algo fresco y luminoso aunque sea un evento formal. Para una cena de invierno en interior, puedes permitirte más densidad. Cuando dudes, el clima manda sobre la ocasión: es mejor ir un poco más ligero de lo "correcto" que asfixiar a los presentes.</p>
-
 <h2>Viajes: el neceser mínimo</h2>
 <p>Cuando viajas no puedes llevar toda la colección. La estrategia es llevar dos: un fresco versátil para el día y uno con más carácter para la noche. Si el viaje incluye eventos formales, sustituye el fresco por algo elegante pero de proyección contenida. Dos frascos pequeños o decants ocupan poco y te cubren casi todo.</p>
 <div class="related">
@@ -172,19 +84,19 @@ footer a:hover{color:var(--gold)}
 </div>
 <div class="cta-box">
 <h3>¿Quieres la recomendación perfecta cada mañana?</h3>
-<p>AROMARIO organiza tu colección y te sugiere el perfume ideal según el clima y tu plan del día. Gratis para Android.</p>
-</div>
-</div>
-</article>
+<p>Aromario organiza tu colección y te sugiere el perfume ideal según el clima y tu plan del día. Gratis para Android.</p>
+<a class="btn" href="../index.html">Conocer Aromario</a></div>
+</div></div>
 </main>
-<footer>
-<p class="foot-brand">AROMARIO</p>
-<nav>
-<a href="../privacy.html">Política de privacidad</a>
-<a href="../terms.html">Términos y condiciones</a>
-<a href="index.html">Guías de perfumes</a>
-</nav>
-<p>© 2026 Clab HF Development. Todos los derechos reservados.</p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="../index.html">AROMARIO</a><p>Tu armario digital de perfumes.</p></div>
+      <div><h4>La app</h4><ul><li><a href="../index.html#funciones">Funciones</a></li><li><a href="../index.html#el-dia">Cómo funciona</a></li><li><a href="../index.html#galeria">Galería</a></li><li><a href="../index.html#faq">Preguntas</a></li></ul></div><div><h4>Aprende</h4><ul><li><a href="../guias/index.html">Guías de perfumes</a></li><li><a href="../guias/familias-olfativas-guia.html">Familias olfativas</a></li><li><a href="../guias/notas-salida-corazon-fondo.html">Notas de un perfume</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="../privacy.html">Privacidad</a></li><li><a href="../terms.html">Términos</a></li><li><a href="../delete.html">Eliminar cuenta</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Todos los derechos reservados.</span><span>Contacto: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
 </footer>
+<script src="../assets/site.js" defer></script>
 </body>
 </html>

@@ -2,128 +2,46 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Clone perfumes vs originals: are they worth it? — Aromario</title>
+<meta name="description" content="An honest guide to clone and &#x27;inspired-by&#x27; perfumes: what they are, how they really differ from the originals, and when buying them makes sense.">
+<meta property="og:title" content="Clone perfumes vs originals: are they worth it? — Aromario">
+<meta property="og:description" content="An honest guide to clone and &#x27;inspired-by&#x27; perfumes: what they are, how they really differ from the originals, and when buying them makes sense.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<title>Clone perfumes vs originals: are they worth it? — AROMARIO</title>
-<meta name="description" content="An honest guide to clone and 'inspired-by' perfumes: what they are, how they really differ from the originals, and when buying them makes sense.">
-<meta property="og:title" content="Clone perfumes vs originals: are they worth it? — AROMARIO">
-<meta property="og:description" content="An honest guide to clone and 'inspired-by' perfumes: what they are, how they really differ from the originals, and when buying them makes sense.">
-<meta property="og:type" content="article">
-<style>
-:root{
---bg:#FFFFFF;--light:#F7F6F2;--navy:#182338;--gold:#B49A62;--gold-deep:#9a7f4e;
---gold-soft:rgba(180,154,98,.14);--text:#1d1d1f;--muted:#5c6470;--labels:#F0EEE8;
---serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
---sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
---micro:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.8;min-height:100vh;-webkit-font-smoothing:antialiased}
-::selection{background:rgba(180,154,98,.3)}
-h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.2;font-weight:600}
-a{color:inherit}
-a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
-.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(24,35,56,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(180,154,98,.3);box-shadow:0 2px 18px rgba(24,35,56,.25)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 1.5rem}
-.logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
-.nav-links a{text-decoration:none;color:#dfe3ea;font-family:var(--micro);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:color .25s;position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;height:1px;width:0;background:var(--gold);transition:width .3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-links a:hover::after{width:100%}
-@media (max-width:720px){.nav-links li:not(:last-child){display:none}}
-.hero-article{position:relative;overflow:hidden;background:linear-gradient(180deg,#F5F2EB 0%,var(--bg) 100%);padding:9.5rem 0 3.5rem}
-.hero-article::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 300px at 85% 8%,rgba(180,154,98,.18),transparent 70%),radial-gradient(520px 280px at 6% 92%,rgba(24,35,56,.06),transparent 70%);pointer-events:none}
-.hero-article::after{content:"\2766";position:absolute;right:4%;bottom:-.38em;font-family:var(--serif);font-size:11rem;line-height:1;color:rgba(180,154,98,.1);pointer-events:none;transform:rotate(-8deg)}
-.hero-article .wrap{position:relative;z-index:1}
-.back{margin-bottom:1.7rem}
-.back a{font-family:var(--micro);font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .25s,color .25s}
-.back a:hover{color:var(--gold);border-color:var(--gold)}
-.eyebrow{font-family:var(--micro);font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.3rem;font-weight:500}
-.eyebrow::before{content:"\2726  ";color:var(--gold)}
-.article-title{font-size:clamp(2.2rem,5.4vw,3.3rem);margin-bottom:1.1rem;letter-spacing:.01em}
-.article-lead{color:var(--muted);max-width:640px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.3rem;line-height:1.6}
-.article-meta{margin-top:1.7rem;font-size:.82rem;color:var(--muted);letter-spacing:.06em;display:flex;align-items:center;gap:.7rem}
-.article-meta::before{content:"";width:36px;height:1px;background:var(--gold);display:inline-block;flex:none}
-.article-meta span{color:var(--gold-deep);font-weight:600;letter-spacing:.16em;font-family:var(--micro);font-size:.76rem;text-transform:uppercase}
-.article-body{padding:3.2rem 0 4.5rem}
-.article-body p{margin-bottom:1.5rem;font-size:1.04rem;color:#2a2a2e}
-.article-body>.wrap>p:first-of-type::first-letter{font-family:var(--serif);font-weight:700;font-size:3.4em;float:left;line-height:.82;padding:.08em .14em 0 0;color:var(--gold-deep)}
-.article-body h2{font-size:2.05rem;margin:3rem 0 1.2rem;position:relative;padding-bottom:.65rem}
-.article-body h2::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:2px;background:linear-gradient(90deg,var(--gold-deep),rgba(180,154,98,0))}
-.article-body h3{font-size:1.42rem;margin:2.1rem 0 .8rem;font-style:italic;font-weight:600}
-.article-body ul,.article-body ol{margin:0 0 1.6rem 1.2rem}
-.article-body li{margin-bottom:.6rem;font-size:1.02rem;padding-left:.3rem}
-.article-body ul li::marker{color:var(--gold-deep)}
-.article-body ol li::marker{color:var(--gold-deep);font-family:var(--serif);font-weight:700}
-.article-body strong{color:var(--navy)}
-.article-body a{color:var(--gold-deep);text-underline-offset:3px}
-.tip{position:relative;background:linear-gradient(180deg,#FCFAF5,#F6F1E7);border:1px solid rgba(180,154,98,.4);border-radius:14px;padding:1.7rem 1.7rem 1.5rem 4rem;margin:2.4rem 0;font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.65;color:var(--navy);box-shadow:0 10px 30px rgba(180,154,98,.12)}
-.tip::before{content:"";display:none}
-.tip strong{font-style:normal;font-family:var(--micro);font-weight:600;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:.45rem}
-.related{background:var(--light);border:1px solid rgba(24,35,56,.08);border-radius:16px;padding:2.1rem 2.2rem;margin-top:3.2rem;position:relative;overflow:hidden}
-.related::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--gold),var(--gold-deep))}
-.related h3{font-size:1.45rem;margin-bottom:1rem}
-.related ul{list-style:none;margin:0}
-.related li{margin-bottom:0;border-bottom:1px solid rgba(24,35,56,.07)}
-.related li:last-child{border-bottom:none}
-.related a{color:var(--navy);text-decoration:none;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0;transition:color .25s,padding-left .25s}
-.related a::after{content:"\2192";color:var(--gold);transition:transform .25s;flex:none}
-.related a:hover{color:var(--gold-deep);padding-left:.35rem}
-.related a:hover::after{transform:translateX(4px)}
-.cta-box{position:relative;overflow:hidden;text-align:center;background:linear-gradient(140deg,#101a2e,var(--navy) 60%,#22314f);border-radius:20px;padding:3rem 2rem;margin-top:3.2rem;border:1px solid rgba(180,154,98,.35)}
-.cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(440px 200px at 50% 0%,rgba(180,154,98,.22),transparent 70%);pointer-events:none}
-.cta-box h3{position:relative;color:var(--gold);font-size:1.7rem;margin-bottom:.9rem}
-.cta-box p{position:relative;color:#aab2c2;font-size:.99rem;max-width:520px;margin:0 auto}
-footer{background:linear-gradient(180deg,#141e31,var(--navy));padding:3rem 1.5rem 2.6rem;text-align:center;color:#aab2c2;font-size:.9rem;border-top:1px solid rgba(180,154,98,.35)}
-footer .foot-brand{font-family:var(--serif);letter-spacing:.32em;color:var(--gold);font-size:1.1rem;margin-bottom:.9rem}
-footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.1rem}
-footer a{color:#c9cfda;text-decoration:none;font-family:var(--micro);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
-footer a:hover{color:var(--gold)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media (max-width:640px){.article-body h2{font-size:1.7rem}.tip{padding:1.4rem 1.2rem 1.2rem 3.2rem;font-size:1.08rem}.hero-article::after{font-size:7rem}}
-.lang-toggle{font-family:var(--micro);font-size:.72rem;letter-spacing:.22em;color:var(--gold);text-decoration:none;border:1px solid rgba(180,154,98,.55);border-radius:999px;padding:.32rem .75rem;transition:background .25s,color .25s;white-space:nowrap}.lang-toggle:hover{background:rgba(180,154,98,.18);color:#fff}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="silk" aria-hidden="true"></div>
 <header class="nav">
-<div class="nav-inner">
-<div style="display:flex;align-items:center;gap:.9rem"><a class="logo" href="../index.html">AROMARIO</a><a class="lang-toggle" href="../../guias/perfumes-clon-vs-originales.html">ES</a></div>
-<ul class="nav-links">
-<li><a href="../index.html#funciones">Features</a></li>
-<li><a href="index.html">Guides</a></li>
-<li><a href="../../privacy.html">Privacy</a></li>
-</ul>
-</div>
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index.html">AROMARIO</a>
+    <nav aria-label="Principal"><ul class="nav-links"><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#your-day">How it works</a></li><li><a href="../index.html#gallery">Gallery</a></li><li><a href="../guias/index.html" aria-current="page">Guides</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav>
+    <div class="lang" role="group" aria-label="Idioma / Language"><a href="../../guias/perfumes-clon-vs-originales.html" hreflang="es" lang="es" data-lang="es" aria-current="false">ES</a><a href="#" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a></div>
+    <a class="btn btn-primary btn-sm" href="../index.html#download">Coming soon</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
 </header>
-<main>
-<section class="hero-article">
-<div class="wrap">
-<p class="back"><a href="index.html">&larr; All guides</a></p>
-<p class="eyebrow">Perfume guide</p>
-<h1 class="article-title">Clone perfumes vs originals: are they worth it?</h1>
-<img src="images/clon.webp" alt="Clone perfumes vs originals" style="width:100%;border-radius:12px;margin:1.5rem 0">
-<p class="article-lead">Clones promise to smell like a $300 perfume for $30. Is it true? An honest look at what they are, what they offer, and when they make sense.</p>
-<p class="article-meta"><span>AROMARIO</span> · Educational guide · 8 min read</p>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#your-day">How it works</a></li><li><a href="../index.html#gallery">Gallery</a></li><li><a href="../guias/index.html" aria-current="page">Guides</a></li><li><a href="../index.html#faq">FAQ</a></li></ul>
+  <a class="btn btn-primary" href="../index.html#download"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Coming soon to Google Play</a>
 </div>
-</section>
-<article class="article-body">
-<div class="wrap">
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="back"><a href="index.html">← All guides</a></p><p class="eyebrow" style="margin-top:1.4rem">Perfume guide</p><h1>Clone perfumes vs originals: are they worth it?</h1><p class="article-lead">Clones promise to smell like a $300 perfume for $30. Is it true? An honest look at what they are, what they offer, and when they make sense.</p><p class="article-meta">Aromario · Educational guide · 8 min read</p><img class="hero-img" src="images/clon.webp" alt="Clone perfumes vs originals"></div></section>
+<div class="wrap"><div class="prose">
 <p>In recent years a phenomenon has exploded: brands selling "inspired-by" perfumes or "clones" of famous fragrances at a fraction of the price. A $300 niche perfume has its $30 version. Opinions are passionate on both sides. Let's bring some order with an honest look.</p>
-
 <h2>What exactly a clone is</h2>
 <p>A clone (also called "inspired-by", "dupe" or "alternative") is a perfume created to smell as close as possible to another famous, usually much more expensive perfume. It is not a counterfeit: it doesn't copy the bottle or use the original's name. It's its own fragrance that deliberately seeks an olfactory resemblance.</p>
 <p>There's a whole spectrum: from shameless clones that imitate even the name with a play on words, to elegant "inspired-by" scents that take the general idea and develop it with their own personality.</p>
-
 <h2>Why they exist and why they work</h2>
 <p>The reason is economic and obvious: not everyone can or wants to pay $200 or $300 for a bottle. Clones democratize access to olfactory profiles that would otherwise be out of reach. For many people they're the gateway to the world of perfumery.</p>
 <p>There's also a practical argument: if you want a perfume for the gym, for daily work, or to test whether a style suits you before investing, a cheap clone makes total sense.</p>
-
 <h2>How they really differ</h2>
 <h3>Ingredient quality</h3>
 <p>Here's the main difference. A $300 perfume uses pricier, more natural raw materials in higher concentration. The clone uses cheaper ingredients to achieve a similar effect. The result: the resemblance is usually greatest in the opening (the first 30 minutes) and fades with the hours, when the base notes emerge — that's where expensive ingredients make the difference.</p>
@@ -131,7 +49,6 @@ footer a:hover{color:var(--gold)}
 <p>Many clones project strongly at first (sometimes more than the original) but don't last as long. Others last well but with a flatter, less interesting evolution. There are exceptions in both directions, but that's the general trend.</p>
 <h3>Originality and nuance</h3>
 <p>The original usually has more nuance, depth and a richer evolution. The clone captures the "idea" of the perfume: you recognize it instantly, but if you compare them side by side, you notice the original has "something more" going on. That "something more" is what the money pays for.</p>
-
 <h2>When a clone makes total sense</h2>
 <ul>
 <li><strong>To try a style:</strong> do oud scents appeal to you but you've never worn one? A cheap clone lets you explore without risking $250.</li>
@@ -139,7 +56,6 @@ footer a:hover{color:var(--gold)}
 <li><strong>If the resemblance is enough for you:</strong> some people try the original and the clone and honestly decide the difference doesn't justify the price. That's a perfectly valid decision.</li>
 <li><strong>Large collections:</strong> if you like to vary a lot, clones let you have more options for less money.</li>
 </ul>
-
 <h2>When the original is worth it</h2>
 <ul>
 <li><strong>It's your personal signature:</strong> if it's the perfume that defines you and you wear it daily, the extra quality shows and pays off.</li>
@@ -148,7 +64,6 @@ footer a:hover{color:var(--gold)}
 <li><strong>Special occasions:</strong> for important moments, many people prefer the safety of the original.</li>
 </ul>
 <div class="tip"><strong>The smart middle ground:</strong> many people combine both worlds: originals for their undisputed favorites and clones for exploring, for everyday wear, or for those indulgences that don't justify the full price. You don't have to pick a side.</div>
-
 <h2>How to choose a good clone</h2>
 <p>Not all clones are equal. Some brands have earned a reputation for quality and fidelity, while others are a lottery. Before buying:</p>
 <ul>
@@ -157,7 +72,6 @@ footer a:hover{color:var(--gold)}
 <li>Start with samples or small bottles before buying the big one.</li>
 <li>Pay attention to reported longevity, not just the initial resemblance.</li>
 </ul>
-
 <h2>The honest conclusion</h2>
 <p>Clones are neither a scam nor a miracle: they're one more option on the market. The original is almost always the better perfume in absolute terms, but "better" doesn't always mean "the better buy for you." A well-chosen clone, used in the right context, can give you 85% of the pleasure for 10% of the price. And that, for many people and on many occasions, is totally worth it.</p>
 <p>The important thing is to buy with your eyes open: know what you're buying, why, and don't expect from a clone what only an original can give. With that honesty, clones are a fantastic tool. Without it, they're a guaranteed disappointment.</p>
@@ -173,19 +87,19 @@ footer a:hover{color:var(--gold)}
 </div>
 <div class="cta-box">
 <h3>Want the perfect recommendation every morning?</h3>
-<p>AROMARIO organizes your collection and suggests the ideal perfume based on the weather and your plans for the day. Free for Android.</p>
-</div>
-</div>
-</article>
+<p>Aromario organizes your collection and suggests the ideal perfume based on the weather and your plans for the day. Free for Android.</p>
+<a class="btn" href="../index.html">Discover Aromario</a></div>
+</div></div>
 </main>
-<footer>
-<p class="foot-brand">AROMARIO</p>
-<nav>
-<a href="../../privacy.html">Privacy Policy</a>
-<a href="../../terms.html">Terms and Conditions</a>
-<a href="index.html">Perfume guides</a>
-</nav>
-<p>© 2026 Clab HF Development. All rights reserved.</p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="../index.html">AROMARIO</a><p>Your digital perfume wardrobe.</p></div>
+      <div><h4>The app</h4><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#your-day">How it works</a></li><li><a href="../index.html#gallery">Gallery</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div><div><h4>Learn</h4><ul><li><a href="../guias/index.html">Perfume guides</a></li><li><a href="../guias/familias-olfativas-guia.html">Fragrance families</a></li><li><a href="../guias/notas-salida-corazon-fondo.html">Perfume notes</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy</a></li><li><a href="../terms.html">Terms</a></li><li><a href="../delete.html">Delete account</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. All rights reserved.</span><span>Contact: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
 </footer>
+<script src="../../assets/site.js" defer></script>
 </body>
 </html>

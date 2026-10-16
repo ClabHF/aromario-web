@@ -2,65 +2,59 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eliminación de datos — AROMARIO</title>
-<meta name="description" content="Cómo solicitar la eliminación de tu cuenta y tus datos en AROMARIO.">
-<style>
-  :root { --gold: #d4af37; --black: #0a0a0a; --gray: #b8b8b8; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--black); color: #f5f5f5; font-family: Georgia, 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; }
-  header { text-align: center; padding: 3.5rem 1.5rem 2rem; }
-  .brand { font-size: 2.5rem; letter-spacing: .5rem; color: var(--gold); }
-  main { max-width: 800px; margin: 0 auto; padding: 0 1.5rem 4rem; flex: 1; }
-  h1 { color: var(--gold); font-size: 1.8rem; margin-bottom: .5rem; text-align: center; }
-  .date { text-align: center; color: var(--gray); font-style: italic; margin-bottom: 2.5rem; }
-  h2 { color: var(--gold); font-size: 1.15rem; margin: 1.8rem 0 .6rem; letter-spacing: .05rem; }
-  p, li { color: #e0e0e0; line-height: 1.75; }
-  ul, ol { margin: .5rem 0 .5rem 1.5rem; }
-  a { color: var(--gold); }
-  .cta { display: inline-block; margin-top: 1rem; padding: .9rem 2rem; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; letter-spacing: .05rem; }
-  footer { text-align: center; padding: 2rem 1.5rem; border-top: 1px solid rgba(212,175,55,.25); color: var(--gray); font-size: .9rem; }
-  footer a { color: var(--gold); text-decoration: none; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Eliminar cuenta — Aromario</title>
+<meta name="description" content="Cómo eliminar tu cuenta de Aromario y todos tus datos.">
+<meta property="og:title" content="Eliminar cuenta — Aromario">
+<meta property="og:description" content="Cómo eliminar tu cuenta de Aromario y todos tus datos.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<header>
-  <div class="brand">AROMARIO</div>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">AROMARIO</a>
+    <nav aria-label="Principal"><ul class="nav-links"><li><a href="index.html#funciones">Funciones</a></li><li><a href="index.html#el-dia">Cómo funciona</a></li><li><a href="index.html#galeria">Galería</a></li><li><a href="guias/index.html">Guías</a></li><li><a href="index.html#faq">Preguntas</a></li></ul></nav>
+    <div class="lang" role="group" aria-label="Idioma / Language"><a href="#" hreflang="es" lang="es" data-lang="es" aria-current="true">ES</a><a href="en/delete.html" hreflang="en" lang="en" data-lang="en" aria-current="false">EN</a></div>
+    <a class="btn btn-primary btn-sm" href="index.html#descargar">Próximamente</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
 </header>
-<main>
-  <h1>Eliminación de cuenta y datos</h1>
-  <p class="date">Última actualización: 9 de octubre de 2026</p>
-
-  <h2>Cómo solicitar la eliminación</h2>
-  <p>Si usaste AROMARIO con una cuenta de Google y quieres que eliminemos tu cuenta y tus datos asociados, escríbenos un correo a <a href="mailto:clabhfdevelopment@gmail.com?subject=Eliminar%20mi%20cuenta%20de%20AROMARIO">clabhfdevelopment@gmail.com</a> con el asunto "Eliminar mi cuenta de AROMARIO".</p>
-  <ol>
-    <li>Envía el correo desde la misma dirección de Gmail que usaste para iniciar sesión en la app.</li>
-    <li>Procesaremos tu solicitud en un plazo máximo de 30 días y te confirmaremos por correo cuando esté completa.</li>
-  </ol>
-
-  <h2>Qué datos se eliminan</h2>
-  <ul>
-    <li>Tu perfil (ciudad, género, entorno de trabajo y preferencias del cuestionario).</li>
-    <li>Tu colección de perfumes, lista de deseos, registros de uso y diario, si estaban sincronizados con tu cuenta.</li>
-    <li>El vínculo entre tu cuenta de Google y nuestros sistemas (Firebase Authentication).</li>
-  </ul>
-
-  <h2>Qué datos se conservan</h2>
-  <ul>
-    <li>Los datos guardados solo en tu teléfono (modo sin cuenta) no los tenemos nosotros: se borran al desinstalar la app.</li>
-    <li>Podemos conservar registros mínimos de la solicitud de eliminación (tu correo y la fecha) durante 12 meses por obligaciones legales y de seguridad. No se usan con fines publicitarios.</li>
-  </ul>
-
-  <h2>Borrar datos del teléfono</h2>
-  <p>Si usaste AROMARIO sin cuenta, tus datos están solo en tu dispositivo. Para borrarlos: abre la app y usa "Cerrar sesión" en el Perfil, o desinstala la app — eso elimina todos los datos locales.</p>
-
-  <p><a class="cta" href="mailto:clabhfdevelopment@gmail.com?subject=Eliminar%20mi%20cuenta%20de%20AROMARIO">Solicitar eliminación por correo</a></p>
-
-  <h2>Contacto</h2>
-  <p>Clab HF Development — <a href="mailto:clabhfdevelopment@gmail.com">clabhfdevelopment@gmail.com</a></p>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="index.html#funciones">Funciones</a></li><li><a href="index.html#el-dia">Cómo funciona</a></li><li><a href="index.html#galeria">Galería</a></li><li><a href="guias/index.html">Guías</a></li><li><a href="index.html#faq">Preguntas</a></li></ul>
+  <a class="btn btn-primary" href="index.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Próximamente en Google Play</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="eyebrow">Tu cuenta</p><h1>Eliminar tu cuenta y tus datos</h1><p class="date">Última actualización: 16 de octubre de 2026</p></div></section>
+<div class="wrap"><div class="prose"><h2><span class="n">1.</span>Desde la app (lo más rápido)</h2>
+<p>Abre Aromario y ve a <strong>Perfil › Eliminar mi cuenta y datos</strong>. Confirma y se borran al momento tu cuenta, tu perfil y tus listas, en la nube y en tu teléfono. Necesitas conexión a internet; si hace tiempo que iniciaste sesión, la app te pedirá elegir de nuevo tu cuenta de Google.</p>
+<h2><span class="n">2.</span>Por correo (si ya no tienes la app)</h2>
+<p>Escríbenos a <strong class="mail">clabhfdevelopment@gmail.com</strong> con el asunto «Eliminar mi cuenta de Aromario», desde el mismo correo de Google con el que iniciaste sesión. Lo haremos en un plazo máximo de 30 días y te confirmaremos por correo.</p>
+<p><a class="btn btn-primary" href="mailto:clabhfdevelopment@gmail.com?subject=Eliminar%20mi%20cuenta%20de%20Aromario">Escribir para eliminar mi cuenta</a></p>
+<h2><span class="n">3.</span>Qué se elimina</h2>
+<ul><li>Tu perfil (las respuestas del cuestionario).</li><li>Tu armario y tu lista de deseos guardados en la nube.</li><li>Tu cuenta de acceso (Firebase Authentication).</li><li>Desde la app, además, todo lo guardado en tu teléfono.</li></ul>
+<h2><span class="n">4.</span>Qué se conserva</h2>
+<ul><li>Los contadores anónimos de estadísticas, que no se pueden asociar a ti.</li><li>Si lo pides por correo, un registro mínimo de la solicitud (tu correo y la fecha) durante 12 meses, por obligaciones legales y de seguridad. No se usa para nada más.</li></ul>
+<h2><span class="n">5.</span>Contacto</h2>
+<p>Clab HF Development — <a href="mailto:clabhfdevelopment@gmail.com">clabhfdevelopment@gmail.com</a></p></div></div>
 </main>
-<footer>
-  <p>&copy; 2026 Clab HF Development &nbsp;·&nbsp; <a href="index.html">Volver a AROMARIO</a> &nbsp;·&nbsp; <a href="privacy.html">Política de privacidad</a> &nbsp;·&nbsp; <a href="terms.html">Términos y condiciones</a></p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index.html">AROMARIO</a><p>Tu armario digital de perfumes.</p></div>
+      <div><h4>La app</h4><ul><li><a href="index.html#funciones">Funciones</a></li><li><a href="index.html#el-dia">Cómo funciona</a></li><li><a href="index.html#galeria">Galería</a></li><li><a href="index.html#faq">Preguntas</a></li></ul></div><div><h4>Aprende</h4><ul><li><a href="guias/index.html">Guías de perfumes</a></li><li><a href="guias/familias-olfativas-guia.html">Familias olfativas</a></li><li><a href="guias/notas-salida-corazon-fondo.html">Notas de un perfume</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="privacy.html">Privacidad</a></li><li><a href="terms.html">Términos</a></li><li><a href="delete.html">Eliminar cuenta</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Todos los derechos reservados.</span><span>Contacto: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
 </footer>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

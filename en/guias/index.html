@@ -2,134 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfume guides — AROMARIO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Perfume guides — Aromario</title>
 <meta name="description" content="Educational perfume guides: how to choose by occasion, fragrance families, longevity tricks, clones vs originals, and more.">
-<meta property="og:title" content="Perfume guides — AROMARIO">
-<meta property="og:description" content="Learn all about perfumes: occasions, fragrance families, longevity, clones, and notes.">
+<meta property="og:title" content="Perfume guides — Aromario">
+<meta property="og:description" content="Educational perfume guides: how to choose by occasion, fragrance families, longevity tricks, clones vs originals, and more.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
---bg:#FFFFFF;--light:#F7F6F2;--navy:#182338;--gold:#B49A62;--gold-deep:#9a7f4e;
---gold-soft:rgba(180,154,98,.14);--text:#1d1d1f;--muted:#5c6470;
---serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
---sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
---micro:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased}
-::selection{background:rgba(180,154,98,.3)}
-h1,h2{font-family:var(--serif);color:var(--navy);line-height:1.2;font-weight:600}
-a{color:inherit}
-a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(24,35,56,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(180,154,98,.3);box-shadow:0 2px 18px rgba(24,35,56,.25)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 1.5rem}
-.logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
-.lang-toggle{font-family:var(--micro);font-size:.72rem;letter-spacing:.22em;color:var(--gold);text-decoration:none;border:1px solid rgba(180,154,98,.55);border-radius:999px;padding:.32rem .75rem;transition:background .25s,color .25s;white-space:nowrap}.lang-toggle:hover{background:rgba(180,154,98,.18);color:#fff}
-.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
-.nav-links a{text-decoration:none;color:#dfe3ea;font-family:var(--micro);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:color .25s;position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;height:1px;width:0;background:var(--gold);transition:width .3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-links a:hover::after{width:100%}
-@media (max-width:720px){.nav-links li:not(:last-child){display:none}}
-.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#F5F2EB 0%,var(--bg) 100%);padding:10rem 0 3.5rem;text-align:center}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(640px 300px at 50% 0%,rgba(180,154,98,.2),transparent 70%);pointer-events:none}
-.hero .wrap{position:relative}
-.crumb{font-family:var(--micro);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem}
-.crumb a{color:var(--gold-deep);text-decoration:none}
-.crumb a:hover{color:var(--gold)}
-.crumb span{margin:0 .5rem;color:var(--gold)}
-.eyebrow{font-family:var(--micro);font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.2rem;font-weight:500}
-.hero h1{font-size:clamp(2.3rem,5.4vw,3.4rem);margin-bottom:1.1rem}
-.hero h1::after{content:"";display:block;width:84px;height:2px;margin:1.3rem auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.hero p.lede{color:var(--muted);font-size:1.08rem;max-width:620px;margin:0 auto;font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.6}
-.grid-section{padding:1rem 0 5rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem}
-.card{background:#fff;border:1px solid rgba(24,35,56,.1);border-radius:18px;overflow:hidden;box-shadow:0 8px 26px rgba(24,35,56,.07);transition:transform .35s,box-shadow .35s;text-decoration:none;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-8px);box-shadow:0 24px 54px rgba(24,35,56,.16)}
-.card-visual{position:relative;height:150px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.card-visual::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 9px)}
-.card-visual::after{content:"";position:absolute;inset:0;background:radial-gradient(220px 120px at 50% 115%,rgba(180,154,98,.4),transparent 70%)}
-.v1{background:linear-gradient(135deg,#141e31,#2e4066)}
-.v2{background:linear-gradient(135deg,#1b2740,#4a3a20)}
-.v3{background:linear-gradient(135deg,#2a2113,#1c2a44)}
-.v4{background:linear-gradient(135deg,#182338,#57431f)}
-.v5{background:linear-gradient(135deg,#202c46,#6b5636)}
-.v6{background:linear-gradient(135deg,#33270f,#24344f)}
-.card-icon{position:relative;z-index:1;width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(180,154,98,.65);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.15);transition:transform .35s}
-.card:hover .card-icon{transform:scale(1.08) rotate(-4deg)}
-.card-icon svg{width:36px;height:36px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.card-body{padding:1.8rem 1.8rem 1.7rem;display:flex;flex-direction:column;flex:1}
-.card .tag{font-family:var(--micro);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);font-weight:500;margin-bottom:.7rem}
-.card h2{font-size:1.5rem;margin-bottom:.65rem;transition:color .25s}
-.card:hover h2{color:var(--gold-deep)}
-.card p.desc{color:var(--muted);font-size:.95rem;flex:1}
-.card-cta{margin-top:1.3rem;font-family:var(--micro);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);display:inline-flex;align-items:center;gap:.5rem}
-.card-cta i{font-style:normal;transition:transform .25s}
-.card:hover .card-cta i{transform:translateX(5px)}
-footer{background:linear-gradient(180deg,#141e31,var(--navy));padding:3rem 1.5rem 2.6rem;text-align:center;color:#aab2c2;font-size:.9rem;border-top:1px solid rgba(180,154,98,.35)}
-footer .foot-brand{font-family:var(--serif);letter-spacing:.32em;color:var(--gold);font-size:1.1rem;margin-bottom:.9rem}
-footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.1rem}
-footer a{color:#c9cfda;text-decoration:none;font-family:var(--micro);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
-footer a:hover{color:var(--gold)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.card-icon,.card-cta i{transition:none}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
-<header class="nav"><div class="nav-inner">
-<div style="display:flex;align-items:center;gap:.9rem"><a class="logo" href="../index.html">AROMARIO</a><a class="lang-toggle" href="../../guias/index.html">ES</a></div>
-<ul class="nav-links">
-<li><a href="../index.html#funciones">Features</a></li>
-<li><a href="index.html">Guides</a></li>
-<li><a href="../../privacy.html">Privacy</a></li>
-</ul></div></header>
-<main>
-<section class="hero"><div class="wrap">
-<p class="crumb"><a href="../index.html">Home</a><span>/</span>Guides</p>
-<p class="eyebrow">Learn</p>
-<h1>Perfume guides</h1>
-<p class="lede">Educational articles to understand the world of fragrance: occasions, fragrance families, longevity, clones, and much more.</p>
-</div></section>
-<section class="grid-section"><div class="wrap"><div class="grid">
-<a class="card" href="como-elegir-perfume-segun-ocasion.html">
-<img src="images/ocasion.webp" alt="How to choose perfume by occasion" style="width:100%;height:170px;object-fit:cover;display:block">
-<div class="card-body"><p class="tag">Occasions</p><h2>How to choose perfume by occasion</h2><p class="desc">Office, dates, events, sports, and church: which fragrance works for each moment.</p><span class="card-cta">Read guide <i>&rarr;</i></span></div>
-</a>
-<a class="card" href="familias-olfativas-guia.html">
-<img src="images/familias.webp" alt="Fragrance families guide" style="width:100%;height:170px;object-fit:cover;display:block">
-<div class="card-body"><p class="tag">Basics</p><h2>Fragrance families guide</h2><p class="desc">Citrus, floral, woody, oriental, foug&egrave;re, chypre, and gourmand, explained.</p><span class="card-cta">Read guide <i>&rarr;</i></span></div>
-</a>
-<a class="card" href="mejores-perfumes-verano-2026.html">
-<img src="images/verano.webp" alt="The best perfumes for each season" style="width:100%;height:170px;object-fit:cover;display:block">
-<div class="card-body"><p class="tag">Seasons</p><h2>The best perfumes by season</h2><p class="desc">Spring, summer, fall, and winter: which fragrance to wear in each season.</p><span class="card-cta">Read guide <i>&rarr;</i></span></div>
-</a>
-<a class="card" href="perfume-dure-mas-trucos.html">
-<img src="images/duracion.webp" alt="Tricks to make your perfume last longer" style="width:100%;height:170px;object-fit:cover;display:block">
-<div class="card-body"><p class="tag">Tips</p><h2>Tricks to make your perfume last longer</h2><p class="desc">12 proven tips: hydration, application points, storage, and more.</p><span class="card-cta">Read guide <i>&rarr;</i></span></div>
-</a>
-<a class="card" href="perfumes-clon-vs-originales.html">
-<img src="images/clon.webp" alt="Clone vs original perfumes" style="width:100%;height:170px;object-fit:cover;display:block">
-<div class="card-body"><p class="tag">Buying guide</p><h2>Clone vs original: is it worth it?</h2><p class="desc">An honest look at clone perfumes: real differences and when they make sense.</p><span class="card-cta">Read guide <i>&rarr;</i></span></div>
-</a>
-<a class="card" href="notas-salida-corazon-fondo.html">
-<img src="images/notas.webp" alt="Top, heart, and base notes" style="width:100%;height:170px;object-fit:cover;display:block">
-<div class="card-body"><p class="tag">Basics</p><h2>Top, heart, and base notes</h2><p class="desc">Why a perfume changes over the hours and how to use it to choose better.</p><span class="card-cta">Read guide <i>&rarr;</i></span></div>
-</a>
-</div></div></section>
+<a class="skip" href="#main">Skip to content</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index.html">AROMARIO</a>
+    <nav aria-label="Principal"><ul class="nav-links"><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#your-day">How it works</a></li><li><a href="../index.html#gallery">Gallery</a></li><li><a href="../guias/index.html" aria-current="page">Guides</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></nav>
+    <div class="lang" role="group" aria-label="Idioma / Language"><a href="../../guias/index.html" hreflang="es" lang="es" data-lang="es" aria-current="false">ES</a><a href="#" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a></div>
+    <a class="btn btn-primary btn-sm" href="../index.html#download">Coming soon</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#your-day">How it works</a></li><li><a href="../index.html#gallery">Gallery</a></li><li><a href="../guias/index.html" aria-current="page">Guides</a></li><li><a href="../index.html#faq">FAQ</a></li></ul>
+  <a class="btn btn-primary" href="../index.html#download"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Coming soon to Google Play</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="crumb"><a href="../index.html">Home</a> / Perfume guides</p><h1>Perfume guides</h1><p class="lede">Educational articles to understand the world of fragrance: occasions, fragrance families, longevity, clones, and much more.</p></div></section>
+<div class="wrap grid-guides"><div class="guides"><a class="guide rise" href="como-elegir-perfume-segun-ocasion.html"><img src="images/ocasion.webp" alt="How to choose perfume by occasion" loading="lazy"><div><span class="tag">Occasions</span><h3>How to choose perfume by occasion</h3><p>Office, dates, events, sports, and church: which fragrance works for each moment.</p><span class="go">Read guide →</span></div></a><a class="guide rise" href="familias-olfativas-guia.html"><img src="images/familias.webp" alt="Fragrance families guide" loading="lazy"><div><span class="tag">Basics</span><h3>Fragrance families guide</h3><p>Citrus, floral, woody, oriental, fougère, chypre, and gourmand, explained.</p><span class="go">Read guide →</span></div></a><a class="guide rise" href="mejores-perfumes-verano-2026.html"><img src="images/verano.webp" alt="The best perfumes for each season" loading="lazy"><div><span class="tag">Seasons</span><h3>The best perfumes by season</h3><p>Spring, summer, fall, and winter: which fragrance to wear in each season.</p><span class="go">Read guide →</span></div></a><a class="guide rise" href="perfume-dure-mas-trucos.html"><img src="images/duracion.webp" alt="Tricks to make your perfume last longer" loading="lazy"><div><span class="tag">Tips</span><h3>Tricks to make your perfume last longer</h3><p>12 proven tips: hydration, application points, storage, and more.</p><span class="go">Read guide →</span></div></a><a class="guide rise" href="perfumes-clon-vs-originales.html"><img src="images/clon.webp" alt="Clone vs original perfumes" loading="lazy"><div><span class="tag">Buying guide</span><h3>Clone vs original: is it worth it?</h3><p>An honest look at clone perfumes: real differences and when they make sense.</p><span class="go">Read guide →</span></div></a><a class="guide rise" href="notas-salida-corazon-fondo.html"><img src="images/notas.webp" alt="Top, heart, and base notes" loading="lazy"><div><span class="tag">Basics</span><h3>Top, heart, and base notes</h3><p>Why a perfume changes over the hours and how to use it to choose better.</p><span class="go">Read guide →</span></div></a></div></div>
 </main>
-<footer>
-<p class="foot-brand">AROMARIO</p>
-<nav>
-<a href="../../privacy.html">Privacy Policy</a>
-<a href="../../terms.html">Terms and Conditions</a>
-<a href="index.html">Perfume Guides</a>
-</nav>
-<p>© 2026 Clab HF Development. All rights reserved.</p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="../index.html">AROMARIO</a><p>Your digital perfume wardrobe.</p></div>
+      <div><h4>The app</h4><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#your-day">How it works</a></li><li><a href="../index.html#gallery">Gallery</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div><div><h4>Learn</h4><ul><li><a href="../guias/index.html">Perfume guides</a></li><li><a href="../guias/familias-olfativas-guia.html">Fragrance families</a></li><li><a href="../guias/notas-salida-corazon-fondo.html">Perfume notes</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy</a></li><li><a href="../terms.html">Terms</a></li><li><a href="../delete.html">Delete account</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. All rights reserved.</span><span>Contact: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
 </footer>
+<script src="../../assets/site.js" defer></script>
 </body>
 </html>

@@ -2,121 +2,41 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<title>Los mejores perfumes según la estación — AROMARIO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Los mejores perfumes según la estación — Aromario</title>
 <meta name="description" content="Guía de perfumes por estación: qué familias olfativas funcionan en primavera, verano, otoño e invierno, y cómo rotar tu armario durante todo el año.">
-<meta property="og:title" content="Los mejores perfumes según la estación — AROMARIO">
+<meta property="og:title" content="Los mejores perfumes según la estación — Aromario">
 <meta property="og:description" content="Guía de perfumes por estación: qué familias olfativas funcionan en primavera, verano, otoño e invierno, y cómo rotar tu armario durante todo el año.">
 <meta property="og:type" content="article">
-<style>
-:root{
---bg:#FFFFFF;--light:#F7F6F2;--navy:#182338;--gold:#B49A62;--gold-deep:#9a7f4e;
---gold-soft:rgba(180,154,98,.14);--text:#1d1d1f;--muted:#5c6470;--labels:#F0EEE8;
---serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
---sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
---micro:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.8;min-height:100vh;-webkit-font-smoothing:antialiased}
-::selection{background:rgba(180,154,98,.3)}
-h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.2;font-weight:600}
-a{color:inherit}
-a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
-.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(24,35,56,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(180,154,98,.3);box-shadow:0 2px 18px rgba(24,35,56,.25)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px;margin:0 auto;padding:0 1.5rem}
-.logo{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.32em;color:var(--gold);text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
-.nav-links a{text-decoration:none;color:#dfe3ea;font-family:var(--micro);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:color .25s;position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-7px;height:1px;width:0;background:var(--gold);transition:width .3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-links a:hover::after{width:100%}
-@media (max-width:720px){.nav-links li:not(:last-child){display:none}}
-.hero-article{position:relative;overflow:hidden;background:linear-gradient(180deg,#F5F2EB 0%,var(--bg) 100%);padding:9.5rem 0 3.5rem}
-.hero-article::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 300px at 85% 8%,rgba(180,154,98,.18),transparent 70%),radial-gradient(520px 280px at 6% 92%,rgba(24,35,56,.06),transparent 70%);pointer-events:none}
-.hero-article::after{content:"\2766";position:absolute;right:4%;bottom:-.38em;font-family:var(--serif);font-size:11rem;line-height:1;color:rgba(180,154,98,.1);pointer-events:none;transform:rotate(-8deg)}
-.hero-article .wrap{position:relative;z-index:1}
-.back{margin-bottom:1.7rem}
-.back a{font-family:var(--micro);font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .25s,color .25s}
-.back a:hover{color:var(--gold);border-color:var(--gold)}
-.eyebrow{font-family:var(--micro);font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.3rem;font-weight:500}
-.eyebrow::before{content:"\2726  ";color:var(--gold)}
-.article-title{font-size:clamp(2.2rem,5.4vw,3.3rem);margin-bottom:1.1rem;letter-spacing:.01em}
-.article-lead{color:var(--muted);max-width:640px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.3rem;line-height:1.6}
-.article-meta{margin-top:1.7rem;font-size:.82rem;color:var(--muted);letter-spacing:.06em;display:flex;align-items:center;gap:.7rem}
-.article-meta::before{content:"";width:36px;height:1px;background:var(--gold);display:inline-block;flex:none}
-.article-meta span{color:var(--gold-deep);font-weight:600;letter-spacing:.16em;font-family:var(--micro);font-size:.76rem;text-transform:uppercase}
-.article-body{padding:3.2rem 0 4.5rem}
-.article-body p{margin-bottom:1.5rem;font-size:1.04rem;color:#2a2a2e}
-.article-body>.wrap>p:first-of-type::first-letter{font-family:var(--serif);font-weight:700;font-size:3.4em;float:left;line-height:.82;padding:.08em .14em 0 0;color:var(--gold-deep)}
-.article-body h2{font-size:2.05rem;margin:3rem 0 1.2rem;position:relative;padding-bottom:.65rem}
-.article-body h2::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:2px;background:linear-gradient(90deg,var(--gold-deep),rgba(180,154,98,0))}
-.article-body h3{font-size:1.42rem;margin:2.1rem 0 .8rem;font-style:italic;font-weight:600}
-.article-body ul,.article-body ol{margin:0 0 1.6rem 1.2rem}
-.article-body li{margin-bottom:.6rem;font-size:1.02rem;padding-left:.3rem}
-.article-body ul li::marker{color:var(--gold-deep)}
-.article-body ol li::marker{color:var(--gold-deep);font-family:var(--serif);font-weight:700}
-.article-body strong{color:var(--navy)}
-.article-body a{color:var(--gold-deep);text-underline-offset:3px}
-.tip{position:relative;background:linear-gradient(180deg,#FCFAF5,#F6F1E7);border:1px solid rgba(180,154,98,.4);border-radius:14px;padding:1.7rem 1.7rem 1.5rem 4rem;margin:2.4rem 0;font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.65;color:var(--navy);box-shadow:0 10px 30px rgba(180,154,98,.12)}
-.tip::before{content:"";display:none}
-.tip strong{font-style:normal;font-family:var(--micro);font-weight:600;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:.45rem}
-.related{background:var(--light);border:1px solid rgba(24,35,56,.08);border-radius:16px;padding:2.1rem 2.2rem;margin-top:3.2rem;position:relative;overflow:hidden}
-.related::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--gold),var(--gold-deep))}
-.related h3{font-size:1.45rem;margin-bottom:1rem}
-.related ul{list-style:none;margin:0}
-.related li{margin-bottom:0;border-bottom:1px solid rgba(24,35,56,.07)}
-.related li:last-child{border-bottom:none}
-.related a{color:var(--navy);text-decoration:none;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0;transition:color .25s,padding-left .25s}
-.related a::after{content:"\2192";color:var(--gold);transition:transform .25s;flex:none}
-.related a:hover{color:var(--gold-deep);padding-left:.35rem}
-.related a:hover::after{transform:translateX(4px)}
-.cta-box{position:relative;overflow:hidden;text-align:center;background:linear-gradient(140deg,#101a2e,var(--navy) 60%,#22314f);border-radius:20px;padding:3rem 2rem;margin-top:3.2rem;border:1px solid rgba(180,154,98,.35)}
-.cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(440px 200px at 50% 0%,rgba(180,154,98,.22),transparent 70%);pointer-events:none}
-.cta-box h3{position:relative;color:var(--gold);font-size:1.7rem;margin-bottom:.9rem}
-.cta-box p{position:relative;color:#aab2c2;font-size:.99rem;max-width:520px;margin:0 auto}
-footer{background:linear-gradient(180deg,#141e31,var(--navy));padding:3rem 1.5rem 2.6rem;text-align:center;color:#aab2c2;font-size:.9rem;border-top:1px solid rgba(180,154,98,.35)}
-footer .foot-brand{font-family:var(--serif);letter-spacing:.32em;color:var(--gold);font-size:1.1rem;margin-bottom:.9rem}
-footer nav{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.1rem}
-footer a{color:#c9cfda;text-decoration:none;font-family:var(--micro);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;transition:color .25s}
-footer a:hover{color:var(--gold)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media (max-width:640px){.article-body h2{font-size:1.7rem}.tip{padding:1.4rem 1.2rem 1.2rem 3.2rem;font-size:1.08rem}.hero-article::after{font-size:7rem}}
-
-.lang-toggle{font-family:var(--micro);font-size:.72rem;letter-spacing:.22em;color:var(--gold);text-decoration:none;border:1px solid rgba(180,154,98,.55);border-radius:999px;padding:.32rem .75rem;transition:background .25s,color .25s;white-space:nowrap}.lang-toggle:hover{background:rgba(180,154,98,.18);color:#fff}
-</style>
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="silk" aria-hidden="true"></div>
 <header class="nav">
-<div class="nav-inner">
-<div style="display:flex;align-items:center;gap:.9rem"><a class="logo" href="../index.html">AROMARIO</a><a class="lang-toggle" href="../en/guias/mejores-perfumes-verano-2026.html">EN</a></div>
-<ul class="nav-links">
-<li><a href="../index.html#funciones">Funciones</a></li>
-<li><a href="index.html">Guías</a></li>
-<li><a href="../privacy.html">Privacidad</a></li>
-</ul>
-</div>
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index.html">AROMARIO</a>
+    <nav aria-label="Principal"><ul class="nav-links"><li><a href="../index.html#funciones">Funciones</a></li><li><a href="../index.html#el-dia">Cómo funciona</a></li><li><a href="../index.html#galeria">Galería</a></li><li><a href="../guias/index.html" aria-current="page">Guías</a></li><li><a href="../index.html#faq">Preguntas</a></li></ul></nav>
+    <div class="lang" role="group" aria-label="Idioma / Language"><a href="#" hreflang="es" lang="es" data-lang="es" aria-current="true">ES</a><a href="../en/guias/mejores-perfumes-verano-2026.html" hreflang="en" lang="en" data-lang="en" aria-current="false">EN</a></div>
+    <a class="btn btn-primary btn-sm" href="../index.html#descargar">Próximamente</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
 </header>
-<main>
-<section class="hero-article">
-<div class="wrap">
-<p class="back"><a href="index.html">&larr; Todas las guías</a></p>
-<p class="eyebrow">Guía de perfumes</p>
-<h1 class="article-title">Los mejores perfumes según la estación</h1>
-<img src="images/verano.webp" alt="Los mejores perfumes según la estación" style="width:100%;border-radius:12px;margin:1.5rem 0">
-<p class="article-lead">Cada estación cambia las reglas del perfume: lo que brilla en agosto puede desaparecer en enero. Esta es la guía para vestir tu aroma durante todo el año.</p>
-<p class="article-meta"><span>AROMARIO</span> · Guía educativa · 8 min de lectura</p>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="../index.html#funciones">Funciones</a></li><li><a href="../index.html#el-dia">Cómo funciona</a></li><li><a href="../index.html#galeria">Galería</a></li><li><a href="../guias/index.html" aria-current="page">Guías</a></li><li><a href="../index.html#faq">Preguntas</a></li></ul>
+  <a class="btn btn-primary" href="../index.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Próximamente en Google Play</a>
 </div>
-</section>
-<article class="article-body">
-<div class="wrap">
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="back"><a href="index.html">← Todas las guías</a></p><p class="eyebrow" style="margin-top:1.4rem">Guía de perfumes</p><h1>Los mejores perfumes según la estación</h1><p class="article-lead">Cada estación cambia las reglas del perfume: lo que brilla en agosto puede desaparecer en enero. Esta es la guía para vestir tu aroma durante todo el año.</p><p class="article-meta">Aromario · Guía educativa · 8 min de lectura</p><img class="hero-img" src="images/verano.webp" alt="Los mejores perfumes según la estación"></div></section>
+<div class="wrap"><div class="prose">
 <p>El clima no solo decide qué ropa usas: también decide cómo se comporta tu perfume. El calor amplifica la proyección y evapora las notas ligeras, mientras el frío apaga los aromas y pide fragancias con más cuerpo. Por eso los amantes de los perfumes rotan su armario con las estaciones, igual que hacen con el closet.</p>
 <p>No necesitas una colección enorme para hacerlo bien. Con entender qué familia olfativa pide cada estación, dos o tres frascos bien elegidos te cubren cada temporada. Vamos estación por estación.</p>
-
 <h2>Primavera: el renacer</h2>
 <p>La primavera pide ligereza con optimismo. Después del invierno, la nariz quiere aire, flores y verde: fragancias luminosas que acompañen los días más largos sin resultar pesadas.</p>
 <h3>Lo que funciona</h3>
@@ -128,7 +48,6 @@ footer a:hover{color:var(--gold)}
 </ul>
 <h3>Lo que conviene evitar</h3>
 <p>Guarda todavía los orientales densos y las vainillas pesadas: a 20 grados empiezan a resultar opresivos. La primavera es transición, no el momento de las bombas invernales ni de los frescos extremos del verano.</p>
-
 <h2>Verano: la frescura manda</h2>
 <p>El verano es la temporada más exigente. El calor multiplica la proyección, el sudor altera las notas y una fragancia densa que en diciembre resulta acogedora, en agosto puede volverse agobiante. Aquí, menos es más.</p>
 <h3>Lo que funciona</h3>
@@ -146,7 +65,6 @@ footer a:hover{color:var(--gold)}
 <li><strong>Guardar mal los frascos:</strong> el calor y la luz degradan el perfume. Guarda tus frascos en un lugar fresco y oscuro, nunca en el coche.</li>
 </ul>
 <div class="tip"><strong>Truco de verano:</strong> guarda una muestra o un decant de tu fresco favorito en la nevera. Aplicarlo frío en un día de calor es una de las mejores sensaciones que existen.</div>
-
 <h2>Otoño: la transición cálida</h2>
 <p>El otoño es el puente entre la ligereza del verano y la profundidad del invierno. El aire se enfría, las noches se alargan y la nariz empieza a pedir calidez: es la temporada de los perfumes "acogedores".</p>
 <h3>Lo que funciona</h3>
@@ -158,7 +76,6 @@ footer a:hover{color:var(--gold)}
 </ul>
 <h3>El momento de rescatar</h3>
 <p>Esos perfumes que en verano guardaste por "demasiado intensos" vuelven a la rotación en otoño. Si un amaderado te parecía pesado en agosto, pruébalo de nuevo en octubre: el mismo perfume se comporta de forma muy distinta con diez grados menos.</p>
-
 <h2>Invierno: el abrazo cálido</h2>
 <p>El frío apaga la proyección: las moléculas del perfume se mueven más lento y la nariz las percibe menos. Por eso el invierno pide fragancias con cuerpo, de esas que se sienten como un abrigo.</p>
 <h3>Lo que funciona</h3>
@@ -171,7 +88,6 @@ footer a:hover{color:var(--gold)}
 <h3>La única temporada de las "bombas"</h3>
 <p>El invierno es el momento de esos perfumes potentes que el resto del año resultan excesivos. Aprovecha: aplica con generosidad, porque el frío se encargará de domar la proyección por ti.</p>
 <div class="tip"><strong>Regla de oro:</strong> si un perfume te hace sudar con solo olerlo en la tienda, es de invierno. Si te refresca con solo olerlo, es de verano.</div>
-
 <h2>Cómo rotar tu armario por estaciones</h2>
 <p>No necesitas cuatro colecciones separadas. La mayoría de los perfumes sirven en dos estaciones vecinas: un floral fresco va de primavera a verano, y un amaderado suave, de otoño a invierno. Con dos o tres frascos por estación —algunos compartidos— cubres el año entero.</p>
 <ul>
@@ -181,7 +97,6 @@ footer a:hover{color:var(--gold)}
 <li><strong>Guárdalos bien todo el año:</strong> lugar fresco, oscuro y seco. El calor y la luz degradan cualquier perfume, sea de la estación que sea.</li>
 </ul>
 <p>Y recuerda: la mejor guía es tu propia nariz. Estas son las reglas generales, pero si un "perfume de invierno" te hace feliz en julio, úsalo con moderación y disfrútalo. El perfume, al final, es para quien lo lleva.</p>
-
 <div class="related">
 <h3>Seguir explorando</h3>
 <ul>
@@ -194,19 +109,19 @@ footer a:hover{color:var(--gold)}
 </div>
 <div class="cta-box">
 <h3>¿Quieres la recomendación perfecta cada mañana?</h3>
-<p>AROMARIO organiza tu colección y te sugiere el perfume ideal según el clima y tu plan del día. Gratis para Android.</p>
-</div>
-</div>
-</article>
+<p>Aromario organiza tu colección y te sugiere el perfume ideal según el clima y tu plan del día. Gratis para Android.</p>
+<a class="btn" href="../index.html">Conocer Aromario</a></div>
+</div></div>
 </main>
-<footer>
-<p class="foot-brand">AROMARIO</p>
-<nav>
-<a href="../privacy.html">Política de privacidad</a>
-<a href="../terms.html">Términos y condiciones</a>
-<a href="index.html">Guías de perfumes</a>
-</nav>
-<p>© 2026 Clab HF Development. Todos los derechos reservados.</p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="../index.html">AROMARIO</a><p>Tu armario digital de perfumes.</p></div>
+      <div><h4>La app</h4><ul><li><a href="../index.html#funciones">Funciones</a></li><li><a href="../index.html#el-dia">Cómo funciona</a></li><li><a href="../index.html#galeria">Galería</a></li><li><a href="../index.html#faq">Preguntas</a></li></ul></div><div><h4>Aprende</h4><ul><li><a href="../guias/index.html">Guías de perfumes</a></li><li><a href="../guias/familias-olfativas-guia.html">Familias olfativas</a></li><li><a href="../guias/notas-salida-corazon-fondo.html">Notas de un perfume</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="../privacy.html">Privacidad</a></li><li><a href="../terms.html">Términos</a></li><li><a href="../delete.html">Eliminar cuenta</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Todos los derechos reservados.</span><span>Contacto: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
 </footer>
+<script src="../assets/site.js" defer></script>
 </body>
 </html>
