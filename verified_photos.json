@@ -9000,7 +9000,10 @@
   "halston_unbound_for_men",
   "dior_hypnotic_poison_edp",
   "tom_ford_costa_azzurra_parfum",
-  "parfum_d_empire_eau_de_gloire"
+  "parfum_d_empire_eau_de_gloire",
+  "al_wataniah_al_daiem_elixir",
+  "byredo_mojave_ghost_absolu",
+  "byredo_black_saffron_absolu"
  ],
  "photo_repo": {
   "212_vip_black_eau_de_parfum_spray_for_men_by_carolina_herrera": 2,
@@ -18002,7 +18005,10 @@
   "halston_unbound_for_men": 3,
   "dior_hypnotic_poison_edp": 2,
   "tom_ford_costa_azzurra_parfum": 1,
-  "parfum_d_empire_eau_de_gloire": 1
+  "parfum_d_empire_eau_de_gloire": 1,
+  "al_wataniah_al_daiem_elixir": 4,
+  "byredo_mojave_ghost_absolu": 4,
+  "byredo_black_saffron_absolu": 4
  },
  "default_ext": "webp",
  "photo_ext": {
