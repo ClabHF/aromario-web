@@ -1,7 +1,7 @@
 /* Aromario — página de deseos compartidos (ES/EN). Lee ?ids=… y arma la lista solo con datos
    públicos: nombre y marca de data/perfumes-ligero.json y la foto de verified_photos.json.
    El enlace no lleva datos de la cuenta; la lista no se marca como comprada.
-   Enlace corto (app 1.1.20+): ?v=1&i=… = índices en el orden canónico data/orden-v1.json (3 caracteres
+   Enlace corto (app 1.1.19+): ?v=1&i=… = índices en el orden canónico data/orden-v1.json (3 caracteres
    en base 36 por perfume) + 1 carácter de verificación. Los enlaces viejos con ?ids= siguen valiendo. */
 (function () {
   var root = document.getElementById("wishlist");
