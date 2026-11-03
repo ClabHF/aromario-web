@@ -1,4 +1,4 @@
-/* Aromario — página de deseos compartidos (ES/EN). Lee ?ids=… y arma la lista solo con datos
+/* Aromario — página de deseos compartidos (9 idiomas). Lee ?ids=… y arma la lista solo con datos
    públicos: nombre y marca de data/perfumes-ligero.json y la foto de verified_photos.json.
    El enlace no lleva datos de la cuenta; la lista no se marca como comprada.
    Enlace corto (app 1.1.19+): ?v=1&i=… = índices en el orden canónico data/orden-v1.json (3 caracteres
@@ -6,11 +6,22 @@
 (function () {
   var root = document.getElementById("wishlist");
   if (!root) return;
-  var en = document.documentElement.lang === "en";
+  // 9 idiomas: el de la página (<html lang>); cualquier otro -> español.
+  var lang = (document.documentElement.lang || "es").toLowerCase().slice(0, 2);
   var base = root.getAttribute("data-base") || "";
-  var T = en
-    ? { buy: "Buy", invalid: "This link is damaged or incomplete. Ask for it again.", empty: "This list is empty or the link is incomplete.", error: "We couldn't load the list. Try again in a moment.", count: function (n) { return n === 1 ? "1 perfume" : n + " perfumes"; } }
-    : { buy: "Comprar", invalid: "Este enlace está dañado o incompleto. Pide que te lo envíen de nuevo.", empty: "Esta lista está vacía o el enlace está incompleto.", error: "No pudimos cargar la lista. Prueba de nuevo en un momento.", count: function (n) { return n === 1 ? "1 perfume" : n + " perfumes"; } };
+  function plain(one, many) { return function (n) { return n === 1 ? one : n + " " + many; }; }
+  var TT = {
+    es: { buy: "Comprar", invalid: "Este enlace está dañado o incompleto. Pide que te lo envíen de nuevo.", empty: "Esta lista está vacía o el enlace está incompleto.", error: "No pudimos cargar la lista. Prueba de nuevo en un momento.", count: plain("1 perfume", "perfumes") },
+    en: { buy: "Buy", invalid: "This link is damaged or incomplete. Ask for it again.", empty: "This list is empty or the link is incomplete.", error: "We couldn't load the list. Try again in a moment.", count: plain("1 perfume", "perfumes") },
+    pt: { buy: "Comprar", invalid: "Este link está danificado ou incompleto. Peça que enviem de novo.", empty: "Esta lista está vazia ou o link está incompleto.", error: "Não conseguimos carregar a lista. Tente de novo em um instante.", count: plain("1 perfume", "perfumes") },
+    fr: { buy: "Acheter", invalid: "Ce lien est abîmé ou incomplet. Demandez qu'on vous le renvoie.", empty: "Cette liste est vide ou le lien est incomplet.", error: "Impossible de charger la liste. Réessayez dans un instant.", count: plain("1 parfum", "parfums") },
+    de: { buy: "Kaufen", invalid: "Dieser Link ist beschädigt oder unvollständig. Bitte erneut anfordern.", empty: "Diese Liste ist leer oder der Link ist unvollständig.", error: "Die Liste konnte nicht geladen werden. Versuch es gleich noch einmal.", count: plain("1 Parfüm", "Parfüms") },
+    it: { buy: "Acquista", invalid: "Questo link è danneggiato o incompleto. Chiedi che te lo rimandino.", empty: "Questa lista è vuota o il link è incompleto.", error: "Non siamo riusciti a caricare la lista. Riprova tra un momento.", count: plain("1 profumo", "profumi") },
+    ar: { buy: "شراء", invalid: "هذا الرابط تالف أو غير مكتمل. اطلب إرساله من جديد.", empty: "هذه القائمة فارغة أو الرابط غير مكتمل.", error: "تعذّر تحميل القائمة. حاول مجددًا بعد لحظة.", count: function (n) { return n === 1 ? "عطر واحد" : n === 2 ? "عطران" : n <= 10 ? n + " عطور" : n + " عطرًا"; } },
+    tr: { buy: "Satın al", invalid: "Bu bağlantı bozuk ya da eksik. Yeniden göndermelerini iste.", empty: "Bu liste boş ya da bağlantı eksik.", error: "Liste yüklenemedi. Birazdan tekrar dene.", count: function (n) { return n + " parfüm"; } },
+    pl: { buy: "Kup", invalid: "Ten link jest uszkodzony lub niepełny. Poproś o ponowne wysłanie.", empty: "Ta lista jest pusta albo link jest niepełny.", error: "Nie udało się wczytać listy. Spróbuj ponownie za chwilę.", count: function (n) { return "perfumy: " + n; } }
+  };
+  var T = TT[lang] || TT.es;
   var CJ = "https://www.jdoqocy.com/click-101899442-15733833";
 
   function ids() {
