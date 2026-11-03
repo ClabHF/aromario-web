@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name='impact-site-verification' value='97374b3e-8fb9-4936-aa57-6c6055da868b'>
+<link rel="alternate" hreflang="es" href="https://aromario.app/">
+<link rel="alternate" hreflang="en" href="https://aromario.app/en/">
+<link rel="alternate" hreflang="pt-BR" href="https://aromario.app/pt/">
+<link rel="alternate" hreflang="fr" href="https://aromario.app/fr/">
+<title>Aromario — Votre garde-robe digitale de parfums</title>
+<meta name="description" content="Aromario connaît votre collection de parfums, regarde la météo et votre programme du jour et vous dit quel parfum porter. Superposez les parfums, découvrez-en de nouveaux et gardez vos souhaits. Gratuit pour Android.">
+<meta property="og:title" content="Aromario — Votre garde-robe digitale de parfums">
+<meta property="og:description" content="Aromario connaît votre collection de parfums, regarde la météo et votre programme du jour et vous dit quel parfum porter. Superposez les parfums, découvrez-en de nouveaux et gardez vos souhaits. Gratuit pour Android.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://aromario.app/images/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aromario.app/images/og-cover.png">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<script>(function(){try{var c=localStorage.getItem("aromario_lang");if(c){if(c==="en")location.replace("en/index.html");return;}var l=(navigator.language||"").toLowerCase();if(l.indexOf("en")===0)location.replace("en/index.html");}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="videos/ocasiones.webp">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<script>try{if(sessionStorage.getItem("ab")){document.documentElement.classList.add("noboot")}else{sessionStorage.setItem("ab","1")}}catch(e){}</script>
+<div class="boot" aria-hidden="true"><span>A</span><span>R</span><span>O</span><span>M</span><span>A</span><span>R</span><span>I</span><span>O</span></div>
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index-fr.html">AROMARIO</a>
+    <nav aria-label="Principal"><ul class="nav-links"><li><a href="#funciones">Fonctions</a></li><li><a href="#el-dia">Comment ça marche</a></li><li><a href="#galeria">Galerie</a></li><li><a href="guias/index-fr.html">Guides</a></li><li><a href="#faq">Questions</a></li></ul></nav>
+    <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Langue / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Automatique</button>
+<a href="../index.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../en/index.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../pt/index.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="#" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr" class="current" aria-current="true">Français</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../index.html",en:"../en/index.html",pt:"../pt/index.html",fr:null};
+var CUR="fr",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){}});});
+})();
+</script>
+    <a class="btn btn-primary btn-sm" href="#descargar">Bientôt</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Fermer le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="#funciones">Fonctions</a></li><li><a href="#el-dia">Comment ça marche</a></li><li><a href="#galeria">Galerie</a></li><li><a href="guias/index-fr.html">Guides</a></li><li><a href="#faq">Questions</a></li></ul>
+  <a class="btn btn-primary" href="#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Bientôt sur Google Play</a>
+</div>
+<main id="main">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="intro">
+      <p class="eyebrow">Votre garde-robe digitale de parfums</p>
+      <h1>Le parfum juste, <em>chaque matin.</em></h1>
+      <p class="lead">Aromario connaît votre collection, regarde la météo et votre programme du jour, et vous dit quel parfum porter. Il vous aide aussi à superposer les parfums et à découvrir ceux qui vous manquent.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Bientôt sur Google Play</a>
+        <a class="btn btn-glass" href="#el-dia">Voir comment ça marche<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <p class="hero-meta"><span>Gratuit</span><span>Pour Android</span><span>Connexion avec Google</span></p>
+    </div>
+    <div class="stage">
+      <div class="halo"></div>
+      <div class="float-card fc-pick">
+        <div><div class="k">Le choix du jour</div><div class="v">Tequila Bleu</div><div class="s">Tequila Perfumes</div></div>
+        <div><div class="pct">99 %</div><div class="k">affinité</div></div>
+      </div>
+      <div class="phone"><span class="notch"></span><div class="screen"><video src="videos/ocasiones.mp4" poster="videos/ocasiones.webp" width="540" height="1056" muted loop playsinline preload="metadata" data-loop aria-label="Occasions sur l’écran Aujourd’hui : le choix change à chaque occasion"></video></div></div>
+      <div class="float-card fc-weather"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4.5V3M3.5 9H2M4.8 5.8l-1-1M11.2 5.8l1-1"/><path d="M5.2 11A3.5 3.5 0 0 1 11 7.6"/><path d="M8 19h9.5a3.5 3.5 0 0 0 .3-7 5 5 0 0 0-9.6 1.3A2.9 2.9 0 0 0 8 19z"/></svg><div><div class="v">19 °C</div><div class="s">Ensoleillé · Quotidien</div></div></div>
+    </div>
+  </div>
+</section>
+<div class="wrap"><div class="figures"><div class="figure"><b>12 600+</b><span>Parfums dans le catalogue</span></div><div class="figure"><b>8</b><span>Occasions au choix</span></div><div class="figure"><b>1</b><span>Choix clair chaque matin</span></div><div class="figure"><b>100 %</b><span>Gratuit</span></div></div></div>
+<section class="story" id="el-dia" aria-labelledby="story-title">
+  <div class="story-sticky">
+    <div class="wrap story-grid">
+      <div class="story-copy">
+        <p class="eyebrow">Une journée dans Aromario</p>
+        <h2 id="story-title" class="sec-title" style="font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:500;margin-top:.9rem">Vous ouvrez l’app. <em>Votre parfum est déjà choisi.</em></h2>
+        <p style="color:var(--muted);margin-top:1rem;max-width:30rem">Continuez à faire défiler : parcourez l’écran Aujourd’hui en entier, tel que vous le voyez sur votre téléphone.</p>
+        <div class="story-now" aria-live="polite"></div>
+        <div class="tod" aria-hidden="true" data-labels="Matin|Après-midi|Soir"><i></i><b>7:00</b><span>Matin</span></div>
+        <ol class="story-steps"><li><span class="n">1</span><b>Le choix du jour</b><span>Le parfum de votre garde-robe qui correspond le mieux à la météo, à la saison et à votre programme, avec son affinité avec vous.</span></li><li><span class="n">2</span><b>À découvrir</b><span>Un parfum que vous n’avez pas encore et qui correspond à vos goûts. S’il est dans votre liste de souhaits, c’est encore mieux.</span></li><li><span class="n">3</span><b>Votre Top 3</b><span>Les alternatives du jour, si vous avez envie d’autre chose.</span></li><li><span class="n">4</span><b>À éviter aujourd’hui</b><span>Ce qui ne convient pas à cette météo ou à cette occasion.</span></li></ol>
+        <div class="progress" aria-hidden="true"><i></i></div>
+      </div>
+      <div class="phone"><span class="notch"></span><div class="screen" tabindex="0" aria-label="Écran Aujourd’hui d’Aromario en entier : le choix du jour, à découvrir, Top 3 et à éviter"><img src="images/app/hoy.webp" width="580" height="2516" alt="Écran Aujourd’hui d’Aromario en entier : le choix du jour, à découvrir, Top 3 et à éviter" loading="eager"></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="funciones">
+  <div class="wrap">
+    <div class="sec-head rise"><p class="eyebrow">Fonctions</p><h2>Toute votre garde-robe, <em>pensée pour vous.</em></h2><p>Chaque fonction naît d’une question réelle : qu’est-ce que je porte aujourd’hui, avec quoi je le combine, qu’est-ce qui me manque.</p></div>
+    <div class="bento">
+      <article class="tile wide rise"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg></span><h3>Recommandation quotidienne</h3><p>Huit occasions au choix. La recommandation s’adapte à la météo de votre ville heure par heure : température, humidité et pluie.</p><div class="chips"><span class="chip on">Quotidien</span><span class="chip">Rendez-vous</span><span class="chip">Soirée</span><span class="chip">Événements</span><span class="chip">Bureau</span><span class="chip">Sport</span><span class="chip">Église</span><span class="chip">Sorties</span></div></article>
+      <article class="tile rise"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h3>Superposer les parfums</h3><p>Quels sont les deux parfums de votre garde-robe qui se combinent, et dans quel ordre les appliquer.</p>
+        <div class="mini"><div class="mini-row" style="display:block"><div style="display:flex;justify-content:space-between;gap:1rem"><b>L’Homme → 9PM</b><span class="p">48 %</span></div><small>Yves Saint Laurent + Afnan</small><div class="bar"><i style="width:48%"></i></div></div></div></article>
+      <article class="tile rise"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 3v18M10 11v2M14 11v2"/></svg></span><h3>Fiche complète</h3><p>Notes de tête, de cœur et de fond, accords, tenue et sillage de chaque parfum.</p><div class="chips"><span class="chip">Bergamote</span><span class="chip">Orange</span><span class="chip">Vanille</span><span class="chip">Ambre</span></div></article>
+      <article class="tile rise"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><h3>Trouver des similaires</h3><p>Trouvez des parfums ressemblant à un parfum que vous aimez, y compris ses clones les plus connus.</p><div class="mini"><div class="mini-row"><div><b>Dior Homme</b><small>Dior</small></div></div><div class="mini-row"><div><b>Dior Homme Cologne</b><small>Dior</small></div></div></div></article>
+      <article class="tile rise"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13c2 0 3.5-1.5 6-1.5h7c1.5 0 2.5-1 3.5-2.5.5 1.8-.3 4-2.5 5-1.3 2-3.5 3-6 3-3 0-5.5-1.5-8-4z"/><path d="M10 11.5c0-1.5 1-2.5 2.5-2.5S15 10 15 11.5M12.5 9V7.5M8 18.5h9"/></svg></span><h3>Liste de souhaits</h3><p>Ceux que vous voulez essayer, classés par affinité avec vous et avec un lien pour les acheter.</p>
+        <div class="mini"><div class="mini-row"><div><b>Erba Pura</b><small>Xerjoff</small></div><span class="p">73 %</span></div></div></article>
+      <article class="tile half rise"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></span><h3>Notification et widget</h3><p>Chaque matin, à l’heure que vous choisissez, votre parfum du jour dans une notification et dans un widget toujours en accord avec l’app.</p>
+        <div class="mini"><div class="mini-row gold"><div><small style="letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">Le choix du jour</small><b>Tequila Bleu</b></div><span class="p">99 %</span></div></div></article>
+      <article class="tile half rise"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="18" cy="5.5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="M8.2 10.8l7.6-4M8.2 13.2l7.6 4"/></svg></span><h3>Partagez votre choix</h3><p>Une carte élégante avec votre parfum du jour, prête pour vos stories.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section" id="como-empezar" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rise"><p class="eyebrow">Comment commencer</p><h2>Prêt en <em>trois étapes.</em></h2></div>
+    <ol class="steps" style="list-style:none;margin:0;padding:0"><li class="step rise"><div class="n">01</div><h3>Connectez-vous et parlez-nous de vous</h3><p>Connectez-vous avec Google et répondez à un court questionnaire : votre ville, vos familles préférées, celles que vous ne supportez pas et à quel point vous aimez que votre parfum se remarque.</p></li><li class="step rise"><div class="n">02</div><h3>Ajoutez vos parfums</h3><p>Cherchez parmi plus de 12 600 parfums et ajoutez les vôtres d’un simple toucher.</p></li><li class="step rise"><div class="n">03</div><h3>Recevez votre choix</h3><p>Chaque matin, à l’heure que vous choisissez, votre parfum du jour. Et quand vous voulez, superpositions, similaires et nouvelles découvertes.</p></li></ol>
+  </div>
+</section>
+<section class="section" id="galeria" style="padding-top:0">
+  <div class="wrap"><div class="sec-head center rise"><p class="eyebrow">Galerie</p><h2>L’app, <em>écran par écran.</em></h2></div></div>
+  <div class="gallery edge-bleed" tabindex="0" aria-label="Galerie"><figure><div class="phone"><span class="notch"></span><div class="screen"><video src="videos/hoy.mp4" poster="videos/hoy.webp" width="540" height="1056" muted loop playsinline preload="none" data-loop aria-label="Écran Aujourd’hui : le Top 3 du jour"></video></div></div><figcaption><b>Aujourd’hui</b><span>Votre choix du jour et votre Top 3</span></figcaption></figure><figure><div class="phone"><span class="notch"></span><div class="screen"><video src="videos/armario.mp4" poster="videos/armario.webp" width="540" height="1056" muted loop playsinline preload="none" data-loop aria-label="Écran Ma garde-robe"></video></div></div><figcaption><b>Ma garde-robe</b><span>Votre collection, avec tenue et sillage</span></figcaption></figure><figure><div class="phone"><span class="notch"></span><div class="screen"><img src="images/app/buscar.webp" width="720" alt="Chercher des parfums" loading="lazy"></div></div><figcaption><b>Chercher des parfums</b><span>Plus de 12 600, avec filtres</span></figcaption></figure><figure><div class="phone"><span class="notch"></span><div class="screen"><video src="videos/ficha.mp4" poster="videos/ficha.webp" width="540" height="1056" muted loop playsinline preload="none" data-loop aria-label="Écran Fiche du parfum"></video></div></div><figcaption><b>Fiche du parfum</b><span>Pyramide olfactive complète</span></figcaption></figure><figure><div class="phone"><span class="notch"></span><div class="screen"><img src="images/app/mezclar.webp" width="720" alt="Superposer les parfums" loading="lazy"></div></div><figcaption><b>Superposer les parfums</b><span>Des duos qui fonctionnent</span></figcaption></figure><figure><div class="phone"><span class="notch"></span><div class="screen"><video src="videos/deseos.mp4" poster="videos/deseos.webp" width="540" height="1056" muted loop playsinline preload="none" data-loop aria-label="Écran Liste de souhaits"></video></div></div><figcaption><b>Liste de souhaits</b><span>Classée par affinité</span></figcaption></figure><figure><div class="phone"><span class="notch"></span><div class="screen"><img src="images/app/perfil.webp" width="720" alt="Votre profil" loading="lazy"></div></div><figcaption><b>Votre profil</b><span>Votre notification quotidienne et vos données</span></figcaption></figure></div>
+  <div class="gal-ctrl"><button type="button" data-gal="prev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-gal="next" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
+</section>
+<section class="section" id="guias" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rise"><p class="eyebrow">Guides</p><h2>Apprenez à <em>mieux choisir.</em></h2></div>
+    <div class="guides"><a class="guide rise" href="guias/como-elegir-perfume-segun-ocasion-fr.html"><img src="guias/images/ocasion.webp" alt="Comment choisir son parfum selon l’occasion" loading="lazy"><div><span class="tag">Occasions</span><h3>Comment choisir son parfum selon l’occasion</h3><p>Bureau, rendez-vous, événements, sport et église : quel parfum fonctionne à chaque moment.</p><span class="go">Lire le guide →</span></div></a><a class="guide rise" href="guias/familias-olfativas-guia-fr.html"><img src="guias/images/familias.webp" alt="Guide des familles olfactives" loading="lazy"><div><span class="tag">Fondamentaux</span><h3>Guide des familles olfactives</h3><p>Hespéridés, floraux, boisés, orientaux, fougère, chyprés et gourmands, expliqués.</p><span class="go">Lire le guide →</span></div></a><a class="guide rise" href="guias/mejores-perfumes-verano-2026-fr.html"><img src="guias/images/verano.webp" alt="Les meilleurs parfums frais pour l’été" loading="lazy"><div><span class="tag">Saison</span><h3>Les meilleurs parfums selon la saison</h3><p>Printemps, été, automne et hiver : quel parfum porter à chaque saison.</p><span class="go">Lire le guide →</span></div></a></div>
+    <p style="margin-top:2rem"><a class="btn btn-glass" href="guias/index-fr.html">Voir les 6 guides<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+<section class="section" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head center rise"><p class="eyebrow">Questions</p><h2>Questions <em>fréquentes.</em></h2></div>
+    <div class="faq"><details><summary>Aromario est-il gratuit ?</summary><p>Oui. Quand vous achetez un parfum via un lien de l’app, la boutique peut nous verser une commission, sans coût supplémentaire pour vous.</p></details><details><summary>Ai-je besoin d’un compte ?</summary><p>Vous vous connectez avec votre compte Google. Pas besoin de créer de nouveaux mots de passe.</p></details><details><summary>Où sont enregistrés mes parfums ?</summary><p>Sur votre téléphone. Depuis la version 1.0.108, si vous vous connectez, votre garde-robe et votre liste de souhaits sont aussi sauvegardées dans le cloud avec votre compte, pour ne pas les perdre en changeant de téléphone.</p></details><details><summary>Comment choisit-il mon parfum du jour ?</summary><p>Il regarde la météo de votre ville heure par heure, la saison, l’occasion que vous choisissez et votre profil. En plus, il fait tourner votre collection pour que ce ne soit pas toujours le même qui sorte.</p></details><details><summary>Qu’est-ce que « À découvrir » ?</summary><p>Une suggestion quotidienne d’un parfum que vous n’avez pas et qui correspond à vos goûts, pour élargir votre collection.</p></details><details><summary>Puis-je supprimer mon compte ?</summary><p>Oui. Dans l’app, dans Profil › Supprimer mon compte et mes données, ou depuis la <a href="delete-fr.html">page de suppression de compte</a>.</p></details><details><summary>Sur quels téléphones fonctionne-t-il ?</summary><p>Pour l’instant, sur Android. La version pour iPhone arrivera plus tard.</p></details></div>
+  </div>
+</section>
+<section id="descargar"><div class="wrap"><div class="cta rise">
+  <p class="eyebrow" style="color:#9FC0E2;position:relative">AROMARIO</p>
+  <h2 style="margin-top:1rem">Votre collection mérite <em>un écrin élégant.</em></h2>
+  <p>Aromario arrive bientôt sur Google Play, gratuit. Le lancement est déjà en cours d’examen chez Google : publication imminente.</p>
+  <span class="btn" aria-disabled="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Bientôt sur Google Play</span>
+</div></div></section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index-fr.html">AROMARIO</a><p class="foot-phrase">Le parfum juste, <em>chaque matin.</em></p><p>Votre garde-robe digitale de parfums.</p></div>
+      <div><h4>L’application</h4><ul><li><a href="#funciones">Fonctions</a></li><li><a href="#el-dia">Comment ça marche</a></li><li><a href="#galeria">Galerie</a></li><li><a href="#faq">Questions</a></li></ul></div><div><h4>Apprendre</h4><ul><li><a href="guias/index-fr.html">Guides de parfums</a></li><li><a href="guias/familias-olfativas-guia-fr.html">Familles olfactives</a></li><li><a href="guias/notas-salida-corazon-fondo-fr.html">Notes d’un parfum</a></li></ul></div><div><h4>Légal</h4><ul><li><a href="privacy-fr.html">Confidentialité</a></li><li><a href="terms-fr.html">Conditions</a></li><li><a href="delete-fr.html">Supprimer le compte</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Tous droits réservés.</span><span>Contact : <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

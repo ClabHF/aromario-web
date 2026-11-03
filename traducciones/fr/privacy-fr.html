@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Politique de confidentialité — Aromario</title>
+<meta name="description" content="Quelles données Aromario utilise, pour quoi, où elles sont enregistrées et comment les supprimer.">
+<meta property="og:title" content="Politique de confidentialité — Aromario">
+<meta property="og:description" content="Quelles données Aromario utilise, pour quoi, où elles sont enregistrées et comment les supprimer.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index-fr.html">AROMARIO</a>
+    <nav aria-label="Principal"><ul class="nav-links"><li><a href="index-fr.html#funciones">Fonctions</a></li><li><a href="index-fr.html#el-dia">Comment ça marche</a></li><li><a href="index-fr.html#galeria">Galerie</a></li><li><a href="guias/index-fr.html">Guides</a></li><li><a href="index-fr.html#faq">Questions</a></li></ul></nav>
+    <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Langue / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Automatique</button>
+<a href="../privacy.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../en/privacy.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../pt/privacy.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="#" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr" class="current" aria-current="true">Français</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../privacy.html",en:"../en/privacy.html",pt:"../pt/privacy.html",fr:null};
+var CUR="fr",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){}});});
+})();
+</script>
+    <a class="btn btn-primary btn-sm" href="index-fr.html#descargar">Bientôt</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Fermer le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="index-fr.html#funciones">Fonctions</a></li><li><a href="index-fr.html#el-dia">Comment ça marche</a></li><li><a href="index-fr.html#galeria">Galerie</a></li><li><a href="guias/index-fr.html">Guides</a></li><li><a href="index-fr.html#faq">Questions</a></li></ul>
+  <a class="btn btn-primary" href="index-fr.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Bientôt sur Google Play</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="eyebrow">Légal</p><h1>Politique de confidentialité</h1><p class="date">Dernière mise à jour : 26 octobre 2026</p></div></section>
+<div class="wrap"><div class="prose"><p>Aromario est une app de Clab HF Development. Cette politique explique quelles données l’app utilise, pour quoi et comment vous pouvez les supprimer. Elle est écrite pour être comprise : si quelque chose n’est pas clair, écrivez-nous.</p>
+<h2><span class="n">1.</span>Données que nous utilisons</h2>
+<ul><li><strong>Votre compte Google :</strong> nom, e-mail et photo de profil. Pour utiliser Aromario, vous vous connectez avec Google ; c’est la seule façon d’y accéder.</li><li><strong>Votre profil de parfums :</strong> les réponses au questionnaire initial (tranche d’âge, genre, environnement de travail, familles préférées et celles que vous n’aimez pas, intensité que vous préférez, budget et heure de la notification quotidienne). Elles sont sauvegardées dans le cloud, liées à votre compte.</li><li><strong>Votre garde-robe et votre liste de souhaits :</strong> la liste des parfums que vous enregistrez. Ils sont conservés sur votre téléphone, dans une base de données chiffrée. Depuis la version 1.0.108, ils sont aussi sauvegardés dans le cloud, liés à votre compte, pour ne pas les perdre en changeant de téléphone.</li><li><strong>Votre ville et votre localisation :</strong> elles ne servent qu’à connaître la météo. Depuis la version 1.0.108, elles sont conservées uniquement sur votre téléphone (les versions précédentes les sauvegardaient avec votre profil ; lors de la mise à jour, elles sont supprimées du cloud). Pour demander les prévisions, l’app envoie au service météo des coordonnées approximatives, arrondies à environ 5 km, ou le nom de votre ville.</li><li><strong>Rapports d’erreurs :</strong> si l’app plante, un rapport technique est envoyé (modèle du téléphone, version d’Android et de l’app, et endroit où l’erreur s’est produite) pour pouvoir la corriger.</li><li><strong>Utilisation de l’app, de façon anonyme :</strong> nous comptons combien de fois l’écran Aujourd’hui est ouvert, la recommandation du jour affichée, un parfum ajouté à la garde-robe ou à la liste de souhaits et le bouton « Acheter » touché. Ces événements ne contiennent que l’identifiant du parfum du catalogue public, l’origine de l’ajout (catalogue ou liste de souhaits) et le nom de la boutique. Ils n’incluent ni votre nom, ni votre e-mail, ni votre compte, ni vos réponses au questionnaire, et n’utilisent pas l’identifiant publicitaire de votre téléphone.</li></ul>
+<h2><span class="n">2.</span>À quoi elles nous servent</h2>
+<p>Seulement pour faire fonctionner l’app et l’améliorer : organiser votre collection, vous recommander chaque jour le parfum adapté selon la météo, l’occasion et votre profil, vous prévenir à l’heure que vous choisissez, corriger les erreurs et savoir quelles fonctions sont le plus utilisées. <strong>Nous ne vendons pas vos données et ne les utilisons pas pour la publicité.</strong></p>
+<h2><span class="n">3.</span>Statistiques anonymes</h2>
+<p>Si vous êtes connecté, après quelques jours d’utilisation, l’app ajoute de façon anonyme à des compteurs globaux : tranche d’âge, genre, familles préférées, occasions des parfums de votre garde-robe et nombre de garde-robes contenant chaque parfum. Ces compteurs n’incluent ni votre nom, ni votre e-mail, ni aucun identifiant, et ne permettent pas de savoir qui vous êtes. Ils nous aident à améliorer le catalogue et les recommandations.</p>
+<h2><span class="n">4.</span>Services tiers</h2>
+<ul><li><strong>Google Sign-In et Firebase Authentication :</strong> connexion.</li><li><strong>Cloud Firestore (Google Firebase) :</strong> sauvegarde de votre profil, de votre garde-robe et de votre liste de souhaits, et compteurs anonymes.</li><li><strong>Firebase Crashlytics et Remote Config :</strong> rapports d’erreurs et réglages de l’app.</li><li><strong>Firebase Analytics :</strong> statistiques anonymes d’utilisation de l’app (les événements décrits à la section 1). Il est configuré sans identifiant publicitaire, sans identifiant de l’appareil Android et sans signaux de publicité personnalisée.</li><li><strong>Open-Meteo :</strong> prévisions météo à partir de coordonnées approximatives ou du nom de votre ville.</li><li><strong>GitHub Pages :</strong> héberge ce site et les photos des parfums affichées par l’app.</li><li><strong>Boutiques affiliées (par exemple, Perfumania via CJ Affiliate) :</strong> seulement si vous touchez « Acheter ». Leur site s’ouvre et leurs propres politiques s’appliquent.</li></ul><p>Chaque fournisseur a sa propre politique de confidentialité, que nous vous recommandons de consulter.</p>
+<h2><span class="n">5.</span>Combien de temps nous les conservons</h2>
+<p>Tant que vous avez votre compte. Si vous le supprimez, nous effaçons votre profil, votre garde-robe et votre liste de souhaits du cloud ainsi que votre compte d’accès. Les compteurs anonymes ne peuvent pas vous être associés, ils ne sont donc pas concernés. Les événements anonymes d’utilisation sont supprimés automatiquement au bout de 14 mois. Comme ils ne sont pas associés à votre compte, ils ne peuvent pas vous être reliés et ne sont pas concernés par sa suppression.</p>
+<h2><span class="n">6.</span>Comment supprimer votre compte et vos données</h2>
+<p>Dans l’app : <strong>Profil › Supprimer mon compte et mes données</strong>. La suppression est immédiate. Vous pouvez aussi le demander depuis notre <a href="delete-fr.html">page de suppression de compte</a>.</p>
+<h2><span class="n">7.</span>Sécurité</h2>
+<p>Les données de votre téléphone sont enregistrées chiffrées et les communications avec le cloud circulent chiffrées. Aucun système n’est totalement sûr, mais nous prenons des mesures raisonnables pour protéger vos informations.</p>
+<h2><span class="n">8.</span>Mineurs</h2>
+<p>Aromario s’adresse aux personnes <strong>âgées de 18 ans ou plus</strong> et ne collecte pas intentionnellement de données de mineurs. Si vous êtes parent ou tuteur et pensez qu’un mineur nous a fourni des informations, écrivez-nous et nous les supprimerons.</p>
+<h2><span class="n">9.</span>Modifications de cette politique</h2>
+<p>Si nous la modifions, nous publierons ici la nouvelle version avec sa date.</p>
+<h2><span class="n">10.</span>Contact</h2>
+<p>Clab HF Development — <a href="mailto:clabhfdevelopment@gmail.com">clabhfdevelopment@gmail.com</a></p></div></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index-fr.html">AROMARIO</a><p class="foot-phrase">Le parfum juste, <em>chaque matin.</em></p><p>Votre garde-robe digitale de parfums.</p></div>
+      <div><h4>L’application</h4><ul><li><a href="index-fr.html#funciones">Fonctions</a></li><li><a href="index-fr.html#el-dia">Comment ça marche</a></li><li><a href="index-fr.html#galeria">Galerie</a></li><li><a href="index-fr.html#faq">Questions</a></li></ul></div><div><h4>Apprendre</h4><ul><li><a href="guias/index-fr.html">Guides de parfums</a></li><li><a href="guias/familias-olfativas-guia-fr.html">Familles olfactives</a></li><li><a href="guias/notas-salida-corazon-fondo-fr.html">Notes d’un parfum</a></li></ul></div><div><h4>Légal</h4><ul><li><a href="privacy-fr.html">Confidentialité</a></li><li><a href="terms-fr.html">Conditions</a></li><li><a href="delete-fr.html">Supprimer le compte</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Tous droits réservés.</span><span>Contact : <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
