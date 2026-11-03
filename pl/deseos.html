@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" hreflang="es" href="https://aromario.app/deseos.html">
+<link rel="alternate" hreflang="en" href="https://aromario.app/en/wishlist.html">
+<link rel="alternate" hreflang="pt-BR" href="https://aromario.app/pt/deseos.html">
+<link rel="alternate" hreflang="fr" href="https://aromario.app/fr/deseos.html">
+<link rel="alternate" hreflang="de" href="https://aromario.app/de/deseos.html">
+<link rel="alternate" hreflang="it" href="https://aromario.app/it/deseos.html">
+<link rel="alternate" hreflang="ar" href="https://aromario.app/ar/deseos.html">
+<link rel="alternate" hreflang="tr" href="https://aromario.app/tr/deseos.html">
+<link rel="alternate" hreflang="pl" href="https://aromario.app/pl/deseos.html">
+<link rel="alternate" hreflang="x-default" href="https://aromario.app/deseos.html">
+<script>(function(){try{var L={"es":"../deseos.html","en":"../en/wishlist.html","pt":"../pt/deseos.html","fr":"../fr/deseos.html","de":"../de/deseos.html","it":"../it/deseos.html","ar":"../ar/deseos.html","tr":"../tr/deseos.html","pl":"deseos.html"},C="pl",H=false,p=localStorage.getItem("aromario_lang"),t=null;if(p&&p!=="auto"){t=p;}else if(H){var n=(navigator.language||"").toLowerCase().slice(0,2);t=L[n]?n:null;}if(t&&t!==C&&L[t])location.replace(L[t]+location.search+location.hash);}catch(e){}})();</script>
+<title>Moja lista życzeń — Aromario</title>
+<meta name="description" content="Perfumy, których pragnę, na mojej liście życzeń Aromario.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Moja lista życzeń — Aromario">
+<meta property="og:description" content="Perfumy, których pragnę, na mojej liście życzeń Aromario.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://aromario.app/images/og-deseos.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aromario.app/images/og-deseos.png">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.wl-head{padding:3.2rem 0 1.4rem;text-align:center}
+.wl-head h1{font:500 clamp(2.2rem,6vw,3.4rem)/1.05 var(--display);color:var(--ink);margin:.2rem 0 .6rem}
+.wl-head p{color:var(--muted);margin:0}
+#wl-count{color:var(--steel);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+#wishlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;padding:1rem 0 1.6rem}
+.wl-card{display:flex;gap:1rem;align-items:center;background:var(--glass);border:1px solid var(--glass-edge);border-radius:var(--r-md);padding:1rem;box-shadow:0 14px 34px -24px var(--shadow);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.wl-photo{flex:none;width:92px;height:116px;border-radius:var(--r-sm);background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.wl-photo img{width:100%;height:100%;object-fit:contain}
+.wl-mono{font:500 2.4rem/1 var(--display);color:#1B3A5C}
+.wl-text{min-width:0}
+.wl-name{font:600 1.35rem/1.15 var(--display);color:var(--ink);margin:0 0 .2rem;overflow-wrap:anywhere}
+.wl-brand{color:var(--steel);margin:0 0 .8rem;font-size:.9rem}
+.wl-msg{grid-column:1/-1;text-align:center;color:var(--muted);padding:2rem 0}
+.wl-foot{text-align:center;padding:.4rem 0 3rem}
+.wl-note{color:var(--muted);font-size:.8rem;max-width:560px;margin:0 auto 1.4rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="wl-head">
+    <a class="logo" href="index.html">AROMARIO</a>
+    <h1>Moja lista życzeń</h1>
+    <p>Perfumy, których pragnę. <span id="wl-count"></span></p>
+<div class="langsel"><button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Język / Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="langsel-code">PL</span></button><div class="langsel-menu" role="menu" hidden><button type="button" role="menuitem" data-langsel="auto">Automatycznie</button><a href="../deseos.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a><a href="../en/wishlist.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a><a href="../pt/deseos.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a><a href="../fr/deseos.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a><a href="../de/deseos.html" role="menuitem" hreflang="de" lang="de" data-langsel="de">Deutsch</a><a href="../it/deseos.html" role="menuitem" hreflang="it" lang="it" data-langsel="it">Italiano</a><a href="../ar/deseos.html" role="menuitem" hreflang="ar" lang="ar" data-langsel="ar">العربية</a><a href="../tr/deseos.html" role="menuitem" hreflang="tr" lang="tr" data-langsel="tr">Türkçe</a><a href="#" role="menuitem" hreflang="pl" lang="pl" data-langsel="pl" class="current" aria-current="true">Polski</a></div></div>
+  </header>
+  <section id="wishlist" data-base="../" aria-live="polite"></section>
+  <div class="wl-foot">
+    <p class="wl-note">Informacja o afiliacji: jeśli kupisz przez te linki, Aromario może otrzymać prowizję, bez dodatkowych kosztów dla Ciebie.</p>
+    <a class="btn btn-glass" href="https://play.google.com/store/apps/details?id=com.aromario.app" target="_blank" rel="noopener">Otwórz w Aromario</a>
+  </div>
+</main>
+<script src="../assets/deseos.js" defer></script>
+<script src="../assets/langsel.js" defer></script>
+</body>
+</html>
