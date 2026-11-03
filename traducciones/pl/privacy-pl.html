@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Informacja o prywatności — Aromario</title>
+<meta name="description" content="Jakich danych używa Aromario, do czego, gdzie są zapisywane i jak je usunąć.">
+<meta property="og:title" content="Informacja o prywatności — Aromario">
+<meta property="og:description" content="Jakich danych używa Aromario, do czego, gdzie są zapisywane i jak je usunąć.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index-pl.html">AROMARIO</a>
+    <nav aria-label="Główna"><ul class="nav-links"><li><a href="index-pl.html#funciones">Funkcje</a></li><li><a href="index-pl.html#el-dia">Jak to działa</a></li><li><a href="index-pl.html#galeria">Galeria</a></li><li><a href="guias/index-pl.html">Poradniki</a></li><li><a href="index-pl.html#faq">Pytania</a></li></ul></nav>
+    <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Język / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Automatycznie</button>
+<a href="../privacy.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../en/privacy.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../pt/privacy.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="../fr/privacy.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a>
+<a href="../de/privacy.html" role="menuitem" hreflang="de" lang="de" data-langsel="de">Deutsch</a>
+<a href="../it/privacy.html" role="menuitem" hreflang="it" lang="it" data-langsel="it">Italiano</a>
+<a href="../ar/privacy.html" role="menuitem" hreflang="ar" lang="ar" data-langsel="ar">العربية</a>
+<a href="../tr/privacy.html" role="menuitem" hreflang="tr" lang="tr" data-langsel="tr">Türkçe</a>
+<a href="#" role="menuitem" hreflang="pl" lang="pl" data-langsel="pl" class="current" aria-current="true">Polski</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../privacy.html",en:"../en/privacy.html",pt:"../pt/privacy.html",fr:"../fr/privacy.html",de:"../de/privacy.html",it:"../it/privacy.html",ar:"../ar/privacy.html",tr:"../tr/privacy.html",pl:null};
+var CUR="pl",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("de")===0)return "de";if(l.indexOf("it")===0)return "it";if(l.indexOf("ar")===0)return "ar";if(l.indexOf("tr")===0)return "tr";if(l.indexOf("pl")===0)return "pl";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){});});});
+})();
+</script>
+    <a class="btn btn-primary btn-sm" href="index-pl.html#descargar">Wkrótce</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Zamknij menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="index-pl.html#funciones">Funkcje</a></li><li><a href="index-pl.html#el-dia">Jak to działa</a></li><li><a href="index-pl.html#galeria">Galeria</a></li><li><a href="guias/index-pl.html">Poradniki</a></li><li><a href="index-pl.html#faq">Pytania</a></li></ul>
+  <a class="btn btn-primary" href="index-pl.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Wkrótce na Google Play</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="eyebrow">Informacje prawne</p><h1>Informacja o prywatności</h1><p class="date">Ostatnia aktualizacja: 26 października 2026</p></div></section>
+<div class="wrap"><div class="prose"><p>Aromario to aplikacja firmy Clab HF Development. Niniejsza informacja wyjaśnia, jakich danych używa aplikacja, do czego i jak możesz je usunąć. Jest napisana tak, by była zrozumiała: jeśli coś jest niejasne, napisz do nas.</p>
+<h2><span class="n">1.</span>Dane, których używamy</h2>
+<ul><li><strong>Twoje konto Google:</strong> Imię, e-mail i zdjęcie profilowe. Aby używać Aromario, logujesz się przez Google; to jedyny sposób wejścia.</li><li><strong>Twój profil perfum:</strong> odpowiedzi z początkowej ankiety (grupa wiekowa, płeć, środowisko pracy, ulubione rodziny i te, których nie lubisz, preferowana intensywność, budżet i godzina codziennego powiadomienia). Są zapisywane w chmurze, powiązane z Twoim kontem.</li><li><strong>Twoja garderoba i lista życzeń:</strong> lista perfum, które rejestrujesz. Są przechowywane w Twoim telefonie w zaszyfrowanej bazie danych. Od wersji 1.0.108 zapisują się także w chmurze, powiązane z Twoim kontem, byś nie stracił ich przy zmianie telefonu.</li><li><strong>Twoje miasto i lokalizacja:</strong> służą tylko do poznania pogody. Od wersji 1.0.108 są przechowywane tylko w Twoim telefonie (poprzednie wersje zapisywały je przy Twoim profilu; wraz z aktualizacją są usuwane z chmury). Aby sprawdzić prognozę, aplikacja wysyła do serwisu pogodowego przybliżone współrzędne, zaokrąglone do około 5 km, lub nazwę Twojego miasta.</li><li><strong>Zgłoszenia błędów:</strong> jeśli aplikacja się zawiesi, wysyłany jest raport techniczny (model telefonu, wersja Androida i aplikacji oraz miejsce wystąpienia błędu), aby można go było naprawić.</li><li><strong>Korzystanie z aplikacji, w formie anonimowej:</strong> liczymy, ile razy otwierany jest ekran Dziś, pokazywana rekomendacja dnia, dodawane perfumy do garderoby lub listy życzeń oraz dotykany przycisk «Kup». Zdarzenia te zawierają tylko identyfikator perfum z publicznego katalogu, źródło dodania (katalog lub lista życzeń) i nazwę sklepu. Nie zawierają Twojego imienia, e-maila, konta ani odpowiedzi z ankiety i nie używają identyfikatora reklamowego Twojego telefonu.</li></ul>
+<h2><span class="n">2.</span>Do czego ich używamy</h2>
+<p>Tylko po to, by aplikacja działała i była lepsza: porządkować Twoją kolekcję, polecać Ci każdego dnia odpowiednie perfumy według pogody, okazji i profilu, powiadamiać Cię o wybranej przez Ciebie godzinie, naprawiać błędy i wiedzieć, które funkcje są używane najczęściej. <strong>Nie sprzedajemy Twoich danych i nie używamy ich do reklamy.</strong></p>
+<h2><span class="n">3.</span>Statystyki anonimowe</h2>
+<p>Gdy jesteś zalogowany, po kilku dniach użytkowania aplikacja dodaje anonimowo do globalnych liczników: grupę wiekową, płeć, ulubione rodziny, okazje perfum z Twojej garderoby oraz liczbę garderób zawierających każde perfumy. Liczniki te nie zawierają Twojego imienia, e-maila ani żadnego identyfikatora i nie pozwalają ustalić, kim jesteś. Pomagają nam ulepszać katalog i rekomendacje.</p>
+<h2><span class="n">4.</span>Usługi podmiotów trzecich</h2>
+<ul><li><strong>Google Sign-In i Firebase Authentication:</strong> Logowanie.</li><li><strong>Cloud Firestore (Google Firebase):</strong> Kopia zapasowa Twojego profilu, garderoby i listy życzeń oraz anonimowe liczniki.</li><li><strong>Firebase Crashlytics i Remote Config:</strong> Zgłoszenia błędów i ustawienia aplikacji.</li><li><strong>Firebase Analytics:</strong> anonimowe statystyki korzystania z aplikacji (zdarzenia opisane w sekcji 1). Jest skonfigurowany bez identyfikatora reklamowego, bez identyfikatora urządzenia z Androidem i bez sygnałów spersonalizowanej reklamy.</li><li><strong>Open-Meteo:</strong> Prognozy pogody z przybliżonych współrzędnych lub nazwy Twojego miasta.</li><li><strong>GitHub Pages:</strong> hostuje tę stronę internetową oraz zdjęcia perfum pokazywane przez aplikację.</li><li><strong>Sklepy afiliacyjne (na przykład Perfumania przez CJ Affiliate):</strong> tylko gdy dotkniesz «Kup». Otwiera się ich strona internetowa i obowiązują ich zasady.</li></ul><p>Każdy dostawca ma własną informację o prywatności, którą zalecamy przeczytać.</p>
+<h2><span class="n">5.</span>Jak długo je przechowujemy</h2>
+<p>Tak długo, jak masz konto. Jeśli je usuniesz, usuniemy z chmury Twój profil, garderobę i listę życzeń oraz konto logowania. Anonimowe liczniki nie mogą zostać z Tobą powiązane, więc ich to nie dotyczy. Anonimowe zdarzenia użytkowania są automatycznie usuwane po 14 miesiącach. Ponieważ nie są powiązane z Twoim kontem, nie można ich z Tobą powiązać i usunięcie konta ich nie dotyczy.</p>
+<h2><span class="n">6.</span>Jak usunąć konto i swoje dane</h2>
+<p>W aplikacji: <strong>Profil › Usuń moje konto i moje dane</strong>. Usunięcie jest natychmiastowe. Możesz to zrobić także z naszej <a href="delete-pl.html">strona usuwania konta</a>.</p>
+<h2><span class="n">7.</span>Bezpieczeństwo</h2>
+<p>Dane w telefonie są zapisywane w formie zaszyfrowanej, a komunikacja z chmurą jest szyfrowana. Żaden system nie jest całkowicie bezpieczny, ale podejmujemy rozsądne środki, by chronić Twoje informacje.</p>
+<h2><span class="n">8.</span>Osoby niepełnoletnie</h2>
+<p>Aromario jest skierowane do osób <strong>od 18 lat wzwyż</strong> i nie zbiera celowo danych osób niepełnoletnich. Jeśli jesteś rodzicem lub opiekunem i uważasz, że osoba niepełnoletnia przekazała nam informacje, napisz do nas, a je usuniemy.</p>
+<h2><span class="n">9.</span>Zmiany w tej informacji</h2>
+<p>Jeśli ją zmienimy, opublikujemy tutaj nową wersję z jej datą.</p>
+<h2><span class="n">10.</span>Kontakt</h2>
+<p>Clab HF Development — <a href="mailto:clabhfdevelopment@gmail.com">clabhfdevelopment@gmail.com</a></p></div></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index-pl.html">AROMARIO</a><p class="foot-phrase">Właściwe perfumy, <em>każdego ranka.</em></p><p>Twoja cyfrowa garderoba perfum.</p></div>
+      <div><h4>Aplikacja</h4><ul><li><a href="index-pl.html#funciones">Funkcje</a></li><li><a href="index-pl.html#el-dia">Jak to działa</a></li><li><a href="index-pl.html#galeria">Galeria</a></li><li><a href="index-pl.html#faq">Pytania</a></li></ul></div><div><h4>Ucz się</h4><ul><li><a href="guias/index-pl.html">Poradniki o perfumach</a></li><li><a href="guias/familias-olfativas-guia-pl.html">Rodziny zapachowe</a></li><li><a href="guias/notas-salida-corazon-fondo-pl.html">Nuty perfum</a></li></ul></div><div><h4>Informacje prawne</h4><ul><li><a href="privacy-pl.html">Prywatność</a></li><li><a href="terms-pl.html">Regulamin</a></li><li><a href="delete-pl.html">Usuń konto</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Wszelkie prawa zastrzeżone.</span><span>Kontakt: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

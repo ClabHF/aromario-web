@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Warunki użytkowania — Aromario</title>
+<meta name="description" content="Warunki użytkowania aplikacji AROMARIO.">
+<meta property="og:title" content="Warunki użytkowania — Aromario">
+<meta property="og:description" content="Warunki użytkowania aplikacji AROMARIO.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index-pl.html">AROMARIO</a>
+    <nav aria-label="Główna"><ul class="nav-links"><li><a href="index-pl.html#funciones">Funkcje</a></li><li><a href="index-pl.html#el-dia">Jak to działa</a></li><li><a href="index-pl.html#galeria">Galeria</a></li><li><a href="guias/index-pl.html">Poradniki</a></li><li><a href="index-pl.html#faq">Pytania</a></li></ul></nav>
+    <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Język / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Automatycznie</button>
+<a href="../terms.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../en/terms.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../pt/terms.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="../fr/terms.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a>
+<a href="../de/terms.html" role="menuitem" hreflang="de" lang="de" data-langsel="de">Deutsch</a>
+<a href="../it/terms.html" role="menuitem" hreflang="it" lang="it" data-langsel="it">Italiano</a>
+<a href="../ar/terms.html" role="menuitem" hreflang="ar" lang="ar" data-langsel="ar">العربية</a>
+<a href="../tr/terms.html" role="menuitem" hreflang="tr" lang="tr" data-langsel="tr">Türkçe</a>
+<a href="#" role="menuitem" hreflang="pl" lang="pl" data-langsel="pl" class="current" aria-current="true">Polski</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../terms.html",en:"../en/terms.html",pt:"../pt/terms.html",fr:"../fr/terms.html",de:"../de/terms.html",it:"../it/terms.html",ar:"../ar/terms.html",tr:"../tr/terms.html",pl:null};
+var CUR="pl",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("de")===0)return "de";if(l.indexOf("it")===0)return "it";if(l.indexOf("ar")===0)return "ar";if(l.indexOf("tr")===0)return "tr";if(l.indexOf("pl")===0)return "pl";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){});});});
+})();
+</script>
+    <a class="btn btn-primary btn-sm" href="index-pl.html#descargar">Wkrótce</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Zamknij menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="index-pl.html#funciones">Funkcje</a></li><li><a href="index-pl.html#el-dia">Jak to działa</a></li><li><a href="index-pl.html#galeria">Galeria</a></li><li><a href="guias/index-pl.html">Poradniki</a></li><li><a href="index-pl.html#faq">Pytania</a></li></ul>
+  <a class="btn btn-primary" href="index-pl.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Wkrótce na Google Play</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="eyebrow">Informacje prawne</p><h1>Warunki użytkowania</h1><p class="date">Ostatnia aktualizacja: 16 października 2026</p></div></section>
+<div class="wrap"><div class="prose">
+<h2><span class="n">1.</span>Akceptacja regulaminu</h2>
+<p>Pobierając, instalując lub używając aplikacji Aromario («Aplikacja»), akceptujesz te warunki. Jeśli się nie zgadzasz, nie używaj Aplikacji. Clab HF Development («my») może od czasu do czasu aktualizować te warunki; dalsze korzystanie z Aplikacji oznacza akceptację zmian.</p>
+<h2><span class="n">2.</span>Opis usługi</h2>
+<p>Aromario to cyfrowa garderoba perfum, w której możesz rejestrować swoją kolekcję i otrzymywać rekomendacje perfum według pogody, okazji i pory roku. Aplikacja jest darmowa.</p>
+<h2><span class="n">3.</span>Twoje konto</h2>
+<p>Dostęp do aplikacji <strong>wymaga logowania kontem Google</strong> ; nie oferujemy dostępu bez konta ani trybu gościa. Musisz mieć <strong>18 lat lub więcej</strong> aby używać Aplikacji. Odpowiadasz za bezpieczeństwo swojego konta Google i wszystkie działania wykonywane przy jego użyciu.</p>
+<h2><span class="n">4.</span>Dozwolone użycie</h2>
+<p>Udzielamy Ci osobistej, niewyłącznej, nieprzenoszalnej i odwołalnej licencji na używanie Aplikacji na Twoich urządzeniach. Zobowiązujesz się:</p>
+<ul>
+<li>Używać Aplikacji tylko do celów osobistych i zgodnych z prawem.</li>
+<li>Nie próbować wyodrębniać, kopiować ani dekompilować kodu aplikacji (inżynieria wsteczna).</li>
+<li>Nie używać aplikacji do celów komercyjnych bez pisemnej zgody.</li>
+<li>Nie zakłócać działania aplikacji ani jej usług.</li>
+</ul>
+<h2><span class="n">5.</span>Twoje treści</h2>
+<p>Dane, które rejestrujesz (Twoja kolekcja, lista życzeń i profil), należą do Ciebie.</p>
+<ul>
+<li><strong>Twoja garderoba i lista życzeń</strong> są zapisywane na Twoim urządzeniu. Od wersji 1.0.108, gdy jesteś zalogowany, zapisują się także w chmurze, powiązane z Twoim kontem Google.</li>
+<li><strong>Twój profil perfum</strong> (odpowiedzi z początkowej ankiety) jest synchronizowany z Firebase i powiązany z Twoim kontem Google. Możesz usunąć swoje konto i dane z aplikacji (Profil › Usuń moje konto i moje dane) lub pisząc do nas na <a href="mailto:clabhfdevelopment@gmail.com">clabhfdevelopment@gmail.com</a>.</li>
+</ul>
+<p>Odpowiadasz za dokładność wprowadzanych informacji.</p>
+<h2><span class="n">6.</span>Linki afiliacyjne</h2>
+<p>Aplikacja może pokazywać przyciski zakupu z linkami afiliacyjnymi do sklepów zewnętrznych (na przykład Perfumania). Jeśli kupisz przez te linki, możemy otrzymać prowizję, bez dodatkowych kosztów dla Ciebie. Nie kontrolujemy stron podmiotów trzecich: ich ceny, dostępność i zasady są wyłączną odpowiedzialnością każdego sklepu.</p>
+<h2><span class="n">7.</span>Własność intelektualna</h2>
+<p>Aplikacja, jej projekt, logotypy i treści są własnością Clab HF Development lub jej licencjodawców. Pokazywane marki perfum należą do ich właścicieli i są używane w celach opisowych.</p>
+<h2><span class="n">8.</span>Brak gwarancji</h2>
+<p>Aplikacja jest dostarczana «taka, jaka jest», bez gwarancji jakiegokolwiek rodzaju. Nie gwarantujemy, że aplikacja jest wolna od błędów ani że rekomendacje będą odpowiadać Twoim gustom. Rekomendacje są zautomatyzowanymi sugestiami i nie stanowią profesjonalnego doradztwa.</p>
+<h2><span class="n">9.</span>Ograniczenie odpowiedzialności</h2>
+<p>W zakresie dozwolonym przez prawo Clab HF Development nie odpowiada za szkody bezpośrednie, pośrednie, przypadkowe ani następcze wynikające z używania lub niemożności używania aplikacji.</p>
+<h2><span class="n">10.</span>Rozwiązanie umowy</h2>
+<p>Możesz przestać używać aplikacji w każdej chwili, odinstalowując ją. Możemy zawiesić lub zamknąć Twój dostęp, jeśli naruszysz te warunki.</p>
+<h2><span class="n">11.</span>Prawo właściwe</h2>
+<p>Niniejsze warunki podlegają prawu stanu Nowy Jork, USA, bez względu na jego zasady kolizyjne.</p>
+<h2><span class="n">12.</span>Kontakt</h2>
+<p>Jeśli masz pytania dotyczące tych warunków, napisz do nas na <a href="mailto:clabhfdevelopment@gmail.com">clabhfdevelopment@gmail.com</a>.</p>
+</div></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="index-pl.html">AROMARIO</a><p class="foot-phrase">Właściwe perfumy, <em>każdego ranka.</em></p><p>Twoja cyfrowa garderoba perfum.</p></div>
+      <div><h4>Aplikacja</h4><ul><li><a href="index-pl.html#funciones">Funkcje</a></li><li><a href="index-pl.html#el-dia">Jak to działa</a></li><li><a href="index-pl.html#galeria">Galeria</a></li><li><a href="index-pl.html#faq">Pytania</a></li></ul></div><div><h4>Ucz się</h4><ul><li><a href="guias/index-pl.html">Poradniki o perfumach</a></li><li><a href="guias/familias-olfativas-guia-pl.html">Rodziny zapachowe</a></li><li><a href="guias/notas-salida-corazon-fondo-pl.html">Nuty perfum</a></li></ul></div><div><h4>Informacje prawne</h4><ul><li><a href="privacy-pl.html">Prywatność</a></li><li><a href="terms-pl.html">Regulamin</a></li><li><a href="delete-pl.html">Usuń konto</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Wszelkie prawa zastrzeżone.</span><span>Kontakt: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
