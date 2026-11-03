@@ -2,7 +2,7 @@ NO EJECUTAR hasta que Claudio lo ordene expresamente
 
 # Idiomas nuevos de aromario.app — publicación y selector
 
-Contexto: las 12 páginas del sitio están traducidas y auditadas a cero fallos en 7 idiomas (portugués, francés, alemán, italiano, árabe, turco y polaco). Los entregables van en `traducciones-web.zip`, en la raíz de esta rama: por idioma, las 5 páginas principales y las 7 de guías (en la carpeta guias de cada idioma). El portugués conserva los nombres base (index.html, deseos.html…) para su carpeta; los demás idiomas traen los nombres ya sufijados.
+Contexto: las 12 páginas del sitio están traducidas y auditadas a cero fallos en 7 idiomas (portugués, francés, alemán, italiano, árabe, turco y polaco). Los entregables van como archivos sueltos en la carpeta `traducciones/` de esta rama: por idioma, las 5 páginas principales y las 7 de guías (en la subcarpeta guias de cada idioma). El portugués conserva los nombres base (index.html, deseos.html…) para su carpeta; los demás idiomas traen los nombres ya sufijados.
 
 Cambios:
 
