@@ -94,6 +94,15 @@
 
   // Videos dentro del teléfono: solo se reproducen mientras se ven
   var vids = Array.prototype.slice.call(document.querySelectorAll('video[data-loop]'));
+  // El video del hero no arranca hasta que terminan el boot y la intro (~1,4 s):
+  // antes se sumaba a esas animaciones y la portada se trancaba al abrir.
+  var heroVid = document.querySelector('.hero video[data-loop]');
+  var heroReady = !heroVid, heroVisible = false;
+  function tryHero() {
+    if (!heroVid || !heroReady || !heroVisible) return;
+    var pr = heroVid.play(); if (pr && pr.catch) pr.catch(function () {});
+  }
+  if (heroVid) setTimeout(function () { heroReady = true; tryHero(); }, 1500);
   if (vids.length) {
     if (reduce || !('IntersectionObserver' in window)) {
       vids.forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
@@ -101,6 +110,12 @@
       var vio = new IntersectionObserver(function (es) {
         es.forEach(function (e) {
           var v = e.target;
+          if (v === heroVid) {
+            heroVisible = e.isIntersecting;
+            if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; tryHero(); }
+            else v.pause();
+            return;
+          }
           if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
           else v.pause();
         });
