@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Note di testa, cuore e fondo: cosa significano — Aromario</title>
+<meta name="description" content="Capisci la piramide olfattiva: cosa sono le note di testa, cuore e fondo, perché un profumo cambia con le ore e come usarlo per scegliere.">
+<meta property="og:title" content="Note di testa, cuore e fondo: cosa significano — Aromario">
+<meta property="og:description" content="Capisci la piramide olfattiva: cosa sono le note di testa, cuore e fondo, perché un profumo cambia con le ore e come usarlo per scegliere.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index-it.html">AROMARIO</a>
+    <nav aria-label="Principale"><ul class="nav-links"><li><a href="../index-it.html#funciones">Funzioni</a></li><li><a href="../index-it.html#el-dia">Come funziona</a></li><li><a href="../index-it.html#galeria">Galleria</a></li><li><a href="../guias/index-it.html" aria-current="page">Guide</a></li><li><a href="../index-it.html#faq">Domande</a></li></ul></nav>
+    <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Lingua / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Automatico</button>
+<a href="../../guias/notas-salida-corazon-fondo.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../../en/guias/notas-salida-corazon-fondo.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../../pt/guias/notas-salida-corazon-fondo.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="../../fr/guias/notas-salida-corazon-fondo.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a>
+<a href="../../de/guias/notas-salida-corazon-fondo.html" role="menuitem" hreflang="de" lang="de" data-langsel="de">Deutsch</a>
+<a href="#" role="menuitem" hreflang="it" lang="it" data-langsel="it" class="current" aria-current="true">Italiano</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../../guias/notas-salida-corazon-fondo.html",en:"../../en/guias/notas-salida-corazon-fondo.html",pt:"../../pt/guias/notas-salida-corazon-fondo.html",fr:"../../fr/guias/notas-salida-corazon-fondo.html",de:"../../de/guias/notas-salida-corazon-fondo.html",it:null};
+var CUR="it",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("de")===0)return "de";if(l.indexOf("it")===0)return "it";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){});});});
+})();
+</script>
+    <a class="btn btn-primary btn-sm" href="../index-it.html#descargar">Prossimamente</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Chiudi il menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="../index-it.html#funciones">Funzioni</a></li><li><a href="../index-it.html#el-dia">Come funziona</a></li><li><a href="../index-it.html#galeria">Galleria</a></li><li><a href="../guias/index-it.html" aria-current="page">Guide</a></li><li><a href="../index-it.html#faq">Domande</a></li></ul>
+  <a class="btn btn-primary" href="../index-it.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Prossimamente su Google Play</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="back"><a href="index-it.html">← Tutte le guide</a></p><p class="eyebrow" style="margin-top:1.4rem">Guide ai profumi</p><h1>Note di testa, cuore e fondo: cosa significano</h1><p class="article-lead">Un profumo non profuma uguale dopo cinque minuti e dopo cinque ore. La piramide olfattiva spiega perché: ogni profumo è una storia in tre atti.</p><p class="article-meta">Aromario · Guida · 7 min di lettura</p><img class="hero-img" src="images/notas.webp" alt="Note di testa, cuore e fondo"></div></section>
+<div class="wrap"><div class="prose">
+<p>Se hai mai provato un profumo in negozio, lo hai amato, lo hai comprato e a casa lo hai trovato diverso, non sei impazzito: è la piramide olfattiva in azione. Ogni profumo è costruito in tre fasi che si susseguono sulla tua pelle: testa, cuore e fondo. Capirle cambia completamente il modo di provare e scegliere i profumi.</p>
+<h2>La piramide olfattiva: una storia in tre atti</h2>
+<p>Pensa a un profumo come a un'opera teatrale. Non vedi il finale dal primo minuto, e giudicare l'opera dai suoi primi cinque minuti sarebbe un errore. Con i profumi è lo stesso: ciò che senti quando lo spruzzi è solo l'inizio.</p>
+<h2>Atto 1: le note di testa</h2>
+<p>Sono le prime che percepisci, durante i primi 5-15 minuti. Di solito sono ingredienti leggeri e volatili: agrumi (bergamotto, limone, pompelmo), note verdi, erbe aromatiche o frutti freschi.</p>
+<p>La loro missione è l'impressione iniziale: quel primo impatto luminoso e seducente. Ma sono effimere per natura: evaporano in fretta perché le loro molecole sono piccole e leggere. Per questo un profumo non si giudica dalle note di testa, anche se sono ciò che in negozio attira di più l'attenzione.</p>
+<div class="tip"><strong>Errore classico:</strong> comprare un profumo per come profuma dopo due minuti sulla striscia di carta in negozio. Stai giudicando solo le note di testa. Indossalo almeno qualche ora sulla pelle prima di decidere.</div>
+<h2>Atto 2: le note di cuore</h2>
+<p>Quando le note di testa si dissolvono (tra 15 minuti e 2-3 ore), emerge il cuore: il vero carattere del profumo. Lì vivono i fiori (rosa, gelsomino, fiori d'arancio, peonia), le spezie dolci (cannella, cardamomo), i frutti maturi e le note verdi più complesse.</p>
+<p>Il cuore è ciò che la maggior parte delle persone percepisce per la maggior parte della giornata, e ciò che gli altri notano quando ti sono vicini. Se le note di testa sono il saluto, il cuore è la conversazione.</p>
+<h2>Atto 3: le note di fondo</h2>
+<p>Dalle 2-3 ore (e fino a 8, 12 o più) resta il fondo: le fondamenta del profumo. Ingredienti pesanti e tenaci come sandalo, cedro, vetiver, ambra, vaniglia, muschio, cuoio o oud.</p>
+<p>Il fondo è ciò che il giorno dopo «resta» sui vestiti e ciò che ricordi del profumo a lungo termine. Lì si nota anche la qualità degli ingredienti: un buon fondo è profondo ed elegante; un fondo economico può diventare piatto o sintetico con le ore.</p>
+<h2>Perché i profumi cambiano sulla tua pelle</h2>
+<p>Ogni persona ha una chimica della pelle diversa: il pH, la temperatura, l'umidità e il tipo di pelle influenzano come si dispiegano le note. Per questo lo stesso profumo su di te può profumare diversamente che su un tuo amico, e perché le prove su carta servono solo come primo approccio.</p>
+<p>La regola d'oro: prova sempre sulla pelle e dagli tempo. Almeno 2-3 ore per conoscere il cuore, idealmente un'intera giornata per scoprire il fondo.</p>
+<h2>Come usare la piramide per scegliere un profumo</h2>
+<ul>
+<li><strong>Non innamorarti solo della testa:</strong> quegli agrumi frizzanti spariranno in 20 minuti. Chiediti se ti piace ciò che viene dopo.</li>
+<li><strong>Identifica il cuore:</strong> ti piacciono i profumi floreali, speziati, fruttati? Il cuore ti dice a quale famiglia appartiene davvero il profumo.</li>
+<li><strong>Valuta il fondo in base al tuo uso:</strong> se vuoi un profumo per tutta la giornata, ti serve un fondo che ti piaccia, perché è ciò che indosserai per ore.</li>
+<li><strong>Attenzione ai fondi pesanti:</strong> un fondo di oud intenso può essere meraviglioso la sera e soffocante in ufficio. Pensa al momento in cui lo indosserai.</li>
+</ul>
+<h2>La piramide in pratica: un esempio</h2>
+<p>Immagina un profumo con una testa di bergamotto e pompelmo, un cuore di gelsomino e un fondo di sandalo e vaniglia. Quando lo spruzzi senti una freschezza agrumata (testa). Mezz'ora dopo gli agrumi si sono ammorbiditi ed emerge un gelsomino elegante (cuore). Quattro ore dopo resta una scia cremosa di sandalo e vaniglia (fondo). Tre profumi in uno, in un solo giorno.</p>
+<div class="tip"><strong>Da ricordare:</strong> Testa = prima impressione (minuti), cuore = vero carattere (ore), fondo = ricordo duraturo (il resto della giornata). Giudica un profumo dai suoi tre atti, non solo dal primo.</div>
+<h2>E le «note» non sono ingredienti letterali</h2>
+<p>Un dettaglio importante: quando la scheda di un profumo dice «note di cuoio», non significa che contenga cuoio vero. Le note descrivono l'<em>effetto olfattivo</em> : una combinazione di ingredienti che crea l'impressione di cuoio, pioggia, mare o altro. La profumeria è un'arte di illusioni, e la piramide è la sua partitura.</p>
+<p>Con questa conoscenza, la prossima volta che proverai un profumo lo farai con altri occhi (o meglio, con un altro naso): aspetterai la sua evoluzione, gli darai il suo tempo e sceglierai con molto più discernimento. È questo, più di ogni altra cosa, che separa chi compra d'impulso da chi trova il suo profumo ideale.</p>
+<div class="related">
+<h3>Continua a esplorare</h3>
+<ul>
+<li><a href="como-elegir-perfume-segun-ocasion-it.html">Come scegliere il profumo in base all'occasione</a></li>
+<li><a href="familias-olfativas-guia-it.html">Guida alle famiglie olfattive</a></li>
+<li><a href="mejores-perfumes-verano-2026-it.html">I migliori profumi per stagione</a></li>
+<li><a href="perfume-dure-mas-trucos-it.html">Consigli per far durare di più il profumo</a></li>
+<li><a href="perfumes-clon-vs-originales-it.html">Clone o originale: ne vale la pena?</a></li>
+</ul>
+</div>
+<div class="cta-box">
+<h3>Vuoi il consiglio perfetto ogni mattina?</h3>
+<p>Aromario organizza la tua collezione e ti suggerisce il profumo ideale in base al meteo e ai tuoi programmi della giornata. Gratis per Android.</p>
+<a class="btn" href="../index-it.html">Scopri Aromario</a></div>
+</div></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="../index-it.html">AROMARIO</a><p class="foot-phrase">Il profumo giusto, <em>ogni mattina.</em></p><p>Il tuo armadio digitale di profumi.</p></div>
+      <div><h4>L'app</h4><ul><li><a href="../index-it.html#funciones">Funzioni</a></li><li><a href="../index-it.html#el-dia">Come funziona</a></li><li><a href="../index-it.html#galeria">Galleria</a></li><li><a href="../index-it.html#faq">Domande</a></li></ul></div><div><h4>Impara</h4><ul><li><a href="../guias/index-it.html">Guide ai profumi</a></li><li><a href="../guias/familias-olfativas-guia-it.html">Famiglie olfattive</a></li><li><a href="../guias/notas-salida-corazon-fondo-it.html">Le note di un profumo</a></li></ul></div><div><h4>Note legali</h4><ul><li><a href="../privacy-it.html">Privacy</a></li><li><a href="../terms-it.html">Termini</a></li><li><a href="../delete-it.html">Elimina account</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Tutti i diritti riservati.</span><span>Contatto: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

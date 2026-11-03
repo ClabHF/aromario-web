@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Guida completa alle famiglie olfattive — Aromario</title>
+<meta name="description" content="Scopri le famiglie olfattive: agrumate, floreali, legnose, orientali, fougère, chypre e gourmand. Impara a identificarle e a scegliere i tuoi profumi secondo i tuoi gusti.">
+<meta property="og:title" content="Guida completa alle famiglie olfattive — Aromario">
+<meta property="og:description" content="Scopri le famiglie olfattive: agrumate, floreali, legnose, orientali, fougère, chypre e gourmand. Impara a identificarle e a scegliere i tuoi profumi secondo i tuoi gusti.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index-it.html">AROMARIO</a>
+    <nav aria-label="Principale"><ul class="nav-links"><li><a href="../index-it.html#funciones">Funzioni</a></li><li><a href="../index-it.html#el-dia">Come funziona</a></li><li><a href="../index-it.html#galeria">Galleria</a></li><li><a href="../guias/index-it.html" aria-current="page">Guide</a></li><li><a href="../index-it.html#faq">Domande</a></li></ul></nav>
+    <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Lingua / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Automatico</button>
+<a href="../../guias/familias-olfativas-guia.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../../en/guias/familias-olfativas-guia.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../../pt/guias/familias-olfativas-guia.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="../../fr/guias/familias-olfativas-guia.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a>
+<a href="../../de/guias/familias-olfativas-guia.html" role="menuitem" hreflang="de" lang="de" data-langsel="de">Deutsch</a>
+<a href="#" role="menuitem" hreflang="it" lang="it" data-langsel="it" class="current" aria-current="true">Italiano</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../../guias/familias-olfativas-guia.html",en:"../../en/guias/familias-olfativas-guia.html",pt:"../../pt/guias/familias-olfativas-guia.html",fr:"../../fr/guias/familias-olfativas-guia.html",de:"../../de/guias/familias-olfativas-guia.html",it:null};
+var CUR="it",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("de")===0)return "de";if(l.indexOf("it")===0)return "it";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){});});});
+})();
+</script>
+    <a class="btn btn-primary btn-sm" href="../index-it.html#descargar">Prossimamente</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Chiudi il menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="../index-it.html#funciones">Funzioni</a></li><li><a href="../index-it.html#el-dia">Come funziona</a></li><li><a href="../index-it.html#galeria">Galleria</a></li><li><a href="../guias/index-it.html" aria-current="page">Guide</a></li><li><a href="../index-it.html#faq">Domande</a></li></ul>
+  <a class="btn btn-primary" href="../index-it.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Prossimamente su Google Play</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="back"><a href="index-it.html">← Tutte le guide</a></p><p class="eyebrow" style="margin-top:1.4rem">Guide ai profumi</p><h1>Guida completa alle famiglie olfattive</h1><p class="article-lead">Agrumate, floreali, legnose, orientali... Le famiglie olfattive sono la mappa del mondo dei profumi. Impara a leggerla e sceglierai meglio per sempre.</p><p class="article-meta">Aromario · Guida · 9 min di lettura</p><img class="hero-img" src="images/familias.webp" alt="Guida alle famiglie olfattive"></div></section>
+<div class="wrap"><div class="prose">
+<p>Quando qualcuno dice «mi piacciono i profumi freschi» o «preferisco qualcosa di dolce», sta parlando, senza saperlo, di famiglie olfattive. Le famiglie sono il modo in cui la profumeria classifica i profumi in base al loro carattere dominante. Conoscerle è come imparare i generi del cinema: una volta che le padroneggi, sai esattamente cosa cercare.</p>
+<p>Esistono diverse classificazioni, ma una delle classiche riconosce sette grandi famiglie. Passiamole in rassegna una a una.</p>
+<h2>Agrumate: freschezza immediata</h2>
+<p>Sono i profumi costruiti intorno a bergamotto, limone, arancia, pompelmo o mandarino. Trasmettono pulizia, energia e luminosità. Sono la prima scelta per il caldo, lo sport e tutti i giorni.</p>
+<p>Il loro punto debole è la durata: le molecole agrumate sono volatili ed evaporano in fretta, così molti agrumati puri durano solo poche ore sulla pelle. Per questo spesso li trovi combinati con note legnose o aromatiche, che danno loro corpo.</p>
+<h2>Floreali: il cuore della profumeria</h2>
+<p>La famiglia più grande e varia. Va dal classico gelsomino e dalla rosa ai fiori bianchi come fiori d'arancio, tuberosa o gardenia, passando per fiori cipriati come violetta o iris. Un floreale può essere fresco e primaverile oppure denso e sensuale, a seconda dei fiori scelti.</p>
+<p>I floreali dominano la profumeria femminile tradizionale, ma compaiono anche in profumi moderni unisex e maschili, dove si combinano con legni o spezie per un risultato contemporaneo.</p>
+<h2>Legnose: eleganza solida</h2>
+<p>Cedro, sandalo, vetiver, patchouli, oud... I legni portano profondità, calore e raffinatezza. Sono la spina dorsale di moltissimi profumi maschili e di gran parte della nicchia unisex.</p>
+<p>I legnosi di solito hanno una buona durata e una proiezione elegante, senza essere aggressivi. Funzionano molto bene in ufficio, in autunno e in inverno e nelle occasioni in cui vuoi trasmettere sicurezza.</p>
+<h2>Orientali: calore e opulenza</h2>
+<p>Dette anche ambrate, si costruiscono con vaniglia, ambra, fava tonka, spezie, resine e incenso. Sono calde, avvolgenti e spesso dolci. Pensa alle notti d'inverno, alle cene eleganti e ai momenti intimi.</p>
+<p>Sono i profumi con più presenza: proiettano molto e durano ore. Bisogna quindi dosarli con cura, soprattutto in ambienti chiusi o con climi caldi, dove possono risultare stordenti.</p>
+<h2>Fougère: il classico maschile</h2>
+<p>Il suo nome significa «felce» in francese. Nasce da una combinazione storica: lavanda, cumarina (odore di fieno dolce), muschio di quercia e legni. È la famiglia del barbiere classico, dell'eterno «profumare di pulito e maschile».</p>
+<p>Anche se è nata come famiglia maschile, oggi i suoi ingredienti compaiono in profumi di ogni tipo. Se ti piacciono i profumi freschi ma con carattere, probabilmente ti piacciono le fougère senza saperlo.</p>
+<h2>Chypre: raffinatezza di contrasti</h2>
+<p>Il chypre classico combina un'apertura agrumata (quasi sempre bergamotto) con un cuore floreale e un fondo di muschio di quercia e patchouli. Il contrasto tra la freschezza iniziale e la profondità del fondo crea un'eleganza particolarissima, un po' vintage ma senza tempo.</p>
+<p>È una famiglia oggi meno diffusa che qualche decennio fa, ma resta viva nella profumeria di nicchia e in certi classici che non passano mai di moda.</p>
+<h2>Gourmand: profumi da «mangiare»</h2>
+<p>La famiglia più giovane: nasce negli anni Novanta, con profumi che sanno di vaniglia, caramello, cioccolato, caffè, zucchero filato o frutti dolci. Creano dipendenza, confortano e sono molto amati, soprattutto dal pubblico giovane.</p>
+<p>La loro dolcezza li rende perfetti per il freddo e la sera, ma con il caldo o in ufficio è meglio usarli con misura.</p>
+<div class="tip"><strong>Come usare questa guida:</strong> la prossima volta che provi un profumo che ami, cerca la sua famiglia olfattiva. Se scopri che i tuoi preferiti sono quasi tutti legnosi, sai dove continuare a esplorare. Le famiglie trasformano il caso in criterio.</div>
+<h2>E se un profumo mescola più famiglie?</h2>
+<p>La maggior parte dei profumi moderni non appartiene a una sola famiglia in forma pura: sono combinazioni. Un profumo può essere un «floreale-legnoso» o un «agrumato-aromatico». Le famiglie sono punti di riferimento, non cassetti chiusi.</p>
+<p>Inoltre, dentro ogni famiglia esistono sottofamiglie e sfumature infinite. Due profumi «orientali» possono non assomigliarsi affatto. Per questo le famiglie sono la mappa, non il territorio: ti orientano, ma la prova definitiva è sempre il tuo naso.</p>
+<h3>Un esercizio pratico</h3>
+<p>Scegli tre profumi che possiedi e ami. Cerca a quale famiglia appartiene ciascuno. Se due o tre cadono nella stessa famiglia, hai appena scoperto la tua preferenza dominante. Da lì, chiedi consigli dentro quella famiglia e azzeccherai molto più spesso.</p>
+<h2>Famiglie e genere: una mappa che cambia</h2>
+<p>Storicamente alcune famiglie erano associate a un genere: le floreali al femminile, le fougère e le legnose al maschile. Questa separazione sta svanendo in fretta. Oggi è normale trovare rose in profumi maschili e oud in quelli femminili, e la profumeria di nicchia gioca apposta con questi confini.</p>
+<p>Il mio consiglio: ignora il genere dichiarato sulla bottiglia e fidati della famiglia e del tuo naso. Se ami i floreali, non importa cosa dice l'etichetta. Le famiglie descrivono l'odore; il marketing descrive a chi lo si vuole vendere.</p>
+<h2>Come parlare di profumi grazie alle famiglie</h2>
+<p>Conoscere le famiglie ti dà anche un linguaggio. Invece di dire «questo mi piace, non so perché», potrai dire «mi piacciono i legnosi a base di vetiver» o «cerco un orientale delicato, non troppo dolce». Cambia completamente la conversazione con un venditore o con chi ti consiglia: passi dal caso alla descrizione precisa di ciò che cerchi.</p>
+<p>Annota le famiglie dei tuoi cinque profumi preferiti e tienile sul telefono. È il modo più rapido perché qualcuno ti consigli qualcosa che ti piacerà davvero.</p>
+<div class="related">
+<h3>Continua a esplorare</h3>
+<ul>
+<li><a href="como-elegir-perfume-segun-ocasion-it.html">Come scegliere il profumo in base all'occasione</a></li>
+<li><a href="mejores-perfumes-verano-2026-it.html">I migliori profumi per stagione</a></li>
+<li><a href="perfume-dure-mas-trucos-it.html">Consigli per far durare di più il profumo</a></li>
+<li><a href="perfumes-clon-vs-originales-it.html">Clone o originale: ne vale la pena?</a></li>
+<li><a href="notas-salida-corazon-fondo-it.html">Note di testa, cuore e fondo</a></li>
+</ul>
+</div>
+<div class="cta-box">
+<h3>Vuoi il consiglio perfetto ogni mattina?</h3>
+<p>Aromario organizza la tua collezione e ti suggerisce il profumo ideale in base al meteo e ai tuoi programmi della giornata. Gratis per Android.</p>
+<a class="btn" href="../index-it.html">Scopri Aromario</a></div>
+</div></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="../index-it.html">AROMARIO</a><p class="foot-phrase">Il profumo giusto, <em>ogni mattina.</em></p><p>Il tuo armadio digitale di profumi.</p></div>
+      <div><h4>L'app</h4><ul><li><a href="../index-it.html#funciones">Funzioni</a></li><li><a href="../index-it.html#el-dia">Come funziona</a></li><li><a href="../index-it.html#galeria">Galleria</a></li><li><a href="../index-it.html#faq">Domande</a></li></ul></div><div><h4>Impara</h4><ul><li><a href="../guias/index-it.html">Guide ai profumi</a></li><li><a href="../guias/familias-olfativas-guia-it.html">Famiglie olfattive</a></li><li><a href="../guias/notas-salida-corazon-fondo-it.html">Le note di un profumo</a></li></ul></div><div><h4>Note legali</h4><ul><li><a href="../privacy-it.html">Privacy</a></li><li><a href="../terms-it.html">Termini</a></li><li><a href="../delete-it.html">Elimina account</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Tutti i diritti riservati.</span><span>Contatto: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
