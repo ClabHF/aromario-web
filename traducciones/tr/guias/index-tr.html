@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Parfüm rehberleri — Aromario</title>
+<meta name="description" content="Parfümleri öğrenme rehberleri: duruma göre nasıl seçilir, koku aileleri, kalıcılık ipuçları, klonlara karşı orijinaller ve daha fazlası.">
+<meta property="og:title" content="Parfüm rehberleri — Aromario">
+<meta property="og:description" content="Parfümleri öğrenme rehberleri: duruma göre nasıl seçilir, koku aileleri, kalıcılık ipuçları, klonlara karşı orijinaller ve daha fazlası.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">İçeriğe atla</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index-tr.html">AROMARIO</a>
+    <nav aria-label="Ana"><ul class="nav-links"><li><a href="../index-tr.html#funciones">Özellikler</a></li><li><a href="../index-tr.html#el-dia">Nasıl çalışır</a></li><li><a href="../index-tr.html#galeria">Galeri</a></li><li><a href="../guias/index-tr.html" aria-current="page">Rehberler</a></li><li><a href="../index-tr.html#faq">Sorular</a></li></ul></nav>
+    <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Lingua / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Otomatik</button>
+<a href="../../guias/index.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../../en/guias/index.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../../pt/guias/index.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="../../fr/guias/index.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a>
+<a href="../../de/guias/index.html" role="menuitem" hreflang="de" lang="de" data-langsel="de">Deutsch</a>
+<a href="../../it/guias/index.html" role="menuitem" hreflang="it" lang="it" data-langsel="it">Italiano</a>
+<a href="../../ar/guias/index.html" role="menuitem" hreflang="ar" lang="ar" data-langsel="ar">العربية</a>
+<a href="#" role="menuitem" hreflang="tr" lang="tr" data-langsel="tr" class="current" aria-current="true">Türkçe</a>
+<a href="../../pl/guias/index.html" role="menuitem" hreflang="pl" lang="pl" data-langsel="pl">Polski</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../../guias/index.html",en:"../../en/guias/index.html",pt:"../../pt/guias/index.html",fr:"../../fr/guias/index.html",de:"../../de/guias/index.html",it:"../../it/guias/index.html",ar:"../../ar/guias/index.html",tr:null,pl:"../../pl/guias/index.html"};
+var CUR="tr",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("de")===0)return "de";if(l.indexOf("it")===0)return "it";if(l.indexOf("ar")===0)return "ar";if(l.indexOf("tr")===0)return "tr";if(l.indexOf("pl")===0)return "pl";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){});});});
+})();
+</script>
+    <a class="btn btn-primary btn-sm" href="../index-tr.html#descargar">Çok yakında</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Menüyü kapat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="../index-tr.html#funciones">Özellikler</a></li><li><a href="../index-tr.html#el-dia">Nasıl çalışır</a></li><li><a href="../index-tr.html#galeria">Galeri</a></li><li><a href="../guias/index-tr.html" aria-current="page">Rehberler</a></li><li><a href="../index-tr.html#faq">Sorular</a></li></ul>
+  <a class="btn btn-primary" href="../index-tr.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Yakında Google Play'de</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="crumb"><a href="../index-tr.html">Ana sayfa</a> / Parfüm rehberleri</p><h1>Parfüm rehberleri</h1><p class="lede">Parfüm dünyasını anlama yazıları: durumlar, koku aileleri, kalıcılık, klonlar ve çok daha fazlası.</p></div></section>
+<div class="wrap grid-guides"><div class="guides"><a class="guide rise" href="como-elegir-perfume-segun-ocasion-tr.html"><img src="images/ocasion.webp" alt="Duruma göre parfüm nasıl seçilir" loading="lazy"><div><span class="tag">Durumlar</span><h3>Duruma göre parfüm nasıl seçilir</h3><p>Ofis, randevular, etkinlikler, spor ve kilise: her ana hangi parfüm uyar.</p><span class="go">Rehberi oku →</span></div></a><a class="guide rise" href="familias-olfativas-guia-tr.html"><img src="images/familias.webp" alt="Koku aileleri rehberi" loading="lazy"><div><span class="tag">Temeller</span><h3>Koku aileleri rehberi</h3><p>Narenciyeli, çiçeksi, odunsu, oryantal, fougère, şipre ve gourmand, açıklanmış.</p><span class="go">Rehberi oku →</span></div></a><a class="guide rise" href="mejores-perfumes-verano-2026-tr.html"><img src="images/verano.webp" alt="Yaz için en iyi ferah parfümler" loading="lazy"><div><span class="tag">Mevsim</span><h3>Mevsime göre en iyi parfümler</h3><p>İlkbahar, yaz, sonbahar ve kış: her mevsimde hangi parfüm kullanılır.</p><span class="go">Rehberi oku →</span></div></a><a class="guide rise" href="perfume-dure-mas-trucos-tr.html"><img src="images/duracion.webp" alt="Parfümün daha uzun süre kalıcı olması için ipuçları" loading="lazy"><div><span class="tag">İpuçları</span><h3>Parfümün daha uzun süre kalıcı olması için ipuçları</h3><p>12 denenmiş ipucu: nemlendirme, uygulama noktaları, saklama ve daha fazlası.</p><span class="go">Rehberi oku →</span></div></a><a class="guide rise" href="perfumes-clon-vs-originales-tr.html"><img src="images/clon.webp" alt="Klon parfümlere karşı orijinaller" loading="lazy"><div><span class="tag">Satın alma</span><h3>Klon mu orijinal mi: değer mi?</h3><p>Klon parfümlere dürüst bir bakış: gerçek farklar ve ne zaman mantıklı oldukları.</p><span class="go">Rehberi oku →</span></div></a><a class="guide rise" href="notas-salida-corazon-fondo-tr.html"><img src="images/notas.webp" alt="Üst, kalp ve dip notaları" loading="lazy"><div><span class="tag">Temeller</span><h3>Üst, kalp ve dip notaları</h3><p>Bir parfüm saatler geçtikçe neden değişir ve daha iyi seçmek için bundan nasıl yararlanılır.</p><span class="go">Rehberi oku →</span></div></a></div></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="../index-tr.html">AROMARIO</a><p class="foot-phrase">Doğru parfüm, <em>her sabah.</em></p><p>Dijital parfüm gardırobun.</p></div>
+      <div><h4>Uygulama</h4><ul><li><a href="../index-tr.html#funciones">Özellikler</a></li><li><a href="../index-tr.html#el-dia">Nasıl çalışır</a></li><li><a href="../index-tr.html#galeria">Galeri</a></li><li><a href="../index-tr.html#faq">Sorular</a></li></ul></div><div><h4>Öğren</h4><ul><li><a href="../guias/index-tr.html">Parfüm rehberleri</a></li><li><a href="../guias/familias-olfativas-guia-tr.html">Koku aileleri</a></li><li><a href="../guias/notas-salida-corazon-fondo-tr.html">Bir parfümün notaları</a></li></ul></div><div><h4>Yasal bilgiler</h4><ul><li><a href="../privacy-tr.html">Gizlilik</a></li><li><a href="../terms-tr.html">Şartlar</a></li><li><a href="../delete-tr.html">Hesabı sil</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Tüm hakları saklıdır.</span><span>İletişim: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
