@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" hreflang="es" href="https://aromario.app/deseos.html">
+<link rel="alternate" hreflang="en" href="https://aromario.app/en/wishlist.html">
+<link rel="alternate" hreflang="pt-BR" href="https://aromario.app/pt/deseos.html">
+<link rel="alternate" hreflang="fr" href="https://aromario.app/fr/deseos.html">
+<link rel="alternate" hreflang="de" href="https://aromario.app/de/deseos.html">
+<title>La mia lista dei desideri — Aromario</title>
+<meta name="description" content="I profumi che desidero, nella mia lista dei desideri di Aromario.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="La mia lista dei desideri — Aromario">
+<meta property="og:description" content="I profumi che desidero, nella mia lista dei desideri di Aromario.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://aromario.app/images/og-deseos.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aromario.app/images/og-deseos.png">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.wl-head{padding:3.2rem 0 1.4rem;text-align:center}
+.wl-head h1{font:500 clamp(2.2rem,6vw,3.4rem)/1.05 var(--display);color:var(--ink);margin:.2rem 0 .6rem}
+.wl-head p{color:var(--muted);margin:0}
+#wl-count{color:var(--steel);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+#wishlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;padding:1rem 0 1.6rem}
+.wl-card{display:flex;gap:1rem;align-items:center;background:var(--glass);border:1px solid var(--glass-edge);border-radius:var(--r-md);padding:1rem;box-shadow:0 14px 34px -24px var(--shadow);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.wl-photo{flex:none;width:92px;height:116px;border-radius:var(--r-sm);background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.wl-photo img{width:100%;height:100%;object-fit:contain}
+.wl-mono{font:500 2.4rem/1 var(--display);color:#1B3A5C}
+.wl-text{min-width:0}
+.wl-name{font:600 1.35rem/1.15 var(--display);color:var(--ink);margin:0 0 .2rem;overflow-wrap:anywhere}
+.wl-brand{color:var(--steel);margin:0 0 .8rem;font-size:.9rem}
+.wl-msg{grid-column:1/-1;text-align:center;color:var(--muted);padding:2rem 0}
+.wl-foot{text-align:center;padding:.4rem 0 3rem}
+.wl-note{color:var(--muted);font-size:.8rem;max-width:560px;margin:0 auto 1.4rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="wl-head">
+    <a class="logo" href="index-it.html">AROMARIO</a>
+    <h1>La mia lista dei desideri</h1>
+    <p>I profumi che desidero. <span id="wl-count"></span></p>
+  <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Lingua / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Automatico</button>
+<a href="../deseos.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../en/deseos.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../pt/deseos.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="../fr/deseos.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a>
+<a href="../de/deseos.html" role="menuitem" hreflang="de" lang="de" data-langsel="de">Deutsch</a>
+<a href="#" role="menuitem" hreflang="it" lang="it" data-langsel="it" class="current" aria-current="true">Italiano</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../deseos.html",en:"../en/deseos.html",pt:"../pt/deseos.html",fr:"../fr/deseos.html",de:"../de/deseos.html",it:null};
+var CUR="it",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("de")===0)return "de";if(l.indexOf("it")===0)return "it";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){});});});
+})();
+</script>
+  </header>
+  <section id="wishlist" data-base="" aria-live="polite"></section>
+  <div class="wl-foot">
+    <p class="wl-note">Avviso affiliati: se acquisti tramite questi link, Aromario può ricevere una commissione, senza costi aggiuntivi per te.</p>
+    <a class="btn btn-glass" href="https://play.google.com/store/apps/details?id=com.aromario.app" target="_blank" rel="noopener">Apri in Aromario</a>
+  </div>
+</main>
+<script src="assets/deseos.js" defer></script>
+</body>
+</html>
