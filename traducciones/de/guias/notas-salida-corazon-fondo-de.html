@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Kopf-, Herz- und Basisnoten: was sie bedeuten — Aromario</title>
+<meta name="description" content="Verstehe die Duftpyramide: was Kopf-, Herz- und Basisnoten sind, warum sich ein Parfüm im Laufe der Stunden verändert und wie man das zum Wählen nutzt.">
+<meta property="og:title" content="Kopf-, Herz- und Basisnoten: was sie bedeuten — Aromario">
+<meta property="og:description" content="Verstehe die Duftpyramide: was Kopf-, Herz- und Basisnoten sind, warum sich ein Parfüm im Laufe der Stunden verändert und wie man das zum Wählen nutzt.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index-de.html">AROMARIO</a>
+    <nav aria-label="Principal"><ul class="nav-links"><li><a href="../index-de.html#funciones">Funktionen</a></li><li><a href="../index-de.html#el-dia">So funktioniert es</a></li><li><a href="../index-de.html#galeria">Galerie</a></li><li><a href="../guias/index-de.html" aria-current="page">Ratgeber</a></li><li><a href="../index-de.html#faq">Fragen</a></li></ul></nav>
+    <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Langue / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Automatisch</button>
+<a href="../../guias/notas-salida-corazon-fondo.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../../en/guias/notas-salida-corazon-fondo.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../../pt/guias/notas-salida-corazon-fondo.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="../../fr/guias/notas-salida-corazon-fondo.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a>
+<a href="#" role="menuitem" hreflang="de" lang="de" data-langsel="de" class="current" aria-current="true">Deutsch</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../../guias/notas-salida-corazon-fondo.html",en:"../../en/guias/notas-salida-corazon-fondo.html",pt:"../../pt/guias/notas-salida-corazon-fondo.html",fr:"../../fr/guias/notas-salida-corazon-fondo.html",de:null};
+var CUR="de",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("de")===0)return "de";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){}});});
+})();
+</script>
+    <a class="btn btn-primary btn-sm" href="../index-de.html#descargar">Bald verfügbar</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Fermer le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="../index-de.html#funciones">Funktionen</a></li><li><a href="../index-de.html#el-dia">So funktioniert es</a></li><li><a href="../index-de.html#galeria">Galerie</a></li><li><a href="../guias/index-de.html" aria-current="page">Ratgeber</a></li><li><a href="../index-de.html#faq">Fragen</a></li></ul>
+  <a class="btn btn-primary" href="../index-de.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Bald auf Google Play</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="back"><a href="index-de.html">← Alle Ratgeber</a></p><p class="eyebrow" style="margin-top:1.4rem">Parfüm-Ratgeber</p><h1>Kopf-, Herz- und Basisnoten: was sie bedeuten</h1><p class="article-lead">Ein Parfüm riecht nach fünf Minuten nicht gleich wie nach fünf Stunden. Die Duftpyramide erklärt warum: Jedes Parfüm ist eine Geschichte in drei Akten.</p><p class="article-meta">Aromario · Lern-Ratgeber · 7 Min. Lesezeit</p><img class="hero-img" src="images/notas.webp" alt="Kopf-, Herz- und Basisnoten"></div></section>
+<div class="wrap"><div class="prose">
+<p>Wenn du schon einmal ein Parfüm im Geschäft ausprobiert, es geliebt, es gekauft und es zu Hause anders gefunden hast, bist du nicht verrückt geworden: Es ist die Duftpyramide in Aktion. Jedes Parfüm ist in drei Phasen gebaut, die auf deiner Haut aufeinander folgen: Kopf, Herz und Basis. Sie zu verstehen verändert vollständig die Art, Parfüms auszuprobieren und zu wählen.</p>
+<h2>Die Duftpyramide: eine Geschichte in drei Akten</h2>
+<p>Denke an ein Parfüm wie an ein Theaterstück. Du siehst das Ende nicht ab der ersten Minute, und das Stück nach seinen ersten fünf Minuten zu beurteilen wäre ein Fehler. Mit Parfüms ist es genauso: Was du beim Sprühen riechst, ist nur der Anfang.</p>
+<h2>Akt 1: die Kopfnoten</h2>
+<p>Es sind die ersten, die du wahrnimmst, während der ersten 5 bis 15 Minuten. Es sind in der Regel leichte und flüchtige Zutaten: Zitrusfrüchte (Bergamotte, Zitrone, Grapefruit), grüne Noten, aromatische Kräuter oder frische Früchte.</p>
+<p>Ihre Mission ist der anfängliche Eindruck: dieser erste leuchtende und verführerische Eindruck. Aber sie sind von Natur aus vergänglich: Sie verdunsten schnell, weil ihre Moleküle klein und leicht sind. Deshalb beurteilt man ein Parfüm nicht nach seinen Kopfnoten, selbst wenn es das ist, was im Geschäft am meisten Aufmerksamkeit erregt.</p>
+<div class="tip"><strong>Klassischer Fehler:</strong> ein Parfüm für das kaufen, wonach es nach zwei Minuten auf dem Teststreifen im Geschäft riecht. Du beurteilst nur die Kopfnoten. Trage es mindestens einige Stunden auf der Haut, bevor du entscheidest.</div>
+<h2>Akt 2: die Herznoten</h2>
+<p>Wenn sich die Kopfnoten auflösen (zwischen 15 Minuten und 2-3 Stunden), tritt das Herz hervor: der wahre Charakter des Parfüms. Dort leben die Blumen (Rose, Jasmin, Orangenblüte, Pfingstrose), die sanften Gewürze (Zimt, Kardamom), die reifen Früchte und die komplexeren grünen Noten.</p>
+<p>Das Herz ist das, was die meisten Menschen während des größten Teils des Tages wahrnehmen, und was die anderen bemerken, wenn sie nahe bei dir sind. Wenn die Kopfnoten die Begrüßung sind, ist das Herz das Gespräch.</p>
+<h2>Akt 3: die Basisnoten</h2>
+<p>Ab 2-3 Stunden (und bis zu 8, 12 oder mehr) bleibt die Basis: das Fundament des Parfüms. Schwere und hartnäckige Zutaten wie Sandelholz, Zeder, Vetiver, Amber, Vanille, Moschus, Leder oder Oud.</p>
+<p>Die Basis ist das, was am nächsten Tag auf der Kleidung «bleibt» und woran du dich langfristig vom Parfüm erinnerst. Dort bemerkt sich auch die Qualität der Zutaten: Eine gute Basis ist tief und elegant; eine billige Basis kann mit den Stunden flach oder synthetisch werden.</p>
+<h2>Warum sich Parfüms auf deiner Haut verändern</h2>
+<p>Jede Person hat eine andere Hautchemie: Der pH-Wert, die Temperatur, die Feuchtigkeit und dein Hauttyp beeinflussen, wie sich die Noten entfalten. Deshalb kann dasselbe Parfüm an dir anders riechen als an deinem Freund, und warum Papiertests nur als erste Annäherung dienen.</p>
+<p>Die goldene Regel: Teste immer auf der Haut und gib ihm Zeit. Mindestens 2-3 Stunden, um das Herz kennenzulernen, idealerweise einen ganzen Tag, um die Basis zu entdecken.</p>
+<h2>Wie man die Pyramide nutzt, um ein Parfüm zu wählen</h2>
+<ul>
+<li><strong>Verliebe dich nicht nur in den Kopf:</strong> diese spritzigen Zitrusfrüchte werden in 20 Minuten verschwinden. Frage dich, ob du magst, was danach kommt.</li>
+<li><strong>Identifiziere das Herz:</strong> magst du blumige, würzige, fruchtige Parfüms? Das Herz sagt dir, zu welcher Familie das Parfüm wirklich gehört.</li>
+<li><strong>Bewerte die Basis nach deinem Gebrauch:</strong> wenn du ein Parfüm für den ganzen Tag willst, brauchst du eine Basis, die du magst, denn das ist es, was du über Stunden tragen wirst.</li>
+<li><strong>Vorsicht bei schweren Basen:</strong> eine Basis aus intensivem Oud kann nachts wunderbar und im Büro erstickend sein. Denke an den Moment, in dem du es tragen wirst.</li>
+</ul>
+<h2>Die Pyramide in der Praxis: ein Beispiel</h2>
+<p>Stelle dir ein Parfüm mit einem Kopf aus Bergamotte und Grapefruit, einem Herzen aus Jasmin und einer Basis aus Sandelholz und Vanille vor. Beim Sprühen riechst du eine Zitrusfrische (Kopf). Eine halbe Stunde später sind die Zitrusfrüchte weicher geworden und ein eleganter Jasmin tritt hervor (Herz). Vier Stunden später bleibt eine cremige Spur aus Sandelholz und Vanille (Basis). Drei Parfüms in einem, an einem einzigen Tag.</p>
+<div class="tip"><strong>Zum Behalten:</strong> Kopf = erster Eindruck (Minuten), Herz = wahrer Charakter (Stunden), Basis = dauerhafte Erinnerung (der Rest des Tages). Beurteile ein Parfüm nach seinen drei Akten, nicht nur nach dem ersten.</div>
+<h2>Und die «Noten» sind keine wörtlichen Zutaten</h2>
+<p>Ein wichtiges Detail: Wenn die Detailansicht eines Parfüms «Ledernoten» sagt, bedeutet das nicht, dass es echtes Leder enthält. Die Noten beschreiben den<em>olfaktorischen Effekt</em> : eine Kombination von Zutaten, die den Eindruck von Leder, Regen, Meer oder anderem erschafft. Die Parfümerie ist eine Kunst der Illusionen, und die Pyramide ist ihre Partitur.</p>
+<p>Mit diesem Wissen wirst du das nächste Mal, wenn du ein Parfüm ausprobierst, es mit anderen Augen tun (oder eher mit einer anderen Nase): Du wirst seine Entwicklung abwarten, ihm seine Zeit geben und mit viel mehr Unterscheidungsvermögen wählen. Das ist es, mehr als alles andere, was den, der aus einem Impuls kauft, von dem trennt, der sein ideales Parfüm findet.</p>
+<div class="related">
+<h3>Weiter entdecken</h3>
+<ul>
+<li><a href="como-elegir-perfume-segun-ocasion-de.html">Wie man sein Parfüm nach dem Anlass wählt</a></li>
+<li><a href="familias-olfativas-guia-de.html">Ratgeber zu den Duftfamilien</a></li>
+<li><a href="mejores-perfumes-verano-2026-de.html">Die besten Parfüms nach Jahreszeit</a></li>
+<li><a href="perfume-dure-mas-trucos-de.html">Tipps, damit dein Parfüm länger hält</a></li>
+<li><a href="perfumes-clon-vs-originales-de.html">Klon oder Original: Lohnt es sich?</a></li>
+</ul>
+</div>
+<div class="cta-box">
+<h3>Möchtest du jeden Morgen die perfekte Empfehlung?</h3>
+<p>Aromario organisiert deine Sammlung und schlägt dir das ideale Parfüm nach Wetter und deinem Tagesplan vor. Kostenlos für Android.</p>
+<a class="btn" href="../index-de.html">Aromario entdecken</a></div>
+</div></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="../index-de.html">AROMARIO</a><p class="foot-phrase">Das richtige Parfüm, <em>jeden Morgen.</em></p><p>Dein digitaler Parfümschrank.</p></div>
+      <div><h4>Die App</h4><ul><li><a href="../index-de.html#funciones">Funktionen</a></li><li><a href="../index-de.html#el-dia">So funktioniert es</a></li><li><a href="../index-de.html#galeria">Galerie</a></li><li><a href="../index-de.html#faq">Fragen</a></li></ul></div><div><h4>Lernen</h4><ul><li><a href="../guias/index-de.html">Parfüm-Ratgeber</a></li><li><a href="../guias/familias-olfativas-guia-de.html">Duftfamilien</a></li><li><a href="../guias/notas-salida-corazon-fondo-de.html">Die Noten eines Parfüms</a></li></ul></div><div><h4>Rechtliches</h4><ul><li><a href="../privacy-de.html">Datenschutz</a></li><li><a href="../terms-de.html">Nutzungsbedingungen</a></li><li><a href="../delete-de.html">Konto löschen</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Alle Rechte vorbehalten.</span><span>Kontakt: <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
