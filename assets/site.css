@@ -434,3 +434,12 @@ html{-webkit-tap-highlight-color:transparent}
   .gal-ctrl button{width:54px;height:54px}
   .section{padding-block:clamp(4.5rem,16vw,6rem)}
 }
+
+/* ---------- rendimiento (2026-11-02): pausa fuera de pantalla y desenfoque ligero en móvil ---------- */
+.io-paused,.io-paused::before,.io-paused::after{animation-play-state:paused!important}
+@media (max-width:860px){
+  .nav.scrolled{-webkit-backdrop-filter:saturate(1.2) blur(10px);backdrop-filter:saturate(1.2) blur(10px)}
+  .float-card{-webkit-backdrop-filter:blur(8px) saturate(1.15);backdrop-filter:blur(8px) saturate(1.15)}
+  .tile{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .btn-glass{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+}

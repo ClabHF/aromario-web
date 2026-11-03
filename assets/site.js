@@ -167,3 +167,33 @@
   if (img && !img.complete) img.addEventListener('load', layout); else layout();
   window.addEventListener('load', layout);
 })();
+
+/* Rendimiento: pausar las animaciones infinitas que quedan fuera de pantalla */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  function hasInfinite(el, pseudo) {
+    var s = window.getComputedStyle(el, pseudo || null);
+    return s.animationName !== 'none' && s.animationIterationCount.split(',').indexOf('infinite') !== -1;
+  }
+  var animated = [];
+  var all = document.querySelectorAll('body *');
+  for (var i = 0; i < all.length; i++) {
+    var el = all[i];
+    try { if (hasInfinite(el) || hasInfinite(el, '::before') || hasInfinite(el, '::after')) animated.push(el); } catch (e) {}
+  }
+  if (!animated.length) return;
+  var off = ('WeakSet' in window) ? new WeakSet() : null;
+  var offList = [];
+  function isOff(el) { return off ? off.has(el) : offList.indexOf(el) !== -1; }
+  function setOff(el, v) {
+    if (off) { v ? off.add(el) : off.delete(el); }
+    else { var j = offList.indexOf(el); if (v && j === -1) offList.push(el); if (!v && j !== -1) offList.splice(j, 1); }
+  }
+  function apply(el) { el.classList.toggle('io-paused', document.hidden || isOff(el)); }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { setOff(e.target, !e.isIntersecting); apply(e.target); });
+  }, { rootMargin: '120px' });
+  animated.forEach(function (el) { io.observe(el); });
+  document.addEventListener('visibilitychange', function () { animated.forEach(apply); });
+})();
