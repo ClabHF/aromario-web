@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Guides de parfums — Aromario</title>
+<meta name="description" content="Guides éducatifs sur les parfums : comment choisir selon l’occasion, les familles olfactives, les astuces de tenue, clones contre originaux et plus encore.">
+<meta property="og:title" content="Guides de parfums — Aromario">
+<meta property="og:description" content="Guides éducatifs sur les parfums : comment choisir selon l’occasion, les familles olfactives, les astuces de tenue, clones contre originaux et plus encore.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EEF4FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1520" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="../index-fr.html">AROMARIO</a>
+    <nav aria-label="Principal"><ul class="nav-links"><li><a href="../index-fr.html#funciones">Fonctions</a></li><li><a href="../index-fr.html#el-dia">Comment ça marche</a></li><li><a href="../index-fr.html#galeria">Galerie</a></li><li><a href="../guias/index-fr.html" aria-current="page">Guides</a></li><li><a href="../index-fr.html#faq">Questions</a></li></ul></nav>
+    <style>
+.langsel{position:relative;display:inline-block}
+.langsel-btn{background:none;border:0;font-size:1.25rem;line-height:1;cursor:pointer;color:inherit;padding:.35rem .5rem}
+.langsel-menu{position:absolute;right:0;top:calc(100% + .35rem);min-width:11rem;background:#fff;color:#1B3A5C;border:1px solid rgba(27,58,92,.18);border-radius:.6rem;box-shadow:0 10px 30px rgba(27,58,92,.18);padding:.35rem;z-index:60;display:flex;flex-direction:column}
+.langsel-menu[hidden]{display:none}
+.langsel-menu a,.langsel-menu button{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;font-size:.95rem;padding:.45rem .6rem;border-radius:.4rem;color:inherit;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.langsel-menu a:hover,.langsel-menu button:hover{background:rgba(174,198,221,.35)}
+.langsel-menu .current{font-weight:600}
+</style>
+<div class="langsel">
+<button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Langue / Language">☰</button>
+<div class="langsel-menu" role="menu" hidden>
+<button type="button" role="menuitem" data-langsel="auto">Automatique</button>
+<a href="../../guias/index.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a>
+<a href="../../en/guias/index.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a>
+<a href="../../pt/guias/index.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a>
+<a href="#" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr" class="current" aria-current="true">Français</a>
+</div>
+</div>
+<script>
+(function(){
+var URLS={es:"../../guias/index.html",en:"../../en/guias/index.html",pt:"../../pt/guias/index.html",fr:null};
+var CUR="fr",KEY="aromario_langsel";
+function sys(){var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)return "es";if(l.indexOf("pt")===0)return "pt";if(l.indexOf("fr")===0)return "fr";if(l.indexOf("en")===0)return "en";return "es";}
+function go(lang){if(!lang||lang===CUR)return;var u=URLS[lang];if(u)location.href=u;}
+try{var pref=localStorage.getItem(KEY);if(pref&&pref!=="auto"){go(pref);}else{go(sys());}}catch(e){}
+var root=document.querySelector(".langsel");if(!root)return;
+var btn=root.querySelector(".langsel-btn"),menu=root.querySelector(".langsel-menu");
+function close(){menu.hidden=true;btn.setAttribute("aria-expanded","false");}
+btn.addEventListener("click",function(ev){ev.stopPropagation();var open=menu.hidden;menu.hidden=!open;btn.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",function(ev){if(!root.contains(ev.target))close();});
+document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});
+menu.querySelector('[data-langsel="auto"]').addEventListener("click",function(){try{localStorage.setItem(KEY,"auto");}catch(e){}close();go(sys());});
+menu.querySelectorAll("a[data-langsel]").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem(KEY,a.getAttribute("data-langsel"));}catch(e){}});});
+})();
+</script>
+    <a class="btn btn-primary btn-sm" href="../index-fr.html#descargar">Bientôt</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Fermer le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="../index-fr.html#funciones">Fonctions</a></li><li><a href="../index-fr.html#el-dia">Comment ça marche</a></li><li><a href="../index-fr.html#galeria">Galerie</a></li><li><a href="../guias/index-fr.html" aria-current="page">Guides</a></li><li><a href="../index-fr.html#faq">Questions</a></li></ul>
+  <a class="btn btn-primary" href="../index-fr.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>Bientôt sur Google Play</a>
+</div>
+<main id="main">
+<section class="page-hero"><div class="wrap"><p class="crumb"><a href="../index-fr.html">Accueil</a> / Guides de parfums</p><h1>Guides de parfums</h1><p class="lede">Des articles éducatifs pour comprendre le monde des parfums : occasions, familles olfactives, tenue, clones et bien plus.</p></div></section>
+<div class="wrap grid-guides"><div class="guides"><a class="guide rise" href="como-elegir-perfume-segun-ocasion-fr.html"><img src="images/ocasion.webp" alt="Comment choisir son parfum selon l’occasion" loading="lazy"><div><span class="tag">Occasions</span><h3>Comment choisir son parfum selon l’occasion</h3><p>Bureau, rendez-vous, événements, sport et église : quel parfum fonctionne à chaque moment.</p><span class="go">Lire le guide →</span></div></a><a class="guide rise" href="familias-olfativas-guia-fr.html"><img src="images/familias.webp" alt="Guide des familles olfactives" loading="lazy"><div><span class="tag">Fondamentaux</span><h3>Guide des familles olfactives</h3><p>Hespéridés, floraux, boisés, orientaux, fougère, chyprés et gourmands, expliqués.</p><span class="go">Lire le guide →</span></div></a><a class="guide rise" href="mejores-perfumes-verano-2026-fr.html"><img src="images/verano.webp" alt="Les meilleurs parfums frais pour l’été" loading="lazy"><div><span class="tag">Saison</span><h3>Les meilleurs parfums selon la saison</h3><p>Printemps, été, automne et hiver : quel parfum porter à chaque saison.</p><span class="go">Lire le guide →</span></div></a><a class="guide rise" href="perfume-dure-mas-trucos-fr.html"><img src="images/duracion.webp" alt="Astuces pour que le parfum dure plus longtemps" loading="lazy"><div><span class="tag">Astuces</span><h3>Astuces pour faire durer votre parfum plus longtemps</h3><p>12 conseils éprouvés : hydratation, points d’application, conservation et plus.</p><span class="go">Lire le guide →</span></div></a><a class="guide rise" href="perfumes-clon-vs-originales-fr.html"><img src="images/clon.webp" alt="Parfums clones contre originaux" loading="lazy"><div><span class="tag">Guide d’achat</span><h3>Clone ou original : est-ce que ça vaut le coup ?</h3><p>Un regard honnête sur les parfums clones : les vraies différences et quand ils ont du sens.</p><span class="go">Lire le guide →</span></div></a><a class="guide rise" href="notas-salida-corazon-fondo-fr.html"><img src="images/notas.webp" alt="Notes de tête, de cœur et de fond" loading="lazy"><div><span class="tag">Fondamentaux</span><h3>Notes de tête, de cœur et de fond</h3><p>Pourquoi un parfum change au fil des heures et comment s’en servir pour mieux choisir.</p><span class="go">Lire le guide →</span></div></a></div></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="../index-fr.html">AROMARIO</a><p class="foot-phrase">Le parfum juste, <em>chaque matin.</em></p><p>Votre garde-robe digitale de parfums.</p></div>
+      <div><h4>L’application</h4><ul><li><a href="../index-fr.html#funciones">Fonctions</a></li><li><a href="../index-fr.html#el-dia">Comment ça marche</a></li><li><a href="../index-fr.html#galeria">Galerie</a></li><li><a href="../index-fr.html#faq">Questions</a></li></ul></div><div><h4>Apprendre</h4><ul><li><a href="../guias/index-fr.html">Guides de parfums</a></li><li><a href="../guias/familias-olfativas-guia-fr.html">Familles olfactives</a></li><li><a href="../guias/notas-salida-corazon-fondo-fr.html">Notes d’un parfum</a></li></ul></div><div><h4>Légal</h4><ul><li><a href="../privacy-fr.html">Confidentialité</a></li><li><a href="../terms-fr.html">Conditions</a></li><li><a href="../delete-fr.html">Supprimer le compte</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Clab HF Development. Tous droits réservés.</span><span>Contact : <span class="mail">clabhfdevelopment@gmail.com</span></span></div>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
