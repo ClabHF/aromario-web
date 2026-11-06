@@ -1,4 +1,4 @@
-/* Aromario — página de deseos compartidos (9 idiomas). Lee ?ids=… y arma la lista solo con datos
+/* Aromario — página de deseos compartidos (14 idiomas). Lee ?ids=… y arma la lista solo con datos
    públicos: nombre y marca de data/perfumes-ligero.json y la foto de verified_photos.json.
    El enlace no lleva datos de la cuenta; la lista no se marca como comprada.
    Enlace corto (app 1.1.19+): ?v=1&i=… = índices en el orden canónico data/orden-v1.json (3 caracteres
@@ -6,7 +6,7 @@
 (function () {
   var root = document.getElementById("wishlist");
   if (!root) return;
-  // 9 idiomas: el de la página (<html lang>); cualquier otro -> español.
+  // 14 idiomas: el de la página (<html lang>); cualquier otro -> español.
   var lang = (document.documentElement.lang || "es").toLowerCase().slice(0, 2);
   var base = root.getAttribute("data-base") || "";
   function plain(one, many) { return function (n) { return n === 1 ? one : n + " " + many; }; }
@@ -19,7 +19,12 @@
     it: { buy: "Acquista", invalid: "Questo link è danneggiato o incompleto. Chiedi che te lo rimandino.", empty: "Questa lista è vuota o il link è incompleto.", error: "Non siamo riusciti a caricare la lista. Riprova tra un momento.", count: plain("1 profumo", "profumi") },
     ar: { buy: "شراء", invalid: "هذا الرابط تالف أو غير مكتمل. اطلب إرساله من جديد.", empty: "هذه القائمة فارغة أو الرابط غير مكتمل.", error: "تعذّر تحميل القائمة. حاول مجددًا بعد لحظة.", count: function (n) { return n === 1 ? "عطر واحد" : n === 2 ? "عطران" : n <= 10 ? n + " عطور" : n + " عطرًا"; } },
     tr: { buy: "Satın al", invalid: "Bu bağlantı bozuk ya da eksik. Yeniden göndermelerini iste.", empty: "Bu liste boş ya da bağlantı eksik.", error: "Liste yüklenemedi. Birazdan tekrar dene.", count: function (n) { return n + " parfüm"; } },
-    pl: { buy: "Kup", invalid: "Ten link jest uszkodzony lub niepełny. Poproś o ponowne wysłanie.", empty: "Ta lista jest pusta albo link jest niepełny.", error: "Nie udało się wczytać listy. Spróbuj ponownie za chwilę.", count: function (n) { return "perfumy: " + n; } }
+    pl: { buy: "Kup", invalid: "Ten link jest uszkodzony lub niepełny. Poproś o ponowne wysłanie.", empty: "Ta lista jest pusta albo link jest niepełny.", error: "Nie udało się wczytać listy. Spróbuj ponownie za chwilę.", count: function (n) { return "perfumy: " + n; } },
+    ro: { buy: "Cumpără", invalid: "Acest link este deteriorat sau incomplet. Cere să ți-l trimită din nou.", empty: "Această listă este goală sau linkul este incomplet.", error: "Nu am putut încărca lista. Încearcă din nou peste câteva momente.", count: function (n) { return n === 1 ? "1 parfum" : (n % 100 === 0 || n % 100 >= 20 ? n + " de parfumuri" : n + " parfumuri"); } },
+    el: { buy: "Αγορά", invalid: "Αυτός ο σύνδεσμος είναι κατεστραμμένος ή ελλιπής. Ζήτησε να σου τον ξαναστείλουν.", empty: "Αυτή η λίστα είναι κενή ή ο σύνδεσμος είναι ελλιπής.", error: "Δεν μπορέσαμε να φορτώσουμε τη λίστα. Δοκίμασε ξανά σε λίγο.", count: plain("1 άρωμα", "αρώματα") },
+    hu: { buy: "Vásárlás", invalid: "Ez a link sérült vagy hiányos. Kérd, hogy küldjék el újra.", empty: "Ez a lista üres, vagy a link hiányos.", error: "Nem sikerült betölteni a listát. Próbáld újra egy pillanat múlva.", count: function (n) { return n + " parfüm"; } },
+    cs: { buy: "Koupit", invalid: "Tento odkaz je poškozený nebo neúplný. Požádejte o jeho opětovné zaslání.", empty: "Tento seznam je prázdný nebo je odkaz neúplný.", error: "Seznam se nepodařilo načíst. Zkuste to za chvíli znovu.", count: function (n) { return n === 1 ? "1 parfém" : (n >= 2 && n <= 4 ? n + " parfémy" : n + " parfémů"); } },
+    nl: { buy: "Kopen", invalid: "Deze link is beschadigd of onvolledig. Vraag om hem opnieuw te sturen.", empty: "Deze lijst is leeg of de link is onvolledig.", error: "We konden de lijst niet laden. Probeer het zo meteen opnieuw.", count: plain("1 parfum", "parfums") }
   };
   var T = TT[lang] || TT.es;
   var CJ = "https://www.jdoqocy.com/click-101899442-15733833";
