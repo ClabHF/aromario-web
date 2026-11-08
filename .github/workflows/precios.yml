@@ -1,0 +1,49 @@
+# Corrida nocturna de precios (orden de Claudio, 2026-11-08; diseño del 2026-10-29).
+# Baja los feeds de afiliados, rehace el cruce contra tiendas.json y publica /precios.json en
+# aromario.app. Sin dependencias ni tokens de IA: solo Python estándar en el runner gratuito.
+# Secretos (Settings > Secrets and variables > Actions): ver .github/precios/LEEME.md.
+name: Precios nocturnos
+
+on:
+  schedule:
+    - cron: '17 7 * * *'   # 07:17 UTC: madrugada en América, antes de que la app revise
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: precios
+  cancel-in-progress: false
+
+jobs:
+  precios:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cruce de precios
+        env:
+          AWIN_FEED_APIKEY: ${{ secrets.AWIN_FEED_APIKEY }}
+          RAKUTEN_TOKEN_KEY: ${{ secrets.RAKUTEN_TOKEN_KEY }}
+          RAKUTEN_SID: ${{ secrets.RAKUTEN_SID }}
+          RAKUTEN_FRAGRANCENET_MID: ${{ secrets.RAKUTEN_FRAGRANCENET_MID }}
+          CJ_TOKEN: ${{ secrets.CJ_TOKEN }}
+          CJ_CID: ${{ secrets.CJ_CID }}
+          CJ_PERFUMANIA_ID: ${{ secrets.CJ_PERFUMANIA_ID }}
+        run: python3 .github/precios/precios.py
+
+      - name: Publicar precios.json
+        run: |
+          python3 -c "import json; d=json.load(open('precios.json')); assert d['precios'], 'sin precios'"
+          if git diff --quiet -- precios.json; then echo "Sin cambios"; exit 0; fi
+          git config user.name "aromario-precios[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add precios.json
+          git commit -m "Precios del $(date -u +%F)"
+          for i in 1 2 3 4; do
+            git pull --rebase -q origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
