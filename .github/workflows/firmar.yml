@@ -1,0 +1,44 @@
+# Firma de los archivos que la app aplica (orden de Claudio, 1.1.33). Cada vez que llega a main un
+# verified_photos.json o un precios.json nuevo (p. ej. subido a mano), se firma y se publica <archivo>.sig.
+# El proceso nocturno de precios firma su propio precios.json (precios.yml).
+# Secreto: FIRMA_CLAVE_PRIVADA (Settings > Secrets and variables > Actions). Ver .github/firma/firmar.py.
+name: Firmar archivos de la app
+
+on:
+  push:
+    branches: [main]
+    paths: ['verified_photos.json', 'precios.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: precios
+  cancel-in-progress: false
+
+jobs:
+  firmar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Firmar
+        env:
+          FIRMA_CLAVE_PRIVADA: ${{ secrets.FIRMA_CLAVE_PRIVADA }}
+        run: |
+          pip install -q cryptography
+          python3 .github/firma/firmar.py verified_photos.json precios.json
+      - name: Publicar firmas
+        run: |
+          ls *.sig >/dev/null 2>&1 || { echo "Sin firmas (falta el secreto)"; exit 0; }
+          git add verified_photos.json.sig precios.json.sig
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git config user.name "aromario-firma[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Firmas del $(date -u +%F)"
+          for i in 1 2 3 4; do
+            git pull --rebase -q origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
