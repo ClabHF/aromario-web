@@ -25,3 +25,17 @@ El resumen de cada corrida (qué redes entraron, cuántos enlaces con precio) qu
 python3 .github/precios/precios.py indice ruta/a/aromario-app/app/src/main/assets/tiendas.json
 ```
 y commitear `enlaces.json`.
+
+## Firma (1.1.33)
+
+La app 1.1.33+ solo aplica `precios.json` y `verified_photos.json` si su firma (`<archivo>.sig`, ECDSA P-256 /
+SHA-256 en base64) valida con la clave pública que lleva dentro (`SignedFiles.kt`).
+
+| Secreto | Qué es |
+|---|---|
+| `FIRMA_CLAVE_PRIVADA` | La clave privada PEM (PKCS#8) que entregó Claude fuera del repo. Pegarla entera (con las líneas BEGIN/END). |
+| `CJ_FRAGRANCESHOP_ID`, `CJ_PERFUMEGIANTS_ID`, `CJ_ECOSMETICS_ID` (opcionales) | CID de anunciante de cada tienda en CJ; sin ellos se filtra por palabra clave. |
+
+- `precios.yml` firma su `precios.json` cada noche.
+- `firmar.yml` firma `verified_photos.json` (y `precios.json`) cada vez que llegan a main.
+- Sin el secreto los archivos se publican sin firmar y la app nueva conserva lo que tenía.

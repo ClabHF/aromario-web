@@ -32,15 +32,28 @@ jobs:
           CJ_TOKEN: ${{ secrets.CJ_TOKEN }}
           CJ_CID: ${{ secrets.CJ_CID }}
           CJ_PERFUMANIA_ID: ${{ secrets.CJ_PERFUMANIA_ID }}
+          CJ_FRAGRANCESHOP_ID: ${{ secrets.CJ_FRAGRANCESHOP_ID }}
+          CJ_PERFUMEGIANTS_ID: ${{ secrets.CJ_PERFUMEGIANTS_ID }}
+          CJ_ECOSMETICS_ID: ${{ secrets.CJ_ECOSMETICS_ID }}
         run: python3 .github/precios/precios.py
+
+      # 1.1.33: la app solo aplica precios.json con firma válida (precios.json.sig al lado).
+      - name: Firmar precios.json
+        env:
+          FIRMA_CLAVE_PRIVADA: ${{ secrets.FIRMA_CLAVE_PRIVADA }}
+        run: |
+          pip install -q cryptography
+          python3 .github/firma/firmar.py precios.json
 
       - name: Publicar precios.json
         run: |
           python3 -c "import json; d=json.load(open('precios.json')); assert d['precios'], 'sin precios'"
-          if git diff --quiet -- precios.json; then echo "Sin cambios"; exit 0; fi
+          git add -N precios.json.sig 2>/dev/null || true
+          if git diff --quiet -- precios.json precios.json.sig; then echo "Sin cambios"; exit 0; fi
           git config user.name "aromario-precios[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add precios.json
+          [ -f precios.json.sig ] && git add precios.json.sig
           git commit -m "Precios del $(date -u +%F)"
           for i in 1 2 3 4; do
             git pull --rebase -q origin main && git push origin HEAD:main && exit 0

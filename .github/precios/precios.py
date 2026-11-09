@@ -33,6 +33,24 @@ UA = 'Aromario-precios/1.0 (+https://aromario.app)'
 HOY = datetime.date.today().isoformat()
 
 
+# ---------------------------------------------------------------- tiendas CJ
+# 1.1.33 (orden de Claudio): FragranceShop y Perfume Giants (y eCosmetics) además de Perfumania.
+# tienda -> (dominio, patrón del slug del producto en la URL, secreto opcional con el id de anunciante)
+CJ_TIENDAS = {
+    'perfumania': ('perfumania.com', r'/products/([^/?#]+)', 'CJ_PERFUMANIA_ID'),
+    'fragranceshop': ('fragranceshop.com', r'/product/([^/?#]+)', 'CJ_FRAGRANCESHOP_ID'),
+    'perfumegiants': ('perfumegiants.com', r'/products/([^/?#]+)', 'CJ_PERFUMEGIANTS_ID'),
+    'ecosmetics': ('ecosmetics.com', r'/product/([^/?#]+)', 'CJ_ECOSMETICS_ID'),
+}
+
+
+def clave_cj(tienda, url):
+    """Slug del producto de una tienda CJ en una URL de destino (o None)."""
+    dom, pat, _ = CJ_TIENDAS[tienda]
+    m = re.search(re.escape(dom) + pat, urllib.parse.unquote(url or ''))
+    return m.group(1).lower() if m else None
+
+
 # ---------------------------------------------------------------- índice de enlaces
 def clave_url(u):
     """URL de producto normalizada (sin esquema, query ni barra final) para comparar feed y enlace."""
@@ -56,10 +74,10 @@ def clave_enlace(tienda, url):
         sku = urllib.parse.urlparse(q['murl'][0]).path.rstrip('/').rsplit('/', 1)[-1]
         if sku.isdigit():
             return 'rakuten', 'fragrancenet', sku
-    if tienda == 'perfumania' and 'url' in q:                    # CJ: handle de Shopify
-        m = re.search(r'/products/([^/?#]+)', q['url'][0])
-        if m:
-            return 'cj', 'perfumania', m.group(1).lower()
+    if tienda in CJ_TIENDAS and 'url' in q:                      # CJ: slug del producto en la tienda
+        k = clave_cj(tienda, q['url'][0])
+        if k:
+            return 'cj', tienda, k
     return None
 
 
@@ -213,37 +231,49 @@ def feed_rakuten(marcas):
     return out, (f'{fallos} marcas con error de la API') if fallos else ''
 
 
-def feed_cj():
-    """Perfumania por la API de productos de CJ (GraphQL). Secretos: CJ_TOKEN (Personal Access Token,
-    developers.cj.com) y CJ_CID (Company ID del publisher). Opcional: CJ_PERFUMANIA_ID (id del
-    anunciante; sin él se filtran los anunciantes con alianza por el dominio perfumania.com)."""
+def feed_cj(tiendas):
+    """Tiendas CJ (Perfumania, FragranceShop, Perfume Giants, eCosmetics) por la API de productos de CJ
+    (GraphQL). Secretos: CJ_TOKEN (Personal Access Token, developers.cj.com) y CJ_CID (Company ID del
+    publisher). Opcionales: CJ_<TIENDA>_ID (id del anunciante; sin él se filtran los anunciantes con alianza
+    por palabra clave y se reconoce la tienda por el dominio del enlace)."""
     tok, cid = env('CJ_TOKEN', 'CJ_CID')
-    adv = os.environ.get('CJ_PERFUMANIA_ID', '').strip()
-    filtro = f'partnerIds: ["{adv}"]' if adv else 'partnerStatus: JOINED, keywords: ["perfumania"]'
-    out, offset, total = {}, 0, 1
-    while offset < total and offset < 100000:
-        q = ('{ shoppingProducts(companyId: "%s", %s, limit: 1000, offset: %d) '
-             '{ totalCount count resultList { link price { amount currency } salePrice { amount currency } } } }'
-             % (cid, filtro, offset))
-        r = json.loads(pedir('https://ads.api.cj.com/query', data=json.dumps({'query': q}).encode(),
-                             headers={'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json'}))
-        if r.get('errors'):
-            raise RuntimeError('CJ: ' + '; '.join(e.get('message', '?') for e in r['errors'])[:300])
-        d = r['data']['shoppingProducts']
-        total = int(d.get('totalCount') or 0)
-        lote = d.get('resultList') or []
-        if not lote:
-            break
-        for it in lote:
-            m = re.search(r'perfumania\.com/products/([^/?#]+)', urllib.parse.unquote(it.get('link') or ''))
-            if not m:
-                continue
-            pr, sp = it.get('price') or {}, it.get('salePrice') or {}
-            p = precio(sp.get('amount'), pr.get('amount'), sp.get('currency') or pr.get('currency'))
-            if p:
-                out.setdefault(('perfumania', m.group(1).lower()), p)
-        offset += len(lote)
-    return out, ''
+    out, notas = {}, []
+    for tienda in sorted(tiendas):
+        if tienda not in CJ_TIENDAS:
+            continue
+        dom, _, secreto = CJ_TIENDAS[tienda]
+        adv = os.environ.get(secreto, '').strip()
+        filtro = f'partnerIds: ["{adv}"]' if adv else f'partnerStatus: JOINED, keywords: ["{dom.split(".")[0]}"]'
+        offset, total, n = 0, 1, 0
+        try:
+            while offset < total and offset < 100000:
+                q = ('{ shoppingProducts(companyId: "%s", %s, limit: 1000, offset: %d) '
+                     '{ totalCount count resultList { link price { amount currency } salePrice { amount currency } } } }'
+                     % (cid, filtro, offset))
+                r = json.loads(pedir('https://ads.api.cj.com/query', data=json.dumps({'query': q}).encode(),
+                                     headers={'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json'}))
+                if r.get('errors'):
+                    raise RuntimeError('; '.join(e.get('message', '?') for e in r['errors'])[:300])
+                d = r['data']['shoppingProducts']
+                total = int(d.get('totalCount') or 0)
+                lote = d.get('resultList') or []
+                if not lote:
+                    break
+                for it in lote:
+                    k = clave_cj(tienda, it.get('link') or '')
+                    if not k:
+                        continue
+                    pr, sp = it.get('price') or {}, it.get('salePrice') or {}
+                    p = precio(sp.get('amount'), pr.get('amount'), sp.get('currency') or pr.get('currency'))
+                    if p and (tienda, k) not in out:
+                        out[(tienda, k)] = p
+                        n += 1
+                offset += len(lote)
+        except Exception as e:  # noqa: BLE001 — una tienda caída no tumba a las demás de CJ
+            notas.append(f'{tienda}: {type(e).__name__}: {e}'[:200])
+            continue
+        notas.append(f'{tienda} {n}')
+    return out, '; '.join(notas)
 
 
 # ---------------------------------------------------------------- corrida
@@ -267,7 +297,7 @@ def correr():
     tablas, estado = {}, {}
     trabajos = {'awin': lambda: feed_awin(comercios_awin),
                 'rakuten': lambda: feed_rakuten(ind.get('marcas_fragrancenet', [])),
-                'cj': feed_cj}
+                'cj': lambda: feed_cj(redes.get('cj', set()))}
     for red, fn in trabajos.items():
         if red not in redes:
             continue
