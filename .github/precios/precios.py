@@ -21,7 +21,7 @@ Uso:
   python3 precios.py                       # corrida normal (lo que hace el workflow)
   python3 precios.py indice tiendas.json   # regenerar enlaces.json cuando cambie tiendas.json de la app
 """
-import csv, datetime, gzip, io, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
+import base64, csv, datetime, gzip, io, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -192,19 +192,24 @@ def feed_awin(comercios):
 
 def feed_rakuten(marcas):
     """FragranceNet por la API Product Search de Rakuten Advertising (la misma del cruce del 2026-11-05).
-    Secretos: RAKUTEN_TOKEN_KEY (Token Key de la cuenta, en Links > Web Services), RAKUTEN_SID (id del
-    sitio) y RAKUTEN_FRAGRANCENET_MID (id del comercio FragranceNet en Rakuten)."""
-    key, sid, mid = env('RAKUTEN_TOKEN_KEY', 'RAKUTEN_SID', 'RAKUTEN_FRAGRANCENET_MID')
-    tok = json.loads(pedir('https://api.linksynergy.com/token', data=urllib.parse.urlencode({'scope': sid}).encode(),
-                           headers={'Authorization': 'Bearer ' + key,
-                                    'Content-Type': 'application/x-www-form-urlencoded'}))['access_token']
+    Secretos: RAKUTEN_CLIENT_ID y RAKUTEN_CLIENT_SECRET (credenciales OAuth de la cuenta), RAKUTEN_SID
+    (id del sitio) y RAKUTEN_FRAGRANCENET_MID (id del comercio FragranceNet en Rakuten, 216).
+    Token: OAuth client_credentials con Basic auth (client_id:client_secret) y scope = SID."""
+    cid, csec, sid, mid = env('RAKUTEN_CLIENT_ID', 'RAKUTEN_CLIENT_SECRET', 'RAKUTEN_SID', 'RAKUTEN_FRAGRANCENET_MID')
+    basic = base64.b64encode(f'{cid}:{csec}'.encode()).decode()
+
+    def token():
+        return json.loads(pedir('https://api.linksynergy.com/token',
+                                data=urllib.parse.urlencode({'grant_type': 'client_credentials',
+                                                             'scope': sid}).encode(),
+                                headers={'Authorization': 'Basic ' + basic,
+                                         'Content-Type': 'application/x-www-form-urlencoded'}))['access_token']
+
+    tok = token()
     t0, out, fallos = time.time(), {}, 0
     for marca in marcas:
         if time.time() - t0 > 3000:          # renovar el token antes de la hora
-            tok = json.loads(pedir('https://api.linksynergy.com/token',
-                                   data=urllib.parse.urlencode({'scope': sid}).encode(),
-                                   headers={'Authorization': 'Bearer ' + key,
-                                            'Content-Type': 'application/x-www-form-urlencoded'}))['access_token']
+            tok = token()
             t0 = time.time()
         pagina, total = 1, 1
         while pagina <= total and pagina <= 100:

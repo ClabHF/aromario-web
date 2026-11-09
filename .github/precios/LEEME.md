@@ -9,9 +9,10 @@ Ejecuta `precios.py`, que pone precio a cada enlace de `enlaces.json` con los fe
 | Red (tiendas) | Secreto | Dónde se saca |
 |---|---|---|
 | Awin (Comas, Nasopia, Parfivo, Parfumbella, Opulensi, Al Jazeera) | `AWIN_FEED_APIKEY` | Awin > Toolbox > Create-a-Feed: la clave que aparece en la URL de descarga (`.../apikey/XXXX/...`) |
-| Rakuten (FragranceNet) | `RAKUTEN_TOKEN_KEY` | Rakuten Advertising > Links > Web Services: "Token Key" |
-| | `RAKUTEN_SID` | El mismo panel: "Site ID (SID)" |
-| | `RAKUTEN_FRAGRANCENET_MID` | Advertisers > FragranceNet: el "Advertiser ID / MID" |
+| Rakuten (FragranceNet) | `RAKUTEN_CLIENT_ID` | Rakuten Advertising > Links > Web Services: el client_id (OAuth client_credentials) |
+| | `RAKUTEN_CLIENT_SECRET` | El mismo panel: el client_secret |
+| | `RAKUTEN_SID` | El mismo panel: "Site ID (SID)" (4761161) |
+| | `RAKUTEN_FRAGRANCENET_MID` | Advertisers > FragranceNet: el "Advertiser ID / MID" (216) |
 | CJ (Perfumania) | `CJ_TOKEN` | developers.cj.com > Personal Access Tokens > crear uno |
 | | `CJ_CID` | CJ Account Manager: el "Company ID" (CID) del publisher |
 | | `CJ_PERFUMANIA_ID` (opcional) | CJ > Advertisers > Perfumania: su CID de anunciante |

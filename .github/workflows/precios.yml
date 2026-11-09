@@ -26,7 +26,8 @@ jobs:
       - name: Cruce de precios
         env:
           AWIN_FEED_APIKEY: ${{ secrets.AWIN_FEED_APIKEY }}
-          RAKUTEN_TOKEN_KEY: ${{ secrets.RAKUTEN_TOKEN_KEY }}
+          RAKUTEN_CLIENT_ID: ${{ secrets.RAKUTEN_CLIENT_ID }}
+          RAKUTEN_CLIENT_SECRET: ${{ secrets.RAKUTEN_CLIENT_SECRET }}
           RAKUTEN_SID: ${{ secrets.RAKUTEN_SID }}
           RAKUTEN_FRAGRANCENET_MID: ${{ secrets.RAKUTEN_FRAGRANCENET_MID }}
           CJ_TOKEN: ${{ secrets.CJ_TOKEN }}
