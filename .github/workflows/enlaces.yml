@@ -1,0 +1,52 @@
+# Pasada de feeds para SUMAR enlaces de tienda que faltan (orden de Claudio, 2026-11-09).
+# Solo a mano (Actions > Enlaces candidatos > Run workflow). Usa los secretos de la corrida de precios.
+# La salida queda commiteada en la rama enlaces-candidatos; nada entra a la app sin la auditoría de Bishi.
+name: Enlaces candidatos
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: enlaces
+  cancel-in-progress: false
+
+jobs:
+  enlaces:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cruce estricto de feeds contra el catálogo
+        env:
+          AWIN_FEED_APIKEY: ${{ secrets.AWIN_FEED_APIKEY }}
+          RAKUTEN_CLIENT_ID: ${{ secrets.RAKUTEN_CLIENT_ID }}
+          RAKUTEN_CLIENT_SECRET: ${{ secrets.RAKUTEN_CLIENT_SECRET }}
+          RAKUTEN_SID: ${{ secrets.RAKUTEN_SID }}
+          RAKUTEN_FRAGRANCENET_MID: ${{ secrets.RAKUTEN_FRAGRANCENET_MID }}
+          CJ_TOKEN: ${{ secrets.CJ_TOKEN }}
+          CJ_CID: ${{ secrets.CJ_CID }}
+          CJ_PERFUMANIA_ID: ${{ secrets.CJ_PERFUMANIA_ID }}
+          CJ_FRAGRANCESHOP_ID: ${{ secrets.CJ_FRAGRANCESHOP_ID }}
+          CJ_PERFUMEGIANTS_ID: ${{ secrets.CJ_PERFUMEGIANTS_ID }}
+          CJ_ECOSMETICS_ID: ${{ secrets.CJ_ECOSMETICS_ID }}
+        run: python3 .github/enlaces/enlaces.py
+
+      - name: Guardar en la rama enlaces-candidatos
+        run: |
+          mkdir -p /tmp/salida && mv enlaces_candidatos.json enlaces_resumen.md /tmp/salida/
+          git config user.name "aromario-enlaces[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch -q origin enlaces-candidatos 2>/dev/null; then
+            git checkout -q -B enlaces-candidatos origin/enlaces-candidatos
+          else
+            git checkout -q -b enlaces-candidatos
+          fi
+          mkdir -p candidatos
+          cp /tmp/salida/* candidatos/
+          git add candidatos
+          git commit -q -m "Enlaces candidatos del $(date -u +%F)" || { echo "Sin cambios"; exit 0; }
+          git push -q origin enlaces-candidatos
