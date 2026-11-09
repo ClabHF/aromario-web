@@ -35,7 +35,7 @@ SHA-256 en base64) valida con la clave pública que lleva dentro (`SignedFiles.k
 | Secreto | Qué es |
 |---|---|
 | `FIRMA_CLAVE_PRIVADA` | La clave privada PEM (PKCS#8) que entregó Claude fuera del repo. Pegarla entera (con las líneas BEGIN/END). |
-| `CJ_FRAGRANCESHOP_ID`, `CJ_PERFUMEGIANTS_ID`, `CJ_ECOSMETICS_ID` (opcionales) | CID de anunciante de cada tienda en CJ; sin ellos se filtra por palabra clave. |
+| `CJ_FRAGRANCESHOP_ID`, `CJ_PERFUMEGIANTS_ID`, `CJ_ECOSMETICS_ID` (opcionales) | CID de anunciante de cada tienda en CJ; si están vacíos, el script lo busca solo entre los anunciantes con alianza de CJ (por dominio). Sin id, la tienda conserva su último precio. |
 
 - `precios.yml` firma su `precios.json` cada noche.
 - `firmar.yml` firma `verified_photos.json` (y `precios.json`) cada vez que llegan a main.
