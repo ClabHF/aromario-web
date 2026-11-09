@@ -29,6 +29,7 @@ RAIZ = os.path.abspath(os.path.join(AQUI, '..', '..'))
 INDICE = os.path.join(AQUI, 'enlaces.json')
 SALIDA = os.path.join(RAIZ, 'precios.json')
 MAX_DIAS = 14
+MIN_FRESCO = 0.5
 UA = 'Aromario-precios/1.0 (+https://aromario.app)'
 HOY = datetime.date.today().isoformat()
 
@@ -236,27 +237,65 @@ def feed_rakuten(marcas):
     return out, (f'{fallos} marcas con error de la API') if fallos else ''
 
 
+def anunciantes_cj(tok, cid):
+    """Anunciantes con alianza en CJ (Advertiser Lookup, mismo token): {dominio: id}."""
+    out, pagina = {}, 1
+    while pagina <= 20:
+        q = urllib.parse.urlencode({'requestor-cid': cid, 'advertiser-ids': 'joined',
+                                    'records-per-page': 100, 'page-number': pagina})
+        r = ET.fromstring(pedir('https://advertiser-lookup.api.cj.com/v2/advertiser-lookup?' + q,
+                                headers={'Authorization': 'Bearer ' + tok}))
+        lote = list(r.iter('advertiser'))
+        for a in lote:
+            host = urllib.parse.urlparse((a.findtext('program-url') or '').strip()).netloc.lower()
+            if host.startswith('www.'):
+                host = host[4:]
+            if host and a.findtext('advertiser-id'):
+                out.setdefault(host, a.findtext('advertiser-id').strip())
+        if len(lote) < 100:
+            break
+        pagina += 1
+    return out
+
+
 def feed_cj(tiendas):
     """Tiendas CJ (Perfumania, FragranceShop, Perfume Giants, eCosmetics) por la API de productos de CJ
     (GraphQL). Secretos: CJ_TOKEN (Personal Access Token, developers.cj.com) y CJ_CID (Company ID del
-    publisher). Opcionales: CJ_<TIENDA>_ID (id del anunciante; sin él se filtran los anunciantes con alianza
-    por palabra clave y se reconoce la tienda por el dominio del enlace)."""
+    publisher). El id de anunciante de cada tienda sale de CJ_<TIENDA>_ID o, si está vacío, de la
+    búsqueda de anunciantes con alianza (por el dominio del programa). Sin id, la tienda no se pide:
+    el filtro por palabra clave busca en el texto de los productos, no en la tienda, y no casa."""
     tok, cid = env('CJ_TOKEN', 'CJ_CID')
-    out, notas = {}, []
+    out, notas, ids = {}, [], None
     for tienda in sorted(tiendas):
         if tienda not in CJ_TIENDAS:
             continue
         dom, _, secreto = CJ_TIENDAS[tienda]
         adv = os.environ.get(secreto, '').strip()
-        filtro = f'partnerIds: ["{adv}"]' if adv else f'partnerStatus: JOINED, keywords: ["{dom.split(".")[0]}"]'
+        if not adv:
+            if ids is None:
+                try:
+                    ids = anunciantes_cj(tok, cid)
+                except Exception as e:  # noqa: BLE001
+                    ids = {}
+                    notas.append(f'búsqueda de anunciantes: {type(e).__name__}: {e}'[:200])
+            adv = ids.get(dom, '')
+        if not adv:
+            notas.append(f'{tienda}: sin id de anunciante ({secreto} vacío y {dom} no aparece entre los anunciantes con alianza)')
+            continue
         offset, total, n = 0, 1, 0
         try:
-            while offset < total and offset < 100000:
-                q = ('{ shoppingProducts(companyId: "%s", %s, limit: 1000, offset: %d) '
+            while offset < total and offset < 10000:   # la API corta en offset + limit = 10.000
+                q = ('{ shoppingProducts(companyId: "%s", partnerIds: ["%s"], limit: 1000, offset: %d) '
                      '{ totalCount count resultList { link price { amount currency } salePrice { amount currency } } } }'
-                     % (cid, filtro, offset))
-                r = json.loads(pedir('https://ads.api.cj.com/query', data=json.dumps({'query': q}).encode(),
-                                     headers={'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json'}))
+                     % (cid, adv, offset))
+                try:
+                    r = json.loads(pedir('https://ads.api.cj.com/query', data=json.dumps({'query': q}).encode(),
+                                         headers={'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json'}))
+                except urllib.error.HTTPError as e:
+                    if e.code == 400 and offset > 0:
+                        notas.append(f'{tienda}: la API cortó en {offset} de {total}')
+                        break
+                    raise
                 if r.get('errors'):
                     raise RuntimeError('; '.join(e.get('message', '?') for e in r['errors'])[:300])
                 d = r['data']['shoppingProducts']
@@ -274,10 +313,12 @@ def feed_cj(tiendas):
                         out[(tienda, k)] = p
                         n += 1
                 offset += len(lote)
+            if total > 10000:
+                notas.append(f'{tienda}: {total} productos en CJ, se leen los primeros 10.000')
         except Exception as e:  # noqa: BLE001 — una tienda caída no tumba a las demás de CJ
             notas.append(f'{tienda}: {type(e).__name__}: {e}'[:200])
             continue
-        notas.append(f'{tienda} {n}')
+        notas.append(f'{tienda} {n} (anunciante {adv})')
     return out, '; '.join(notas)
 
 
@@ -320,12 +361,24 @@ def correr():
         print(red, estado[red][0], estado[red][1], f'({time.time() - t:.0f} s)', flush=True)
 
     hoy = datetime.date.fromisoformat(HOY)
+    # Una tienda entra fresca solo si su feed casó al menos MIN_FRESCO de lo que tenía con precio la
+    # corrida anterior; si no (tienda sin id, caída, feed cortado), conserva su último precio.
+    casados, previos = {}, {}
+    for fid, links in fichas.items():
+        for tienda, (red, comercio, clave) in links.items():
+            if red in tablas and (comercio, clave) in tablas[red]:
+                casados[tienda] = casados.get(tienda, 0) + 1
+            if anterior.get('precios', {}).get(fid, {}).get(tienda):
+                previos[tienda] = previos.get(tienda, 0) + 1
+    frescas = {t for t, n in casados.items() if n >= max(1, MIN_FRESCO * previos.get(t, 0))}
+    for t in sorted(set(previos) - frescas):
+        print(f'{t}: conserva el precio anterior (casó {casados.get(t, 0)} de {previos[t]})', flush=True)
     precios, fuentes, cuentas = {}, {}, {}
     for fid, links in fichas.items():
         for tienda, (red, comercio, clave) in links.items():
             c = cuentas.setdefault(tienda, {'enlaces': 0, 'con_precio': 0})
             c['enlaces'] += 1
-            if red in tablas:
+            if red in tablas and tienda in frescas:
                 p = tablas[red].get((comercio, clave))
                 fuentes[tienda] = {'fecha': HOY, 'origen': 'feed ' + red}
             else:
