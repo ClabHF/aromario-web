@@ -362,7 +362,9 @@ def correr():
     datos = json.load(open(DATOS, encoding='utf-8'))
     marcas = sorted({m for m, _, _ in datos['fichas'].values() if m})
     notas, productos, estado = [], [], {}
-    trabajos = [('awin', lambda: feed_awin(datos['awin_mid_tienda'], notas)),
+    mid_tienda = dict(datos['awin_mid_tienda'])
+    mid_tienda.setdefault('124166', 'fragrance_click')  # Fragrance Click UK: unida en Awin, aun sin enlaces en tiendas.json (orden de Claudio, 2026-11-10)
+    trabajos = [('awin', lambda: feed_awin(mid_tienda, notas)),
                 ('rakuten', lambda: feed_rakuten(marcas, notas)),
                 ('cj', lambda: feed_cj(datos['prefijos_cj'], marcas, notas))]
     for red, fn in trabajos:
