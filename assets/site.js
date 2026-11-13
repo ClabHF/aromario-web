@@ -128,7 +128,9 @@
   // Cuando la captura llega a su final, la página sigue bajando (y al revés al subir).
   var story = document.querySelector('.story');
   if (!story) return;
-  var img = story.querySelector('.screen img');
+  var media = story.querySelector('.screen video, .screen img');
+  var vid = media && media.tagName === 'VIDEO' ? media : null;
+  var img = vid ? null : media;
   var screen = story.querySelector('.screen');
   var steps = Array.prototype.slice.call(story.querySelectorAll('.story-steps li'));
   var bar = story.querySelector('.progress i');
@@ -140,12 +142,20 @@
   var travel = 0, start = 0, len = 1;
 
   function layout() {
-    if (!img || !screen) return;
+    if (!media || !screen) return;
+    var vh = window.innerHeight;
+    if (vid) {
+      // Con video: la sección dura 2,8 pantallas y el scroll lo reproduce en ambos sentidos
+      story.style.height = Math.round(vh * 2.8) + 'px';
+      start = story.getBoundingClientRect().top + window.scrollY;
+      len = Math.max(1, story.offsetHeight - vh);
+      tick();
+      return;
+    }
     var sh = screen.clientHeight;
     var ih = img.getBoundingClientRect().height;
     travel = Math.max(0, ih - sh);
     // Altura de la sección = pantalla + recorrido de la imagen (1 px de scroll = 1,1 px de imagen)
-    var vh = window.innerHeight;
     story.style.height = Math.round(vh + travel / 1.1) + 'px';
     start = story.getBoundingClientRect().top + window.scrollY;
     len = Math.max(1, story.offsetHeight - vh);
@@ -154,6 +164,10 @@
   var lastStep = -1;
   function tick() {
     var p = Math.min(1, Math.max(0, (window.scrollY - start) / len));
+    if (vid && vid.duration) {
+      var t = p * Math.max(0, vid.duration - 0.05);
+      if (Math.abs(t - vid.currentTime) > 0.05) { try { vid.currentTime = t; } catch (e) {} }
+    }
     if (img) img.style.transform = 'translate3d(0,' + (-p * travel).toFixed(1) + 'px,0)';
     if (bar) bar.style.width = (p * 100).toFixed(1) + '%';
     // El fondo pasa de mañana a noche mientras recorres la pantalla, y vuelve suave al salir
@@ -179,7 +193,8 @@
   // En el móvil la barra del navegador cambia la altura al hacer scroll: solo se recalcula si cambia el ancho.
   var lastW = window.innerWidth;
   window.addEventListener('resize', function () { if (window.innerWidth !== lastW) { lastW = window.innerWidth; layout(); } });
-  if (img && !img.complete) img.addEventListener('load', layout); else layout();
+  if (vid) { if (vid.readyState >= 1) layout(); else vid.addEventListener('loadedmetadata', layout); }
+  else if (img && !img.complete) img.addEventListener('load', layout); else layout();
   window.addEventListener('load', layout);
 })();
 
