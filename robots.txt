@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /review-images.html
+
+Sitemap: https://aromario.app/sitemap.xml
