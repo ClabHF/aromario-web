@@ -480,7 +480,11 @@ html{-webkit-tap-highlight-color:transparent}
 /* Guardia: la captura de la sección Hoy manda su proporción desde CSS, no desde los atributos HTML */
 .story .phone .screen video{width:100%;height:100%;object-fit:cover;display:block}
 /* Botón de App Store en móvil estrecho: la etiqueta no se parte en líneas y el contador baja entero */
-@media (max-width:560px){
-  .btn-apple{flex-wrap:wrap;row-gap:.3rem}
-  .btn-apple span:not(.ios-count){white-space:nowrap}
+.btn-apple{flex-wrap:nowrap}
+.btn-apple>span:not(.ios-count){white-space:nowrap}
+.btn-apple .ios-count{flex:none}
+.cta .btn{margin:.32rem .2rem}
+@media (max-width:640px){
+  .btn-apple{gap:.45rem;padding:.85rem 1.05rem;font-size:.84rem}
+  .btn-apple .ios-count{font-size:.78rem;padding:.22rem .5rem}
 }
