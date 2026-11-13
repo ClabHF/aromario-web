@@ -488,3 +488,6 @@ html{-webkit-tap-highlight-color:transparent}
   .btn-apple{gap:.45rem;padding:.85rem 1.05rem;font-size:.84rem}
   .btn-apple .ios-count{font-size:.78rem;padding:.22rem .5rem}
 }
+/* Pareja de botones de tienda: mismo ancho y centrados; la manzana sube 2 px a la altura óptica del texto */
+.cta .btn{width:min(100%,22rem)}
+.btn-apple img{transform:translateY(-2px)}
