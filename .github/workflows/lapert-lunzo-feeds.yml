@@ -1,0 +1,62 @@
+# One-off manual retrieval of the Awin product feeds for Lapert and Lunzo.
+# The feed key stays inside the runner via the AWIN_FEED_APIKEY secret. Only
+# non-sensitive inventory metadata or product CSV.GZ files are uploaded as an
+# Actions artifact; the keyed feed list is never saved or uploaded.
+name: Lapert Lunzo Awin feeds (one-off)
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "inventory lists feed IDs; download also downloads and verifies every feed"
+        required: true
+        default: inventory
+        type: choice
+        options:
+          - inventory
+          - download
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lapert-lunzo-awin-feeds
+  cancel-in-progress: false
+
+jobs:
+  retrieve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Retrieve Awin feeds
+        env:
+          AWIN_FEED_APIKEY: ${{ secrets.AWIN_FEED_APIKEY }}
+        run: python3 .github/lapert_lunzo/descargar.py "${{ inputs.mode }}"
+
+      - name: Upload inventory
+        if: inputs.mode == 'inventory'
+        uses: actions/upload-artifact@v4
+        with:
+          name: awin-lapert-lunzo-inventory
+          path: |
+            salida_awin_lapert_lunzo/inventario.json
+            salida_awin_lapert_lunzo/inventario.md
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload product feeds and verification
+        if: inputs.mode == 'download'
+        uses: actions/upload-artifact@v4
+        with:
+          name: awin-lapert-lunzo-feeds
+          path: |
+            salida_awin_lapert_lunzo/*.csv.gz
+            salida_awin_lapert_lunzo/inventario.json
+            salida_awin_lapert_lunzo/inventario.md
+            salida_awin_lapert_lunzo/verificacion.json
+            salida_awin_lapert_lunzo/verificacion.md
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
