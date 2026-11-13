@@ -469,3 +469,10 @@ html{-webkit-tap-highlight-color:transparent}
 /* árabe (dir="rtl"): las flechas de los botones apuntan hacia donde se lee */
 
 [dir="rtl"] .btn-glass svg{transform:scaleX(-1)}
+
+/* Botón iOS (estilo Apple: negro, manzana blanca) + contador de lanzamiento */
+.btn.btn-apple{background:#000;color:#fff;border-color:#000;box-shadow:0 10px 26px -12px rgba(0,0,0,.55)}
+.btn.btn-apple:hover{background:#1c1c1e}
+.cta .btn.btn-apple{background:#000;color:#fff}
+.btn-apple .ios-count{font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:.04em;padding:.28rem .55rem;border-radius:999px;background:rgba(255,255,255,.16)}
+.btn-apple.is-live .ios-count{display:none}
