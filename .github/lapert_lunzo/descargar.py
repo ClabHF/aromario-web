@@ -449,7 +449,7 @@ def main() -> int:
         # known feed in the list, FID 118934). TARGETS lookup is bypassed for
         # the control by temporarily extending the map.
         TARGETS.setdefault("131715", ("scento-de", "Scento Germany (control)"))
-        results = [probe_advertiser(key, "54355"), probe_advertiser(key, "131715")]
+        results = [probe_advertiser(key, adv) for adv in list(TARGETS)]
         (OUT_DIR / "probe.json").write_text(
             json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8"
         )
