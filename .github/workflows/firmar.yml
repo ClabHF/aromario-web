@@ -1,5 +1,7 @@
 # Firma de los archivos que la app aplica (orden de Claudio, 1.1.33). Cada vez que llega a main un
 # verified_photos.json o un precios.json nuevo (p. ej. subido a mano), se firma y se publica <archivo>.sig.
+# 2026-11-13: también descargas.json, el manifiesto de datos de la nube que prepara datos/publicar_datos.py de
+# aromario-app; después Bishi lo activa en descargas.aromario.app con el mismo script (la clave no sale de aquí).
 # El proceso nocturno de precios firma su propio precios.json (precios.yml).
 # Secreto: FIRMA_CLAVE_PRIVADA (Settings > Secrets and variables > Actions). Ver .github/firma/firmar.py.
 name: Firmar archivos de la app
@@ -7,7 +9,7 @@ name: Firmar archivos de la app
 on:
   push:
     branches: [main]
-    paths: ['verified_photos.json', 'precios.json']
+    paths: ['verified_photos.json', 'precios.json', 'descargas.json']
   workflow_dispatch:
 
 permissions:
@@ -28,11 +30,11 @@ jobs:
           FIRMA_CLAVE_PRIVADA: ${{ secrets.FIRMA_CLAVE_PRIVADA }}
         run: |
           pip install -q cryptography
-          python3 .github/firma/firmar.py verified_photos.json precios.json
+          python3 .github/firma/firmar.py verified_photos.json precios.json descargas.json
       - name: Publicar firmas
         run: |
           ls *.sig >/dev/null 2>&1 || { echo "Sin firmas (falta el secreto)"; exit 0; }
-          git add verified_photos.json.sig precios.json.sig
+          for f in verified_photos.json.sig precios.json.sig descargas.json.sig; do [ -f "$f" ] && git add "$f"; done
           if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
           git config user.name "aromario-firma[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

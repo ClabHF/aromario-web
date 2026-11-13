@@ -1,4 +1,5 @@
-"""Firma de los archivos que la app aplica (orden de Claudio, 1.1.33): precios.json y verified_photos.json.
+"""Firma de los archivos que la app aplica (orden de Claudio, 1.1.33): precios.json, verified_photos.json y
+descargas.json (manifiesto de datos de la nube, 2026-11-13).
 
 Uso: python3 .github/firma/firmar.py precios.json verified_photos.json
 Escribe <archivo>.sig al lado: firma ECDSA P-256 / SHA-256 (DER) de los bytes exactos del archivo, en base64.
@@ -16,6 +17,9 @@ if not pem:
 key = serialization.load_pem_private_key(pem.encode(), password=None)
 pub = key.public_key()
 for f in sys.argv[1:]:
+    if not os.path.isfile(f):
+        print('no está', f, '(se salta)')
+        continue
     data = open(f, 'rb').read()
     sig = key.sign(data, ec.ECDSA(hashes.SHA256()))
     pub.verify(sig, data, ec.ECDSA(hashes.SHA256()))   # comprobación antes de publicar
