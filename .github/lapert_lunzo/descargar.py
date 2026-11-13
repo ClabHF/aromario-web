@@ -36,6 +36,7 @@ TARGETS = {
 }
 
 OUT_DIR = Path("salida_awin_lapert_lunzo")
+PUBLISHER_ID = "3146426"
 BRAND_COLUMNS = {
     "brand",
     "brand_name",
@@ -72,18 +73,43 @@ def open_url(url: str, timeout: int):
         raise RuntimeError(f"request failed ({type(exc).__name__})") from None
 
 
-def fetch_feed_list(key: str) -> list[dict[str, str]]:
-    url = f"https://productdata.awin.com/datafeed/list/apikey/{key}"
+def fetch_csv(url: str, source: str) -> list[dict[str, str]]:
     try:
         with open_url(url, timeout=300) as response:
             raw = response.read()
     except RuntimeError as exc:
-        fail(f"could not download the Awin feed list: {exc}")
+        fail(f"could not download the Awin {source} feed list: {exc}")
     text = raw.decode("utf-8-sig", "replace")
     try:
         return list(csv.DictReader(io.StringIO(text)))
     except Exception:
-        fail("the Awin feed list was not readable as CSV")
+        fail(f"the Awin {source} feed list was not readable as CSV")
+
+
+def fetch_feed_lists(key: str) -> dict[str, list[dict[str, str]]]:
+    """Fetch the current Darwin list and the legacy productdata list.
+
+    The legacy endpoint used by the nightly scripts returns an older/smaller
+    list.  The current Awin documentation points to the Darwin feed-list URL;
+    both use the same data-feed key.  URLs are never logged or saved.
+    """
+    sources = {
+        "darwin": (
+            "https://ui.awin.com/productdata-darwin-download/publisher/"
+            f"{PUBLISHER_ID}/{key}/1/feedList"
+        ),
+        "legacy": f"https://productdata.awin.com/datafeed/list/apikey/{key}",
+    }
+    result: dict[str, list[dict[str, str]]] = {}
+    errors: list[str] = []
+    for source, url in sources.items():
+        try:
+            result[source] = fetch_csv(url, source)
+        except RuntimeError as exc:
+            errors.append(str(exc))
+    if not result:
+        fail("; ".join(errors) if errors else "no Awin feed list could be downloaded")
+    return result
 
 
 def normalized(row: dict[str, str]) -> dict[str, str]:
@@ -208,49 +234,51 @@ def verify_gzip_csv(path: Path) -> dict[str, object]:
     }
 
 
-def write_diagnostic(rows: list[dict[str, str]]) -> None:
+def write_diagnostic(sources: dict[str, list[dict[str, str]]]) -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    headers = []
-    if rows:
-        headers = [str(key).strip() for key in rows[0].keys() if key is not None]
-    matches = []
-    membership_counts: dict[str, int] = {}
-    format_counts: dict[str, int] = {}
-    advertiser_ids: set[str] = set()
-    for original in rows:
-        row = normalized(original)
-        advertiser_id = row.get("advertiser id", "")
-        if advertiser_id:
-            advertiser_ids.add(advertiser_id)
-        status = row.get("membership status", "")
-        if status:
-            membership_counts[status] = membership_counts.get(status, 0) + 1
-        data_format = row.get("datafeed format", "")
-        if data_format:
-            format_counts[data_format] = format_counts.get(data_format, 0) + 1
-        joined_values = " ".join(row.values()).lower()
-        if "lapert" in joined_values or "lunzo" in joined_values:
-            public = {
-                key: value
-                for key, value in row.items()
-                if "url" not in key and "link" not in key
-            }
-            matches.append(public)
-    diagnostic = {
-        "row_count": len(rows),
-        "headers": headers,
-        "unique_advertiser_ids": len(advertiser_ids),
-        "membership_status_counts": membership_counts,
-        "datafeed_format_counts": format_counts,
-        "name_matches": matches,
-        "target_ids_present": sorted(set(TARGETS) & advertiser_ids),
-    }
+    diagnostic: dict[str, object] = {"sources": {}}
+    for source, rows in sources.items():
+        headers = []
+        if rows:
+            headers = [str(key).strip() for key in rows[0].keys() if key is not None]
+        matches = []
+        membership_counts: dict[str, int] = {}
+        format_counts: dict[str, int] = {}
+        advertiser_ids: set[str] = set()
+        for original in rows:
+            row = normalized(original)
+            advertiser_id = row.get("advertiser id", "")
+            if advertiser_id:
+                advertiser_ids.add(advertiser_id)
+            status = row.get("membership status", "")
+            if status:
+                membership_counts[status] = membership_counts.get(status, 0) + 1
+            data_format = row.get("datafeed format", "")
+            if data_format:
+                format_counts[data_format] = format_counts.get(data_format, 0) + 1
+            joined_values = " ".join(row.values()).lower()
+            if "lapert" in joined_values or "lunzo" in joined_values:
+                public = {
+                    key: value
+                    for key, value in row.items()
+                    if "url" not in key and "link" not in key
+                }
+                matches.append(public)
+        diagnostic["sources"][source] = {
+            "row_count": len(rows),
+            "headers": headers,
+            "unique_advertiser_ids": len(advertiser_ids),
+            "membership_status_counts": membership_counts,
+            "datafeed_format_counts": format_counts,
+            "name_matches": matches,
+            "target_ids_present": sorted(set(TARGETS) & advertiser_ids),
+        }
+        print(
+            f"Diagnostic {source}: {len(rows)} rows, {len(advertiser_ids)} advertisers, "
+            f"{len(matches)} Lapert/Lunzo name matches"
+        )
     (OUT_DIR / "diagnostico.json").write_text(
         json.dumps(diagnostic, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-    print(
-        f"Diagnostic: {len(rows)} rows, {len(advertiser_ids)} advertisers, "
-        f"{len(matches)} Lapert/Lunzo name matches"
     )
 
 
@@ -318,13 +346,14 @@ def main() -> int:
         fail("mode must be inventory, download or diagnose")
 
     key = get_key()
-    rows = fetch_feed_list(key)
+    sources = fetch_feed_lists(key)
+    rows = [row for source in ("darwin", "legacy") for row in sources.get(source, [])]
     selected, missing = select_rows(rows)
     write_inventory(selected, missing)
     print(f"Feed inventory: {len(selected)} feeds; missing advertisers: {len(missing)}")
 
     if mode == "diagnose":
-        write_diagnostic(rows)
+        write_diagnostic(sources)
         return 0
 
     if mode == "download":
