@@ -16,6 +16,7 @@ on:
           - inventory
           - download
           - diagnose
+          - probe
 
 permissions:
   contents: read
@@ -56,6 +57,17 @@ jobs:
             salida_awin_lapert_lunzo/inventario.json
             salida_awin_lapert_lunzo/inventario.md
             salida_awin_lapert_lunzo/diagnostico.json
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload probe result
+        if: inputs.mode == 'probe'
+        uses: actions/upload-artifact@v4
+        with:
+          name: awin-lapert-lunzo-probe
+          path: |
+            salida_awin_lapert_lunzo/probe.json
+            salida_awin_lapert_lunzo/inventario.json
           if-no-files-found: error
           retention-days: 7
 

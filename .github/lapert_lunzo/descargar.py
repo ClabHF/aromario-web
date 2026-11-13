@@ -296,6 +296,80 @@ def write_diagnostic(sources: dict[str, list[dict[str, str]]]) -> None:
     )
 
 
+PROBE_COLUMNS = (
+    "aw_product_id,product_name,brand_name,merchant_id,merchant_name,data_feed_id"
+)
+
+
+def probe_advertiser(key: str, advertiser_id: str) -> dict[str, object]:
+    """Try the Create-a-Feed merchant filter (mid/<advertiser id>) for one
+    advertiser and report only counts and feed IDs. Nothing is kept."""
+    slug, label = TARGETS[advertiser_id]
+    url = (
+        f"https://productdata.awin.com/datafeed/download/apikey/{key}"
+        f"/language/any/mid/{advertiser_id}/columns/{PROBE_COLUMNS}"
+        "/format/csv/delimiter/%2C/compression/gzip/adultcontent/1/"
+    )
+    raw_path = OUT_DIR / f".probe_{advertiser_id}.raw"
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    try:
+        with open_url(url, timeout=1800) as response, raw_path.open("wb") as output:
+            shutil.copyfileobj(response, output, length=1024 * 1024)
+    except RuntimeError as exc:
+        return {"advertiser_id": advertiser_id, "advertiser": label, "error": str(exc)}
+
+    size = raw_path.stat().st_size
+    result: dict[str, object] = {
+        "advertiser_id": advertiser_id,
+        "advertiser": label,
+        "bytes": size,
+    }
+    try:
+        with raw_path.open("rb") as handle:
+            magic = handle.read(2)
+        opener = gzip.open if magic == b"\x1f\x8b" else open
+        feed_ids: dict[str, int] = {}
+        merchant_ids: set[str] = set()
+        rows = 0
+        header: list[str] = []
+        sample_names: list[str] = []
+        with opener(raw_path, "rt", encoding="utf-8-sig", errors="replace", newline="") as handle:
+            reader = csv.DictReader(handle)
+            header = reader.fieldnames or []
+            for row in reader:
+                rows += 1
+                fid = (row.get("data_feed_id") or "").strip()
+                if fid:
+                    feed_ids[fid] = feed_ids.get(fid, 0) + 1
+                mid = (row.get("merchant_id") or "").strip()
+                if mid:
+                    merchant_ids.add(mid)
+                if len(sample_names) < 3 and row.get("product_name"):
+                    sample_names.append(row["product_name"].strip())
+        result.update(
+            {
+                "rows": rows,
+                "header": header,
+                "brand_column_present": any(
+                    column.strip().lower() in BRAND_COLUMNS for column in header
+                ),
+                "merchant_ids": sorted(merchant_ids),
+                "feed_ids": feed_ids,
+                "sample_product_names": sample_names,
+            }
+        )
+    except Exception as exc:
+        result["error"] = f"unreadable response ({type(exc).__name__})"
+    finally:
+        if raw_path.exists():
+            raw_path.unlink()
+    print(
+        f"Probe {label}: rows={result.get('rows')} feeds={result.get('feed_ids')} "
+        f"error={result.get('error', '')}"
+    )
+    return result
+
+
 def download_one(item: dict[str, object]) -> dict[str, object]:
     fid = str(item["feed_id"])
     slug = str(item["slug"])
@@ -356,8 +430,8 @@ def download_one(item: dict[str, object]) -> dict[str, object]:
 
 def main() -> int:
     mode = sys.argv[1] if len(sys.argv) > 1 else "inventory"
-    if mode not in {"inventory", "download", "diagnose"}:
-        fail("mode must be inventory, download or diagnose")
+    if mode not in {"inventory", "download", "diagnose", "probe"}:
+        fail("mode must be inventory, download, diagnose or probe")
 
     key = get_key()
     sources = fetch_feed_lists(key)
@@ -368,6 +442,13 @@ def main() -> int:
 
     if mode == "diagnose":
         write_diagnostic(sources)
+        return 0
+
+    if mode == "probe":
+        results = [probe_advertiser(key, "54355")]
+        (OUT_DIR / "probe.json").write_text(
+            json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
         return 0
 
     if mode == "download":
