@@ -370,6 +370,48 @@ def probe_advertiser(key: str, advertiser_id: str) -> dict[str, object]:
     return result
 
 
+def probe_enhanced_api(key: str, advertiser_id: str, locale: str) -> dict[str, object]:
+    """Last documented door: the Enhanced (Google-format) feed API. It is
+    documented for the OAuth2 Publisher API token, not the data-feed key; this
+    records only whether the stored key is accepted there. Status only."""
+    slug, label = TARGETS[advertiser_id]
+    url = (
+        "https://api.awin.com/publishers/"
+        f"{PUBLISHER_ID}/awinfeeds/download/{advertiser_id}-retail-{locale}.jsonl"
+    )
+    request = urllib.request.Request(
+        url,
+        headers={
+            "Authorization": f"Bearer {key}",
+            "User-Agent": "Mozilla/5.0 (compatible; Aromario feed retrieval)",
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=600) as response:
+            chunk = response.read(4096)
+            return {
+                "advertiser_id": advertiser_id,
+                "advertiser": label,
+                "locale": locale,
+                "http_status": response.status,
+                "first_bytes": len(chunk),
+            }
+    except urllib.error.HTTPError as exc:
+        return {
+            "advertiser_id": advertiser_id,
+            "advertiser": label,
+            "locale": locale,
+            "http_status": exc.code,
+        }
+    except Exception as exc:
+        return {
+            "advertiser_id": advertiser_id,
+            "advertiser": label,
+            "locale": locale,
+            "error": type(exc).__name__,
+        }
+
+
 def download_one(item: dict[str, object]) -> dict[str, object]:
     fid = str(item["feed_id"])
     slug = str(item["slug"])
@@ -450,6 +492,8 @@ def main() -> int:
         # the control by temporarily extending the map.
         TARGETS.setdefault("131715", ("scento-de", "Scento Germany (control)"))
         results = [probe_advertiser(key, adv) for adv in list(TARGETS)]
+        results.append(probe_enhanced_api(key, "54355", "cs_CZ"))
+        results.append(probe_enhanced_api(key, "69786", "de_DE"))
         (OUT_DIR / "probe.json").write_text(
             json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8"
         )
