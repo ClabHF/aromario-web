@@ -15,6 +15,7 @@ on:
         options:
           - inventory
           - download
+          - diagnose
 
 permissions:
   contents: read
@@ -43,6 +44,18 @@ jobs:
           path: |
             salida_awin_lapert_lunzo/inventario.json
             salida_awin_lapert_lunzo/inventario.md
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload diagnostic
+        if: inputs.mode == 'diagnose'
+        uses: actions/upload-artifact@v4
+        with:
+          name: awin-lapert-lunzo-diagnostic
+          path: |
+            salida_awin_lapert_lunzo/inventario.json
+            salida_awin_lapert_lunzo/inventario.md
+            salida_awin_lapert_lunzo/diagnostico.json
           if-no-files-found: error
           retention-days: 7
 

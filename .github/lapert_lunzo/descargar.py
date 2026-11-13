@@ -208,6 +208,52 @@ def verify_gzip_csv(path: Path) -> dict[str, object]:
     }
 
 
+def write_diagnostic(rows: list[dict[str, str]]) -> None:
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    headers = []
+    if rows:
+        headers = [str(key).strip() for key in rows[0].keys() if key is not None]
+    matches = []
+    membership_counts: dict[str, int] = {}
+    format_counts: dict[str, int] = {}
+    advertiser_ids: set[str] = set()
+    for original in rows:
+        row = normalized(original)
+        advertiser_id = row.get("advertiser id", "")
+        if advertiser_id:
+            advertiser_ids.add(advertiser_id)
+        status = row.get("membership status", "")
+        if status:
+            membership_counts[status] = membership_counts.get(status, 0) + 1
+        data_format = row.get("datafeed format", "")
+        if data_format:
+            format_counts[data_format] = format_counts.get(data_format, 0) + 1
+        joined_values = " ".join(row.values()).lower()
+        if "lapert" in joined_values or "lunzo" in joined_values:
+            public = {
+                key: value
+                for key, value in row.items()
+                if "url" not in key and "link" not in key
+            }
+            matches.append(public)
+    diagnostic = {
+        "row_count": len(rows),
+        "headers": headers,
+        "unique_advertiser_ids": len(advertiser_ids),
+        "membership_status_counts": membership_counts,
+        "datafeed_format_counts": format_counts,
+        "name_matches": matches,
+        "target_ids_present": sorted(set(TARGETS) & advertiser_ids),
+    }
+    (OUT_DIR / "diagnostico.json").write_text(
+        json.dumps(diagnostic, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(
+        f"Diagnostic: {len(rows)} rows, {len(advertiser_ids)} advertisers, "
+        f"{len(matches)} Lapert/Lunzo name matches"
+    )
+
+
 def download_one(item: dict[str, object]) -> dict[str, object]:
     fid = str(item["feed_id"])
     slug = str(item["slug"])
@@ -268,14 +314,18 @@ def download_one(item: dict[str, object]) -> dict[str, object]:
 
 def main() -> int:
     mode = sys.argv[1] if len(sys.argv) > 1 else "inventory"
-    if mode not in {"inventory", "download"}:
-        fail("mode must be inventory or download")
+    if mode not in {"inventory", "download", "diagnose"}:
+        fail("mode must be inventory, download or diagnose")
 
     key = get_key()
     rows = fetch_feed_list(key)
     selected, missing = select_rows(rows)
     write_inventory(selected, missing)
     print(f"Feed inventory: {len(selected)} feeds; missing advertisers: {len(missing)}")
+
+    if mode == "diagnose":
+        write_diagnostic(rows)
+        return 0
 
     if mode == "download":
         if missing:
