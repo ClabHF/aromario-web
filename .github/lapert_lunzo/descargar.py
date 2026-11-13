@@ -242,8 +242,11 @@ def write_diagnostic(sources: dict[str, list[dict[str, str]]]) -> None:
         if rows:
             headers = [str(key).strip() for key in rows[0].keys() if key is not None]
         matches = []
+        active_rows = []
         membership_counts: dict[str, int] = {}
         format_counts: dict[str, int] = {}
+        region_counts: dict[str, int] = {}
+        language_counts: dict[str, int] = {}
         advertiser_ids: set[str] = set()
         for original in rows:
             row = normalized(original)
@@ -256,13 +259,21 @@ def write_diagnostic(sources: dict[str, list[dict[str, str]]]) -> None:
             data_format = row.get("datafeed format", "")
             if data_format:
                 format_counts[data_format] = format_counts.get(data_format, 0) + 1
+            region = row.get("primary region", "")
+            if region:
+                region_counts[region] = region_counts.get(region, 0) + 1
+            language = row.get("language", "")
+            if language:
+                language_counts[language] = language_counts.get(language, 0) + 1
+            public = {
+                key: value
+                for key, value in row.items()
+                if "url" not in key and "link" not in key
+            }
+            if status.lower() == "active":
+                active_rows.append(public)
             joined_values = " ".join(row.values()).lower()
             if "lapert" in joined_values or "lunzo" in joined_values:
-                public = {
-                    key: value
-                    for key, value in row.items()
-                    if "url" not in key and "link" not in key
-                }
                 matches.append(public)
         diagnostic["sources"][source] = {
             "row_count": len(rows),
@@ -270,6 +281,9 @@ def write_diagnostic(sources: dict[str, list[dict[str, str]]]) -> None:
             "unique_advertiser_ids": len(advertiser_ids),
             "membership_status_counts": membership_counts,
             "datafeed_format_counts": format_counts,
+            "primary_region_counts": region_counts,
+            "language_counts": language_counts,
+            "active_rows": active_rows,
             "name_matches": matches,
             "target_ids_present": sorted(set(TARGETS) & advertiser_ids),
         }
