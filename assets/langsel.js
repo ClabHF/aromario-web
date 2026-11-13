@@ -1,4 +1,4 @@
-/* Aromario — selector de idioma (botón de tres barras). La elección se guarda en
+/* Aromario — selector de idioma (botón con globo). La elección se guarda en
    localStorage "aromario_lang"; "Automático" vuelve al idioma del navegador. */
 (function () {
   var KEY = "aromario_lang";

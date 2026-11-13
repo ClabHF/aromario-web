@@ -381,9 +381,9 @@ html{-webkit-tap-highlight-color:transparent}
 .rise-fallback.in{opacity:1;transform:none}
 
 /* pantalla de entrada: el logo aparece letra por letra (menos de un segundo) */
-.boot{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding-left:.3em;background:var(--ice);pointer-events:none;animation:bootout .45s .95s ease forwards}
-.boot span{display:inline-block;font:500 clamp(1.7rem,7vw,2.8rem)/1 var(--display);letter-spacing:.3em;color:var(--navy);opacity:0;transform:translateY(8px);animation:bootin .5s var(--ease) forwards}
-.boot span:nth-child(1){animation-delay:.05s}.boot span:nth-child(2){animation-delay:.11s}.boot span:nth-child(3){animation-delay:.17s}.boot span:nth-child(4){animation-delay:.23s}.boot span:nth-child(5){animation-delay:.29s}.boot span:nth-child(6){animation-delay:.35s}.boot span:nth-child(7){animation-delay:.41s}.boot span:nth-child(8){animation-delay:.47s}
+.boot{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding-left:.3em;background:var(--ice);pointer-events:none;animation:bootout .35s .55s ease forwards}
+.boot span{display:inline-block;font:500 clamp(1.7rem,7vw,2.8rem)/1 var(--display);letter-spacing:.3em;color:var(--navy);opacity:0;transform:translateY(8px);animation:bootin .35s var(--ease) forwards}
+.boot span:nth-child(1){animation-delay:0.03s}.boot span:nth-child(2){animation-delay:0.07s}.boot span:nth-child(3){animation-delay:0.10s}.boot span:nth-child(4){animation-delay:0.14s}.boot span:nth-child(5){animation-delay:0.17s}.boot span:nth-child(6){animation-delay:0.21s}.boot span:nth-child(7){animation-delay:0.25s}.boot span:nth-child(8){animation-delay:0.28s}
 @keyframes bootin{to{opacity:1;transform:none}}
 @keyframes bootout{to{opacity:0;visibility:hidden}}
 .noboot .boot{display:none}
@@ -415,6 +415,9 @@ html{-webkit-tap-highlight-color:transparent}
   .hero .lead{font-size:1rem;margin-top:1rem}
   .hero-cta{flex-direction:column;align-items:stretch;max-width:21rem;margin:1.5rem auto 0;gap:.6rem}
   .hero-cta .btn{justify-content:center}
+  /* Badges de Google Play y App Store lado a lado; el botón "Cómo funciona" debajo, a lo ancho */
+  .hero-cta{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+  .hero-cta .btn{flex-basis:100%}
   .hero-meta{margin-top:1.1rem;gap:.3rem .9rem;font-size:.78rem}
   .stage{display:grid;grid-template-columns:repeat(2,auto);justify-content:center;justify-items:center;align-items:start;gap:1rem}
   .stage .halo{width:100%;max-width:420px}
@@ -478,7 +481,7 @@ html{-webkit-tap-highlight-color:transparent}
 /* Fila social, prueba social y piezas nuevas (auditoría 2026-11-13) */
 .social-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem;margin-top:2rem}
 .social-row .social-label{font:600 .7rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.social-row a{color:var(--text);text-decoration:none;font-size:.92rem;font-weight:600}
+.social-row a{color:var(--text);text-decoration:none;font-size:.92rem;font-weight:400}
 .social-row a:hover{color:var(--steel)}
 .foot .social-row{border-top:1px solid var(--glass-edge);padding-top:1.4rem}
 .hero .ios-note{margin-top:.9rem;color:var(--muted);font-size:.95rem}
@@ -501,6 +504,10 @@ html{-webkit-tap-highlight-color:transparent}
 .store-badge-link .ios-count{font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:.04em;font-size:.85rem;padding:.28rem .55rem;border-radius:999px;background:#13243A;color:#fff;flex:none}
 .cta .store-badge-link .ios-count,.prose .cta-box .store-badge-link .ios-count{background:rgba(255,255,255,.18)}
 .store-badge-link.is-live .ios-count{display:none}
+/* Antes del lanzamiento el badge de Apple se ve apagado: todavía no se puede descargar */
+.ios-btn:not(.is-live) .store-badge{opacity:.45;filter:grayscale(1)}
+.ios-btn:not(.is-live){cursor:default}
+.store-badge-link .ios-count{font-weight:600}
 .cta .store-badge-link{margin:.3rem .25rem}
 .prose .cta-box .store-badge-link{margin-top:1.2rem;margin-right:.6rem}
 @media (max-width:900px){
@@ -509,4 +516,12 @@ html{-webkit-tap-highlight-color:transparent}
 @media (max-width:640px){
   .store-badge-link .store-badge{height:48px}
   .hero-cta .store-badge-link{justify-content:center}
+  .store-badge-link .store-badge{height:44px}
+  .social-row .social-label{flex-basis:100%}
+  .social-row[style*="center"] .social-label{text-align:center}
+  /* El contador va debajo del badge de Apple para que los dos badges quepan lado a lado */
+  .store-badge-link.ios-btn:not(.is-live){flex-direction:column;gap:.35rem}
+  .store-badge-link .ios-count{font-size:.72rem;padding:.2rem .5rem}
+  .social-row{gap:.5rem 1.2rem}
 }
+@media (max-width:380px){.hero-cta .store-badge-link .store-badge{height:40px}.hero-cta{gap:.5rem}}

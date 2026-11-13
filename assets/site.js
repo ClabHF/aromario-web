@@ -228,22 +228,30 @@
   document.addEventListener('visibilitychange', function () { animated.forEach(apply); });
 })();
 
-/* Contador de lanzamiento iOS: al llegar a cero, el botón activa el enlace de App Store */
+/* Lanzamiento iOS (2026-11-14 14:53 UTC): hasta esa hora el badge de App Store se ve apagado, con
+   "Llega en hh:mm:ss". Al llegar, el badge enlaza a la App Store y los textos marcados con data-pre
+   ("iPhone el 14 de noviembre") se cambian solos por su versión data-post, en todas las páginas. */
 (function () {
   var btns = document.querySelectorAll('[data-ios-btn]');
-  if (!btns.length) return;
+  var pres = document.querySelectorAll('[data-pre]');
+  if (!btns.length && !pres.length) return;
   var TARGET = Date.UTC(2026, 10, 14, 14, 53, 0);
   var URL = 'https://apps.apple.com/app/id6833511843';
   function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function live() {
+    btns.forEach(function (b) { b.setAttribute('href', URL); b.classList.add('is-live'); b.removeAttribute('aria-disabled'); });
+    pres.forEach(function (e) { e.hidden = true; });
+    document.querySelectorAll('[data-post]').forEach(function (e) { e.hidden = false; });
+  }
   function tick() {
     var diff = TARGET - Date.now();
-    if (diff <= 0) {
-      btns.forEach(function (b) { b.setAttribute('href', URL); b.classList.add('is-live'); b.removeAttribute('aria-disabled'); });
-      return true;
-    }
+    if (diff <= 0) { live(); return true; }
     var s = Math.floor(diff / 1000);
     var t = pad(Math.floor(s / 3600)) + ':' + pad(Math.floor((s % 3600) / 60)) + ':' + pad(s % 60);
-    btns.forEach(function (b) { var c = b.querySelector('.ios-count'); if (c) c.textContent = t; });
+    btns.forEach(function (b) {
+      var c = b.querySelector('.ios-count');
+      if (c) c.textContent = (c.getAttribute('data-label') || '') + ' ' + t;
+    });
     return false;
   }
   if (!tick()) { var iv = setInterval(function () { if (tick()) clearInterval(iv); }, 1000); }

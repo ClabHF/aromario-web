@@ -55,25 +55,41 @@
 .wl-brand{color:var(--steel);margin:0 0 .8rem;font-size:.9rem}
 .wl-msg{grid-column:1/-1;text-align:center;color:var(--muted);padding:2rem 0}
 .wl-foot{text-align:center;padding:.4rem 0 3rem}
+.wl-stores{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
 .wl-note{color:var(--muted);font-size:.8rem;max-width:560px;margin:0 auto 1.4rem}
 </style>
 </head>
 <body>
-<main class="wrap">
-  <header class="wl-head">
+<a class="skip" href="#main">Přejít na obsah</a>
+<div class="silk" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-inner">
     <a class="logo" href="index.html">AROMARIO</a>
+    <nav aria-label="Hlavní"><ul class="nav-links"><li><a href="index.html#funciones">Funkce</a></li><li><a href="index.html#el-dia">Jak to funguje</a></li><li><a href="index.html#galeria">Galerie</a></li><li><a href="guias/index.html">Průvodci</a></li><li><a href="index.html#faq">Otázky</a></li><li><a href="partners.html">Pro obchody a tvůrce</a></li></ul></nav>
+<div class="langsel"><button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Jazyk / Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.3 2.4 3.5 5.2 3.5 8.5s-1.2 6.1-3.5 8.5M12 3.5c-2.3 2.4-3.5 5.2-3.5 8.5s1.2 6.1 3.5 8.5"/></svg><span class="langsel-code">CS</span></button><div class="langsel-menu" role="menu" hidden><button type="button" role="menuitem" data-langsel="auto">Automaticky</button><a href="../deseos.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a><a href="../en/wishlist.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a><a href="../pt/deseos.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a><a href="../fr/deseos.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a><a href="../de/deseos.html" role="menuitem" hreflang="de" lang="de" data-langsel="de">Deutsch</a><a href="../it/deseos.html" role="menuitem" hreflang="it" lang="it" data-langsel="it">Italiano</a><a href="../ar/deseos.html" role="menuitem" hreflang="ar" lang="ar" data-langsel="ar">العربية</a><a href="../tr/deseos.html" role="menuitem" hreflang="tr" lang="tr" data-langsel="tr">Türkçe</a><a href="../pl/deseos.html" role="menuitem" hreflang="pl" lang="pl" data-langsel="pl">Polski</a><a href="../ro/deseos.html" role="menuitem" hreflang="ro" lang="ro" data-langsel="ro">Română</a><a href="../el/deseos.html" role="menuitem" hreflang="el" lang="el" data-langsel="el">Ελληνικά</a><a href="../hu/deseos.html" role="menuitem" hreflang="hu" lang="hu" data-langsel="hu">Magyar</a><a href="#" role="menuitem" hreflang="cs" lang="cs" data-langsel="cs" class="current" aria-current="true">Čeština</a><a href="../nl/deseos.html" role="menuitem" hreflang="nl" lang="nl" data-langsel="nl">Nederlands</a></div></div>
+    <a class="btn btn-primary btn-sm" href="index.html#descargar">Stáhnout</a>
+    <button class="menu-btn" id="menu-open" type="button" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="menu-btn close" id="menu-close" type="button" aria-label="Zavřít menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul><li><a href="index.html#funciones">Funkce</a></li><li><a href="index.html#el-dia">Jak to funguje</a></li><li><a href="index.html#galeria">Galerie</a></li><li><a href="guias/index.html">Průvodci</a></li><li><a href="index.html#faq">Otázky</a></li></ul>
+  <a class="btn btn-primary" href="index.html#descargar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg><span data-pre>K dispozici na Google Play · iPhone od 14. listopadu</span><span data-post hidden>Na Google Play a v App Store</span></a>
+</div>
+<main id="main" class="wrap">
+  <header class="wl-head">
     <h1>Můj seznam přání</h1>
     <p>Parfémy, které chci. <span id="wl-count"></span></p>
-<div class="langsel"><button class="langsel-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Jazyk / Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="langsel-code">CS</span></button><div class="langsel-menu" role="menu" hidden><button type="button" role="menuitem" data-langsel="auto">Automaticky</button><a href="../deseos.html" role="menuitem" hreflang="es" lang="es" data-langsel="es">Español</a><a href="../en/wishlist.html" role="menuitem" hreflang="en" lang="en" data-langsel="en">English</a><a href="../pt/deseos.html" role="menuitem" hreflang="pt-BR" lang="pt-BR" data-langsel="pt">Português</a><a href="../fr/deseos.html" role="menuitem" hreflang="fr" lang="fr" data-langsel="fr">Français</a><a href="../de/deseos.html" role="menuitem" hreflang="de" lang="de" data-langsel="de">Deutsch</a><a href="../it/deseos.html" role="menuitem" hreflang="it" lang="it" data-langsel="it">Italiano</a><a href="../ar/deseos.html" role="menuitem" hreflang="ar" lang="ar" data-langsel="ar">العربية</a><a href="../tr/deseos.html" role="menuitem" hreflang="tr" lang="tr" data-langsel="tr">Türkçe</a><a href="../pl/deseos.html" role="menuitem" hreflang="pl" lang="pl" data-langsel="pl">Polski</a><a href="../ro/deseos.html" role="menuitem" hreflang="ro" lang="ro" data-langsel="ro">Română</a><a href="../el/deseos.html" role="menuitem" hreflang="el" lang="el" data-langsel="el">Ελληνικά</a><a href="../hu/deseos.html" role="menuitem" hreflang="hu" lang="hu" data-langsel="hu">Magyar</a><a href="#" role="menuitem" hreflang="cs" lang="cs" data-langsel="cs" class="current" aria-current="true">Čeština</a><a href="../nl/deseos.html" role="menuitem" hreflang="nl" lang="nl" data-langsel="nl">Nederlands</a></div></div>
   </header>
   <section id="wishlist" data-base="../" aria-live="polite"></section>
   <div class="wl-foot">
     <p class="wl-note wl-about">Tento seznam byl sdílen z Aromaria, digitálního šatníku parfémů, který vám každé ráno řekne, který si vzít. Uložte si sbírku, získávejte denní doporučení a sdílejte svůj seznam přání odkazem, zdarma.</p>
     <p class="wl-note">Informace o partnerství: pokud nakoupíte přes tyto odkazy, může Aromario získat provizi, bez dodatečných nákladů pro vás.</p>
-    <a class="btn btn-glass" href="https://play.google.com/store/apps/details?id=com.aromario.app" target="_blank" rel="noopener">Otevřít v Aromario</a>
+    <div class="wl-stores"><a class="store-badge-link" href="https://play.google.com/store/apps/details?id=com.aromario.app"><img class="store-badge" src="/images/badges/google-play-cs.png" alt="Stáhnout z Google Play"></a><a class="store-badge-link ios-btn" data-ios-btn aria-disabled="true" aria-label="Stáhnout z App Store"><img class="store-badge" src="/images/badges/app-store-cs.svg" alt=""><span class="ios-count" data-label="Za">Za …</span></a></div>
   </div>
 <div class="social-row" style="justify-content:center;padding:0 0 2rem"><span class="social-label">Sledujte nás</span><a href="https://www.instagram.com/aromario.app/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@aromario_app" target="_blank" rel="noopener">TikTok</a><a href="https://www.facebook.com/people/Aromario/61596189693500/" target="_blank" rel="noopener">Facebook</a><a href="https://www.reddit.com/user/Aromario_app/" target="_blank" rel="noopener">Reddit</a></div>
 </main>
+<script src="../assets/site.js" defer></script>
 <script src="../assets/deseos.js" defer></script>
 <script src="../assets/langsel.js" defer></script>
 </body>
