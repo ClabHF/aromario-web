@@ -491,3 +491,23 @@ html{-webkit-tap-highlight-color:transparent}
 /* Pareja de botones de tienda: mismo ancho y centrados; la manzana sube 2 px a la altura óptica del texto */
 .cta .btn{display:flex;width:min(100%,24rem);margin-inline:auto;justify-content:center}
 .btn-apple img{transform:translateY(-2px)}
+
+/* Fila social, prueba social y piezas nuevas (auditoría 2026-11-13) */
+.social-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem;margin-top:2rem}
+.social-row .social-label{font:600 .7rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.social-row a{color:var(--text);text-decoration:none;font-size:.92rem;font-weight:600}
+.social-row a:hover{color:var(--steel)}
+.foot .social-row{border-top:1px solid var(--glass-edge);padding-top:1.4rem}
+.hero .ios-note{margin-top:.9rem;color:var(--muted);font-size:.95rem}
+.hero .ios-note a{color:var(--steel);font-weight:600}
+.proof-card{max-width:44rem;margin:0 auto;text-align:center;background:var(--glass);border:1px solid var(--glass-edge);border-radius:var(--r-lg);padding:1.6rem 1.4rem;box-shadow:0 14px 34px -24px var(--shadow)}
+.proof-stars{color:#E8A33D;font-size:1.5rem;letter-spacing:.3rem}
+.proof-card p{color:var(--muted);margin:.45rem 0 0}
+.proof-card p b{color:var(--ink)}
+.bento .tile a{color:var(--steel);font-weight:600}
+.tile .disc{display:block;margin-top:.6rem;color:var(--muted);font-size:.8rem;line-height:1.45}
+.prose .share-row{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;align-items:center;margin-top:2rem;font-size:.92rem}
+.prose .share-row span{color:var(--muted);font-weight:600}
+.prose .share-row a{color:var(--steel);font-weight:600;text-decoration:none}
+.prose .cta-box a.btn.btn-apple{background:#000;color:#fff;border-color:#000}
+.prose .cta-box a.btn{margin-right:.6rem}
