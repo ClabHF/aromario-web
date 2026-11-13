@@ -476,3 +476,11 @@ html{-webkit-tap-highlight-color:transparent}
 .cta .btn.btn-apple{background:#000;color:#fff}
 .btn-apple .ios-count{font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:.04em;padding:.28rem .55rem;border-radius:999px;background:rgba(255,255,255,.16)}
 .btn-apple.is-live .ios-count{display:none}
+
+/* Guardia: la captura de la sección Hoy manda su proporción desde CSS, no desde los atributos HTML */
+.story .phone .screen img{aspect-ratio:720/1407}
+/* Botón de App Store en móvil estrecho: la etiqueta no se parte en líneas y el contador baja entero */
+@media (max-width:560px){
+  .btn-apple{flex-wrap:wrap;row-gap:.3rem}
+  .btn-apple span:not(.ios-count){white-space:nowrap}
+}
