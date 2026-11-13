@@ -123,7 +123,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 :root[data-theme="dark"] .phone{background:linear-gradient(145deg,#3A4E64,#1A2939 45%,#33475C 55%,#16222F)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .phone{background:linear-gradient(145deg,#3A4E64,#1A2939 45%,#33475C 55%,#16222F)}}
 /* la pantalla tiene la proporción exacta de las capturas (720 x 1407) */
-.phone .screen{position:relative;width:100%;aspect-ratio:266/1974;border-radius:30px;overflow:hidden;background:#fff}
+.phone .screen{position:relative;width:100%;aspect-ratio:720/1407;border-radius:30px;overflow:hidden;background:#fff}
 .phone .screen img{width:100%;height:100%;object-fit:cover;object-position:top}
 .story .phone .screen img{height:auto;object-fit:fill}
 .phone .screen::after{content:"";position:absolute;inset:0;border-radius:30px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);pointer-events:none}
