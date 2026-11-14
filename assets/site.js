@@ -228,31 +228,50 @@
   document.addEventListener('visibilitychange', function () { animated.forEach(apply); });
 })();
 
-/* Lanzamiento iOS (2026-11-14 14:53 UTC): hasta esa hora el badge de App Store se ve apagado, con
-   "Llega en hh:mm:ss". Al llegar, el badge enlaza a la App Store y los textos marcados con data-pre
-   ("iPhone el 14 de noviembre") se cambian solos por su versión data-post, en todas las páginas. */
+/* Lanzamiento iOS: el badge de App Store se ve apagado, con "Llega en hh:mm:ss" hasta el
+   2026-11-14 14:53 UTC. El enlace vivo NO se activa por la hora: se activa cuando la app
+   está pública de verdad en la App Store, marcado por /ios-live.json ({"live": true}),
+   que publica el vigilante de Bishi al verificar el enlace. Al activarse, el badge enlaza
+   a la App Store y los textos data-pre se cambian por su versión data-post. */
 (function () {
   var btns = document.querySelectorAll('[data-ios-btn]');
   var pres = document.querySelectorAll('[data-pre]');
   if (!btns.length && !pres.length) return;
   var TARGET = Date.UTC(2026, 10, 14, 14, 53, 0);
   var URL = 'https://apps.apple.com/app/id6833511843';
+  var isLive = false;
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function live() {
+    if (isLive) return;
+    isLive = true;
     btns.forEach(function (b) { b.setAttribute('href', URL); b.classList.add('is-live'); b.removeAttribute('aria-disabled'); });
     pres.forEach(function (e) { e.hidden = true; });
     document.querySelectorAll('[data-post]').forEach(function (e) { e.hidden = false; });
   }
+  function checkFlag() {
+    fetch('/ios-live.json?x=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (j && j.live) live(); })
+      .catch(function () {});
+  }
   function tick() {
     var diff = TARGET - Date.now();
-    if (diff <= 0) { live(); return true; }
-    var s = Math.floor(diff / 1000);
-    var t = pad(Math.floor(s / 3600)) + ':' + pad(Math.floor((s % 3600) / 60)) + ':' + pad(s % 60);
-    btns.forEach(function (b) {
-      var c = b.querySelector('.ios-count');
-      if (c) c.textContent = (c.getAttribute('data-label') || '') + ' ' + t;
-    });
-    return false;
+    if (diff > 0) {
+      var s = Math.floor(diff / 1000);
+      var t = pad(Math.floor(s / 3600)) + ':' + pad(Math.floor((s % 3600) / 60)) + ':' + pad(s % 60);
+      btns.forEach(function (b) {
+        var c = b.querySelector('.ios-count');
+        if (c) c.textContent = (c.getAttribute('data-label') || '') + ' ' + t;
+      });
+    } else {
+      btns.forEach(function (b) {
+        var c = b.querySelector('.ios-count');
+        if (c && !isLive) c.textContent = (c.getAttribute('data-label') || '');
+      });
+    }
+    return isLive;
   }
+  checkFlag();
+  setInterval(checkFlag, 60000);
   if (!tick()) { var iv = setInterval(function () { if (tick()) clearInterval(iv); }, 1000); }
 })();
