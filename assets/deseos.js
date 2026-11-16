@@ -95,7 +95,9 @@
     var url = photoUrl(photos, id);
     if (!url) return;
     var img = new Image();
-    img.alt = nombre; img.loading = "lazy"; img.decoding = "async";
+    // Sin loading="lazy": una imagen diferida fuera del documento nunca empieza a
+    // cargar en Chrome, el onload no llega y la tarjeta se queda con el monograma.
+    img.alt = nombre; img.decoding = "async";
     img.onload = function () { slot.pic.textContent = ""; slot.pic.appendChild(img); };
     img.onerror = function () {};
     img.src = url;
