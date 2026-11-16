@@ -91,15 +91,19 @@
     return { el: c, pic: pic };
   }
   // La foto entra cuando llega verified_photos.json; si falla, queda el monograma.
+  // La imagen se inserta en el documento ANTES de asignarle la URL: precargarla
+  // fuera del DOM no es fiable (con lazy ni siquiera empieza a cargar) y el
+  // onload podía no llegar nunca, dejando la tarjeta con el monograma.
   function setPhoto(slot, id, photos, nombre) {
     var url = photoUrl(photos, id);
     if (!url) return;
+    var mono = slot.pic.querySelector(".wl-mono");
     var img = new Image();
-    // Sin loading="lazy": una imagen diferida fuera del documento nunca empieza a
-    // cargar en Chrome, el onload no llega y la tarjeta se queda con el monograma.
     img.alt = nombre; img.decoding = "async";
-    img.onload = function () { slot.pic.textContent = ""; slot.pic.appendChild(img); };
-    img.onerror = function () {};
+    img.onload = function () { if (mono) mono.remove(); };
+    img.onerror = function () { img.remove(); if (mono) mono.style.display = ""; };
+    if (mono) mono.style.display = "none";
+    slot.pic.appendChild(img);
     img.src = url;
   }
   function msg(t) { root.textContent = ""; root.appendChild(el("p", "wl-msg", t)); }
